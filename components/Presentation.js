@@ -8,20 +8,20 @@ function Presentation() {
   return (
     <>
       <main className={styles.mainPresentation}>
-        <h1>Wali Sylla</h1>
-        <section className={styles.presentation}></section>
-        <section className={styles.projets}>
+        <h1>Wali Sylla</h1>        
+        <section id="projets" className={styles.projets}>
           <Projets />
         </section>
-        <section className={styles.experiences}>
-          <Experiences />
-        </section>
-        <section className={styles.formations}>
-          <Formations />
-        </section>
-        <section className={styles.competences}>
+        <section id="competences" className={styles.competences}>
           <Competences />
         </section>
+        <section id="experiences" className={styles.experiences}>
+          <Experiences />
+        </section>
+        <section id="formations" className={styles.formations}>
+          <Formations />
+        </section>
+        
       </main>
     </>
   );

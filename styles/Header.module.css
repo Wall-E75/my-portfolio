@@ -32,6 +32,8 @@
 
 .list li {
     padding: 0 0.5rem;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .logo {
@@ -39,4 +41,6 @@
     font-weight: 700;
     color: #000000;
     border: 1px solid #000000;
+    ;
+    cursor: pointer;
 }

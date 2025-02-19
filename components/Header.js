@@ -9,16 +9,16 @@ function Header() {
         <nav className={styles.nav}>
             <ul className={styles.list}>
                 <li>
-                  <Link href="/projets">Projets</Link>
+                  <Link href="#projets">Projets</Link>
                 </li>
                 <li>
-                  <Link href="/competences">Compétences</Link>
+                  <Link href="#competences">Compétences</Link>
                 </li>
                 <li>
-                  <Link href='/experiences'>Expériences</Link>
+                  <Link href='#experiences'>Expériences</Link>
                 </li>
                 <li>
-                  <Link href='/formations'>Formations</Link>
+                  <Link href='#formations'>Formations</Link>
                 </li>
             </ul>
         </nav>
