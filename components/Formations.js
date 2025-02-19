@@ -3,7 +3,9 @@ import styles from '../styles/Formations.module.css';
 function Formations() {
     return(
         <>
-            <h1>Formations</h1>
+            <main className={styles.main}>
+                <h1 className={styles.title}>Formations</h1>
+            </main>
         </>
     );
 }

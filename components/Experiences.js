@@ -3,7 +3,9 @@ import styles from '../styles/Experiences.module.css';
 function Experiences() {
     return(
         <>
-        <h1>Experiences</h1>
+        <main className={styles.main}>
+            <h1 className={styles.title}>Experiences</h1>
+        </main>
         </>
     );
 }

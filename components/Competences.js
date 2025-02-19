@@ -3,7 +3,9 @@ import styles from '../styles/Competences.module.css';
 function Competences() {
     return (
         <>
-            <h1>Competences</h1>
+            <main className={styles.main}>
+                <h1 className={styles.title}>Competences</h1>
+            </main>
         </>
     );
 };

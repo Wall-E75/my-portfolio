@@ -3,7 +3,9 @@ import styles from '../styles/Projets.module.css';
 function Projets() {
     return(
         <>
-            <h1>Projets</h1>
+            <main className={styles.main}>
+                <h1 className={styles.title}>Projets</h1>
+            </main>
         </>
     );
 };
