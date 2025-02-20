@@ -3,7 +3,6 @@
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-start;
-
     padding: 0.5rem 0;
     position: fixed;
     width: 100%;
@@ -16,7 +15,7 @@
 .nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     border: 1px solid #000000;
@@ -43,4 +42,87 @@
     border: 1px solid #000000;
     ;
     cursor: pointer;
+}
+
+/*Tablette*/
+
+@media screen and (min-width: 768px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 2rem;
+        height: 10vh;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        padding: 1 0;
+    }
+
+    .list li {
+        padding: 0 0.5rem;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000000;
+        cursor: pointer;
+    }
+}
+
+
+/*Desktop*/
+
+@media screen and (min-width: 1024px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 2rem;
+        height: 10vh;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        padding: 1 0;
+    }
+
+    .list li {
+        padding: 0 0.5rem;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000000;
+        cursor: pointer;
+    }
 }
