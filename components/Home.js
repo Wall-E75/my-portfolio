@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css';
-import Button from './Button';
+import Buttons from './Buttons';
 import { useRouter } from 'next/router';
 
 
@@ -21,7 +21,7 @@ function Home() {
         <h1 className={styles.title}>
           Developpeur Web Full Stack
         </h1>      
-      <Button
+      <Buttons
         onClick={handleClick}//Au clic sur le bouton, on est redirigé vers la page /presentation
         text="En savoir plus" 
       />
