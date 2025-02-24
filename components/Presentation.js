@@ -1,4 +1,5 @@
 import styles from '../styles/Presentation.module.css';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Buttons from './Buttons';
 import Projets from './Projets'; 
@@ -8,8 +9,18 @@ import Competences from './Competences';
 import Contact from './Contact';
 
 function Presentation() {
-  const handleClick = () => {
-    console.log('Clic');    
+  const [isVisible, setIsVisible] = useState(true);
+  useEffect(() => {
+    // Vérifie la largeur de l'écran
+    const handleResize = () => {
+     setIsVisible(window.innerWidth > 768);//Si la largeur de l'écran est supérieure à 768px, isVisible est true
+    };
+    window.addEventListener('resize', handleResize);//Écoute les événements de redimensionnement de la fenêtre
+    handleResize();//Vérifie la largeur de l'écran
+    return () => window.removeEventListener('resize', handleResize);//Supprime l'écouteur d'événements lors du démontage du composant
+  }, []);//[] signifie que le hook useEffect ne s'exécute qu'une seule fois après le premier rendu du composant
+  // Fonction pour télécharger le CV
+  const handleClick = () => {   
     // Crée un élément <a> invisible
     const link = document.createElement('a');    
     link.href = '/CV_Wali_Sylla.pdf'; // URL du fichier à télécharger
@@ -18,33 +29,41 @@ function Presentation() {
     link.click();//Déclenche le téléchargement
     document.body.removeChild(link);//Supprime l'élément du DOM
   };
+
+  const presentationContent = (
+    <div className={styles.presentationContent}>
+      <ul>
+        <li><span>ID:</span> Sylla Wali</li>
+        <li><span>JOB:</span> Developpeur Web Full Stack</li>
+        <li><span>Age:</span> 34 ans</li>
+        <li><span>Ville:</span> Paris</li>
+      </ul>
+    </div> 
+  )
   return (
     <>
       <main className={styles.mainPresentation}>
         <section id="presentation" className={styles.presentation}>
           <div className={styles.presentationIntro}>
-            {/* <Image
-              src="/photo_de_profil.webp"
-              alt="Wali Sylla"
-              width={200}
-              height={300}
-              className={styles.image}
-              style={{borderRadius: '5%', position: 'relative', top: '50px', left: '50px'}}
-            /> */}
+            <div className={styles.imageContainer}>
+              <Image
+                src="/photo_de_profil.webp"
+                alt="Wali Sylla"
+                width={300}
+                height={450}
+                style={{borderRadius: '5%', position: 'relative', top: '50px', left: '50px'}}
+              />
+            </div>
+
+         
             <div className={styles.greeting}>
               <h1 className={styles.greetingTitle}>Salut !</h1>
               <q className={styles.greetingText}>Je suis Wali Sylla, un développeur web fullstack passionné par les nouvelles technologies et les projets innovants.</q>
+              <div className={styles.line}></div>
+              {isVisible && presentationContent}
             </div>
           </div>
-          <hr />
-          <div className={styles.presentationContent}>
-            <ul>
-              <li><span>ID:</span> Sylla Wali</li>
-              <li><span>JOB:</span> Developpeur Web Full Stack</li>
-              <li><span>Age:</span> 34 ans</li>
-              <li><span>Ville:</span> Paris</li>
-            </ul>
-          </div> 
+          {!isVisible && presentationContent}
           <Buttons 
           text="Télécharger CV"
           onClick={handleClick} />

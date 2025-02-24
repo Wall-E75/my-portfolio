@@ -7,15 +7,17 @@ function Projets() {
             id: 1,
             title: 'Kanap',
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 1',
-            image: '/explain_pix1.webp',
+            image: '/kanap.webp',
             alt: 'test',
+            link: '#formations',
         },
         {
             id: 2,
             title: 'La Sauce',
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 2',
-            image: '/explain_pix2.webp',
+            image: '/La_Sauce.webp',
             alt: 'test',
+            link: '#experiences',
         },
         {
             id: 3,
@@ -23,11 +25,12 @@ function Projets() {
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 3',
             image: '/explain_pix3.webp',
             alt: 'test',
+            link: '#competences',
         },
     ];
 
     const projetCards = projetData.map((projet) => (
-        <Cards key={projet.id} title={projet.title} description={projet.description} image={projet.image} alt={projet.alt}/>
+        <Cards key={projet.id} title={projet.title} description={projet.description} image={projet.image} alt={projet.alt} link={projet.link}/>
     ));
 
     return(

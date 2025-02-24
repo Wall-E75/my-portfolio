@@ -13,23 +13,29 @@ function Header() {
           <Link href="/presentation"><FontAwesomeIcon icon={faUser} /></Link>
         </h1>
         {/* <FontAwesomeIcon icon={faCoffee} /> */}
-        {/* <nav className={styles.nav}> */}
-        <Menu />
-            {/* <ul className={styles.list}>
-                <li>
+        <div className={styles.menu}>
+          <Menu />
+        </div>
+        <nav className={styles.nav}>
+      
+            <ul className={styles.list}>
+                <li className={styles.project}>
                   <Link href="#projets">Projets</Link>
                 </li>
-                <li>
+                <li className={styles.competences}>
                   <Link href="#competences">Compétences</Link>
                 </li>
-                <li>
+                <li className={styles.experiences}>
                   <Link href='#experiences'>Expériences</Link>
                 </li>
-                <li>
+                <li className={styles.formations}>
                   <Link href='#formations'>Formations</Link>
                 </li>
-            </ul> */}
-        {/* </nav> */}
+                <li className={styles.contact}>
+                  <Link href='#contact'>Contact</Link>
+                </li>
+            </ul>
+        </nav>
       </header>
     </>
   );

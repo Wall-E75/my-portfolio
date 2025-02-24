@@ -6,19 +6,16 @@
     padding: 0.5rem 0;
     position: fixed;
     width: 100%;
-    /* height: 10vh; */
     z-index: 1000;
-    /* background-color: green;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .nav {
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
     width: 50%;
-    /* border: 1px solid #000000; */
 }
 
 .list {
@@ -57,12 +54,18 @@
 /*Tablette*/
 
 @media screen and (min-width: 768px) {
+    .menu {
+        display: none;
+    }
     .header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0.5rem 2rem;
         height: 10vh;
+        background-color: green;
+        border: 1px solid #000000;  
+
     }
 
     .nav {
@@ -75,6 +78,7 @@
 
     .list {
         display: flex;
+        width: 100%;
         justify-content: space-between;
         align-items: center;
         list-style: none;
@@ -82,10 +86,30 @@
     }
 
     .list li {
-        padding: 0 0.5rem;
-        text-decoration: none;
+        border: 1px solid #000000;
+        padding: 1rem 0.5rem;
         cursor: pointer;
+        height: 100%;
+        width: 25%;
+        text-align: center;
+        cursor: pointer;
+
     }
+
+    .list li a {
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .project {}
+
+    .competence {}
+
+    .experiences {}
+
+    .formations {}
+
+    .contact {}
 
     .logo {
         font-size: 1.5rem;
@@ -99,6 +123,9 @@
 /*Desktop*/
 
 @media screen and (min-width: 1024px) {
+    .menu {
+        display: none;
+    }
     .header {
         flex-direction: row;
         justify-content: space-between;
