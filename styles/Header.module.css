@@ -83,9 +83,13 @@
         align-items: center;
         list-style: none;
         padding: 1 0;
+        height: 10vh;
     }
 
     .list li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 1px solid #000000;
         padding: 1rem 0.5rem;
         cursor: pointer;
@@ -101,7 +105,10 @@
         color: #000000;
     }
 
-    .project {}
+    .project {
+        background-image: url('/project.avif');
+        background-size: cover;
+    }
 
     .competence {}
 

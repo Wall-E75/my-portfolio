@@ -21,8 +21,16 @@
     /* margin: 1rem; */
 }
 
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 /*Tablet*/
 
 @media (min-width: 768px) {
-
+    .main {
+        height: auto;
+        padding: 1rem 0;
+    }
 }

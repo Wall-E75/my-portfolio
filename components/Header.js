@@ -19,7 +19,7 @@ function Header() {
         <nav className={styles.nav}>
       
             <ul className={styles.list}>
-                <li className={styles.project}>
+                <li className={styles.project} title="projets">
                   <Link href="#projets">Projets</Link>
                 </li>
                 <li className={styles.competences}>

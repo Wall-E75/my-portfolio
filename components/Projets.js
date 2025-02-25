@@ -5,32 +5,52 @@ function Projets() {
     const projetData = [
         {
             id: 1,
-            title: 'Kanap',
+            title: 'HTML/CSS',
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 1',
-            image: '/kanap.webp',
-            alt: 'test',
-            link: '#formations',
+            image: '/html_css_logo.webp',
+            alt: 'Logo html et css',
+            link: '/htmlCssProjects',
         },
         {
             id: 2,
-            title: 'La Sauce',
+            title: 'Js Vanilla',
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 2',
-            image: '/La_Sauce.webp',
-            alt: 'test',
-            link: '#experiences',
+            image: '/Js_logo.webp',
+            alt: 'Logo JavaScript',
+            link: 'jsVanillaProjects',
         },
         {
             id: 3,
-            title: 'FoodApp',
+            title: 'React',
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 3',
-            image: '/explain_pix3.webp',
-            alt: 'test',
-            link: '#competences',
+            image: '/React_logo.webp',
+            alt: 'Logo React',
+            link: 'reactProjects',
+        },
+
+        {
+            id: 3,
+            title: 'React native',
+            description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 3',
+            image: '/React_logo.webp',
+            alt: 'Logo React',
+            link: 'reactNativeProjects',
         },
     ];
 
     const projetCards = projetData.map((projet) => (
-        <Cards key={projet.id} title={projet.title} description={projet.description} image={projet.image} alt={projet.alt} link={projet.link}/>
+        <div className={styles.cardContainer}>
+            <Cards 
+                key={projet.id} 
+                title={projet.title} 
+                description={projet.description} 
+                image={projet.image} 
+                alt={projet.alt} 
+                link={projet.link}
+            />
+            <h3>{projet.title}</h3>
+
+        </div>
     ));
 
     return(

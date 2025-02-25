@@ -11,3 +11,11 @@
     font-weight: 700;
     margin-bottom: 1rem;
 }
+
+/*Tablet*/
+
+@media (min-width: 768px) {
+    .main {
+        height: auto;
+    }
+}
