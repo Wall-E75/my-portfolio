@@ -11,19 +11,24 @@ function TemplateProjects(props) {
             <h2 className={styles.title}>{props.title}</h2>
             
             <div className={styles.projectContainer}>
+                <div className={styles.imageContainer}>
                     <Image 
                         src={props.image}
                         alt={props.alt}
                         width={200}
                         height={200}
                     />
+
+                </div>
                     <ul>
                         <li className={styles.project}>
                             <h2>{props.name}</h2>
-                            <p>Description: {props.description}</p>
-                            <p>Technologies: {props.techno}</p>
-                            <p>GitHub: {props.github}</p>
-                            {props.isDeployed && <p>Lien vers le site: <Link href={props.link}>{props.link}</Link></p>}
+                            <div className={styles.projectDesc}>
+                                <p><span className={styles.textTitle}>Description: </span>{props.description}</p>
+                                <p><span className={styles.textTitle}>Technologies: </span>{props.techno}</p>
+                                <p><span className={styles.textTitle}>GitHub: </span><Link href={props.github}>{props.github}</Link></p>
+                                {props.isDeployed && <p><span className={styles.textTitle}>Lien vers le site: </span><Link href={props.link}>{props.link}</Link></p>}
+                            </div>
                         </li>
                     </ul>                  
             

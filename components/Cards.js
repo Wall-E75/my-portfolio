@@ -14,7 +14,8 @@ function Cards(props) {
                             alt={props.alt} 
                             width={500} 
                             height={400}
-                            style={{borderRadius: '10px', width: '100%', height: '100%'}} 
+                            style={{borderRadius: '10px'}} 
+                            priority={props.priority}
                         />
                     </div>
                 </Link>

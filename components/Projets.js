@@ -2,13 +2,14 @@ import styles from '../styles/Projets.module.css';
 import Cards from './Cards';
 
 function Projets() {
-    const projetData = [
+    const projectData = [
         {
             id: 1,
             title: 'HTML/CSS',
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 1',
             image: '/html_css_logo.webp',
             alt: 'Logo html et css',
+            // priority: false,
             link: '/htmlCssProjects',
         },
         {
@@ -17,6 +18,7 @@ function Projets() {
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 2',
             image: '/Js_logo.webp',
             alt: 'Logo JavaScript',
+            priority: false,
             link: 'jsVanillaProjects',
         },
         {
@@ -25,6 +27,7 @@ function Projets() {
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 3',
             image: '/React_logo.webp',
             alt: 'Logo React',
+            // priority: false,
             link: 'reactProjects',
         },
 
@@ -34,21 +37,21 @@ function Projets() {
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 3',
             image: '/React_logo.webp',
             alt: 'Logo React',
+            // priority: false,
             link: 'reactNativeProjects',
         },
     ];
 
-    const projetCards = projetData.map((projet) => (
-        <div className={styles.cardContainer}>
+    const projectCards = projectData.map((project, index) => (
+        <div key={index}  className={styles.cardContainer}>
             <Cards 
-                key={projet.id} 
-                title={projet.title} 
-                description={projet.description} 
-                image={projet.image} 
-                alt={projet.alt} 
-                link={projet.link}
+                title={project.title} 
+                description={project.description} 
+                image={project.image} 
+                alt={project.alt} 
+                link={project.link}
             />
-            <h3>{projet.title}</h3>
+            <h3>{project.title}</h3>
 
         </div>
     ));
@@ -58,7 +61,7 @@ function Projets() {
             <main className={styles.main}>
                 <h1 className={styles.title}>Projets</h1>
                 <div className={styles.container}>
-                    {projetCards}
+                    {projectCards}
                 </div>
             </main>
         </>

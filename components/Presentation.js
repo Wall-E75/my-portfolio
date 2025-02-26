@@ -51,7 +51,8 @@ function Presentation() {
                 alt="Wali Sylla"
                 width={300}
                 height={450}
-                style={{borderRadius: '5%', position: 'relative', top: '50px', left: '50px'}}
+                priority={true}
+                style={{borderRadius: '5%'}}
               />
             </div>
 
