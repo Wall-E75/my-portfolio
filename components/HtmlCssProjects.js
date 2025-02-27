@@ -10,7 +10,7 @@ function HtmlCssProjects() {
             id: 1,
             name: 'Booki',
             description: 'Site web de location d\'hebergement',
-            image: '/booki.webp',
+            image: '/booki_logement.webp',
             alt: 'logo booki',
             techno: 'html, Css',
             github: '',
@@ -22,7 +22,7 @@ function HtmlCssProjects() {
             id: 2,
             name: 'OhMyFood',
             description: 'Site de commande de repas en ligne, pour ce site, j\ai utiliser Sass afin de structurer mon css et les keyframe pour gerer mes animations.',
-            image: '/ohmyfood.webp',
+            image: '/ohmyfood_restaurant.webp',
             alt: 'logo oh my food',
             techno: 'html, Css, Saas, keyframe',
             github: 'https://github.com/Wall-E75/ohmyfood.github.io',
@@ -50,6 +50,7 @@ function HtmlCssProjects() {
     return (
         <>
         <main className={styles.mainContainer}>
+            <h1 className={styles.themeTitle}>HTML/CSS</h1>
                {projectList}
 
         </main>

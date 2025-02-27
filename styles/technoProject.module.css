@@ -5,41 +5,154 @@
     padding-top: 10vh;
 }
 
+.themeTitle {
+    color: #000000;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+}
+
 .projectContainer {
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    margin-bottom: 1.5rem;
+    
 }
 
 .projectContainer ul {
-    width: 75%;
+    padding: 0 0.5rem;
+    width: 100%;
+    
 }
 
 .imageContainer {
-    width: 25%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .imageContainer img {
-    width: calc(100vw * 0.8) !important;
-    /* object-fit: cover; */
+    width: calc(100vw * 0.95) !important;   
+    object-fit: cover;
     border: 1px solid black !important;
+    border-radius: 5% !important;
 }
 
 .project {
     list-style-type: none;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.projectTitle {
+    margin: 0.5rem 0;
 }
 
 .projectDesc {
     border: 1px solid black;
 }
 
-.project P {
+.projectDesc P {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
     font-size: 0.7rem;
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 0.5rem;
+}
+
+.projectDesc a {
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
 }
 
 .textTitle {
+    margin: 1rem 0;
     font-weight: 700;
     font-size: 1rem;
+}
+
+
+.rightText {
+    width: 65%;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+
+/*small phone*/
+
+@media only screen and (min-width: 600px) {
+    
+}
+
+/*tablet*/
+
+@media (min-width: 768px) {
+    .mainContainer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .themeTitle {
+        margin-top: 1rem;
+    }
+    .projectContainer {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .projectContainer ul {
+        /* width: 50%; */
+        
+    }
+
+    .imageContainer {
+        width: 50%;
+        height: auto;
+        max-width: 250px;
+    }
+
+    .imageContainer img {
+        width: calc(100vw * 0.8) !important;
+    }
+
+    .projectTitle {
+        margin-top: 0;
+
+    }
+
+    .projectDesc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .projectDesc p {
+        margin: 0;
+    }
+
+}
+
+
+/*PC*/
+
+@media (min-width: 992px) {
+    .imageContainer {
+        width: 300px;
+        height: auto;
+    }
 }

@@ -94,6 +94,12 @@
 
 /* rgb(39 85 4) */
 
+/*small phone*/
+
+@media only screen and (min-width: 600px) {
+    
+  }
+
 /*Tablet*/
 
 @media (min-width: 768px) {

@@ -19,15 +19,16 @@ function TemplateProjects(props) {
                         height={200}
                     />
 
+
                 </div>
                     <ul>
                         <li className={styles.project}>
-                            <h2>{props.name}</h2>
+                            <h2 className={styles.projectTitle}>{props.name}</h2>
                             <div className={styles.projectDesc}>
-                                <p><span className={styles.textTitle}>Description: </span>{props.description}</p>
-                                <p><span className={styles.textTitle}>Technologies: </span>{props.techno}</p>
-                                <p><span className={styles.textTitle}>GitHub: </span><Link href={props.github}>{props.github}</Link></p>
-                                {props.isDeployed && <p><span className={styles.textTitle}>Lien vers le site: </span><Link href={props.link}>{props.link}</Link></p>}
+                                <p><span className={styles.textTitle}>Description: </span><span className={styles.rightText}>{props.description}</span></p>
+                                <p><span className={styles.textTitle}>Technologies: </span><span className={styles.rightText}>{props.techno}</span></p>
+                                <p><span className={styles.textTitle}>GitHub: </span><span  className={styles.rightText}><Link href={props.github}>{props.github}</Link></span></p>
+                                {props.isDeployed && <p><span className={styles.textTitle}>Lien vers le site: </span><span  className={styles.rightText}><Link  href={props.link}>{props.link}</Link></span></p>}
                             </div>
                         </li>
                     </ul>                  
