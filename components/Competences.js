@@ -39,7 +39,7 @@ function Competences() {
 
                     </div>
                     <div>
-                        <div>
+                        <div className={styles.dataBase}>
                             <h4>Base de données</h4>
                             <ul>
                                 <li>MongoDB</li>
@@ -47,7 +47,7 @@ function Competences() {
                             </ul>
                         </div>
 
-                        <div>
+                        <div className={styles.tools}>
                             <h4>Outils</h4>
                             <ul>
                                 <li>Git</li>

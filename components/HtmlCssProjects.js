@@ -4,30 +4,30 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 function HtmlCssProjects() {
-    // const [isDeployed, setIsDeployed] = useState(false)
+    const [isDeployed, setIsDeployed] = useState(false)
     const projectData = [
         {
             id: 1,
             name: 'Booki',
-            description: 'Site web de location d\'hebergement',
+            description: 'Plateforme de réservation d\'hébergements et d\'activités.',
             image: '/booki_logement.webp',
             alt: 'logo booki',
             techno: 'html, Css',
-            github: '',
-            link: 'https://www.canva.com/design/DAGgChl94Js/m_ya7z9_zgDeWf1VVwN-kg/edit',
+            github: 'https://github.com/Wall-E75/booki.git',
+            link: '',
             isDeployed: false,
         },
 
         {
             id: 2,
             name: 'OhMyFood',
-            description: 'Site de commande de repas en ligne, pour ce site, j\ai utiliser Sass afin de structurer mon css et les keyframe pour gerer mes animations.',
+            description: 'Site de commande de repas en ligne, conçu avec Sass pour une meilleure organisation du CSS et des animations gérées via @keyframes.',
             image: '/ohmyfood_restaurant.webp',
             alt: 'logo oh my food',
             techno: 'html, Css, Saas, keyframe',
             github: 'https://github.com/Wall-E75/ohmyfood.github.io',
-            link: '',
-            isDeployed: false,
+            link: 'https://wall-e75.github.io/ohmyfood.github.io/',
+            isDeployed: true,
         },
 
         // {
