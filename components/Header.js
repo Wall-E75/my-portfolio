@@ -9,9 +9,9 @@ function Header() {
     <>
       <header className={styles.header}>
        
-        <h1 className={styles.logo}>
+        <span className={styles.logo}>
           <Link href="/presentation"><FontAwesomeIcon icon={faUser} /></Link>
-        </h1>
+        </span>
         {/* <FontAwesomeIcon icon={faCoffee} /> */}
         <div className={styles.menu}>
           <Menu />
