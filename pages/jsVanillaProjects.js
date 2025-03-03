@@ -1,4 +1,4 @@
-import JsVanillaProjects from "../components/JsVanillaProjects";
+import JsVanillaProjects from "@components/projects/JsVanillaProjects";
 
 
 function JsVanillaProjectsPage () {

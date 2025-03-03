@@ -1,4 +1,4 @@
-import Experiences from "../components/Experiences";
+import Experiences from "@components/sections/Experiences";
 
 function ExperiencesPage() {
     return <Experiences />;

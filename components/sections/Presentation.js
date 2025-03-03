@@ -1,15 +1,16 @@
-import styles from '../styles/Presentation.module.css';
+import styles from '@/styles/Presentation.module.css';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Buttons from './Buttons';
-import Projets from './Projets'; 
-import Experiences from './Experiences';
-import Formations from './Formations';
-import Competences from './Competences';
+import Buttons from '@components/ui/Buttons';
+import Projets from '@components/ui/Projets'; 
+import Experiences from '@components/sections/Experiences';
+import Formations from '@components/sections/Formations';
+import Competences from '@components/sections/Competences';
 import Contact from './Contact';
 
 function Presentation() {
   const [isVisible, setIsVisible] = useState(true);
+  const [displayComponent, setDisplayComponent] = useState(true);
   useEffect(() => {
     // Vérifie la largeur de l'écran
     const handleResize = () => {
@@ -29,6 +30,11 @@ function Presentation() {
     link.click();//Déclenche le téléchargement
     document.body.removeChild(link);//Supprime l'élément du DOM
   };
+
+  const showComponent = (display) => {
+    console.log("click presentaton")
+    setDisplayComponent(display)
+  }
 
   const presentationContent = (
     <div className={styles.presentationContent}>
@@ -77,9 +83,9 @@ function Presentation() {
         <section id="competences" className={styles.competences}>
           <Competences />
         </section>
-        <section id="experiences" className={styles.experiences}>
-          <Experiences />
-        </section>
+        {displayComponent && <section id="experiences" className={styles.experiences}>
+          <Experiences showComponent={showComponent} />
+        </section>}
         <section id="formations" className={styles.formations}>
           <Formations />
         </section>

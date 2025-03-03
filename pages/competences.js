@@ -1,4 +1,4 @@
-import Competences from "../components/Competences";
+import Competences from "@components/sections/Competences";
 
 function CompetencesPage() {
     return <Competences />;

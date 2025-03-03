@@ -1,4 +1,4 @@
-import ReactNativeProjects from "../components/ReactNativeProjects";
+import ReactNativeProjects from "@components/projects/ReactNativeProjects";
 
 
 function ReactNativeProjectsPage () {

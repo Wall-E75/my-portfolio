@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import Head from 'next/head';
-import Header from '../components/Header';
+import Header from '@/components/layouts/Header';
 import { useRouter } from 'next/router';
 
 function App({ Component, pageProps }) {

@@ -1,4 +1,4 @@
-import Formations from "../components/Formations";
+import Formations from "@components/sections/Formations";
 
 function FormationsPage() {
     return <Formations />;

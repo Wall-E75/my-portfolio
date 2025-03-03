@@ -1,4 +1,4 @@
-import HtmlCssProjects from "../components/HtmlCssProjects";
+import HtmlCssProjects from "@components/projects/HtmlCssProjects";
 
 function HtmlCssProjectsPage() {
     return <HtmlCssProjects />;

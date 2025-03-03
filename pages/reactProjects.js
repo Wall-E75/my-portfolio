@@ -1,4 +1,4 @@
-import ReactProjects from "../components/ReactProjects";
+import ReactProjects from "@components/projects/ReactProjects";
 
 function ReactProjectsPage() {
     return <ReactProjects />;

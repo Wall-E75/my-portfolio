@@ -1,4 +1,4 @@
-import Projets from '../components/Projets';
+import Projets from '@components/sections/Projets';
 
 function ProjetsPage() {
     return <Projets />;
