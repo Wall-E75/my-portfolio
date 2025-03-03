@@ -1,4 +1,4 @@
-import styles from '../styles/Button.module.css';
+import styles from '@styles/Button.module.css';
 import { Button } from 'antd';
 
 function Buttons(props) {

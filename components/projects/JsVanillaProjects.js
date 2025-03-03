@@ -1,6 +1,6 @@
-import styles from '../styles/technoProject.module.css';
+import styles from '@styles/technoProject.module.css';
 import { useState } from 'react';
-import TemplateProjects from './TemplateProjects';
+import TemplateProjects from '@components/projects/TemplateProjects';
 import Link from 'next/link';
 import Image from 'next/image';
 

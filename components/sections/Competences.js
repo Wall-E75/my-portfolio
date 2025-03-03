@@ -1,4 +1,4 @@
-import styles from '../styles/Competences.module.css';
+import styles from '@styles/Competences.module.css';
 import Image from 'next/image';
 
 function Competences() {

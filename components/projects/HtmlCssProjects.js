@@ -1,5 +1,5 @@
-import styles from '../styles/technoProject.module.css';
-import TemplateProjects from './TemplateProjects.js';
+import styles from '@styles/technoProject.module.css';
+import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
 import Link from 'next/link';
 

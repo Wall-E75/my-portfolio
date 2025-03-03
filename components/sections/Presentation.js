@@ -1,8 +1,8 @@
-import styles from '@/styles/Presentation.module.css';
+import styles from '@styles/Presentation.module.css';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Buttons from '@components/ui/Buttons';
-import Projets from '@components/ui/Projets'; 
+import Projets from '@components/sections/Projets'; 
 import Experiences from '@components/sections/Experiences';
 import Formations from '@components/sections/Formations';
 import Competences from '@components/sections/Competences';

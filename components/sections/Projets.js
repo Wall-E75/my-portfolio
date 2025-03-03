@@ -1,5 +1,5 @@
-import styles from '../styles/Projets.module.css';
-import Cards from './Cards';
+import styles from '@styles/Projets.module.css';
+import Cards from '@components/ui/Cards';
 
 function Projets() {
     const projectData = [
@@ -7,8 +7,10 @@ function Projets() {
             id: 1,
             title: 'HTML/CSS',
             description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 1',
-            image: '/html_css_logo.webp',
-            alt: 'Logo html et css',
+            image: '/html5_icon.webp', 
+            alt:'Logo html5', 
+            image2: '/css_logo_icon.webp', 
+            alt2: 'logo css',    
             // priority: false,
             link: '/htmlCssProjects',
         },
@@ -40,16 +42,21 @@ function Projets() {
             // priority: false,
             link: 'reactNativeProjects',
         },
+
+        {
+            id: 4,
+            title: 'Full Stack',
+            description: '',
+            image: '/icon-react-native.webp',
+            alt: '',
+            link: '',
+        }
     ];
 
     const projectCards = projectData.map((project, index) => (
         <div key={index}  className={styles.cardContainer}>
             <Cards 
-                title={project.title} 
-                description={project.description} 
-                image={project.image} 
-                alt={project.alt} 
-                link={project.link}
+               { ...project }
             />
             <h3>{project.title}</h3>
 

@@ -1,10 +1,26 @@
-import styles from '../styles/Experiences.module.css';
+import styles from '@styles/Experiences.module.css';
 import { useEffect, useState } from 'react';
 
 
 function Experiences(props) {
     const [display, setDisplay] = useState(true)
-    const experienceData = [1,2];
+    const experienceData = [
+        {
+            entreprise: 'uh',
+            startYear: '65',
+            endYear: '',
+            task: '',
+
+        },
+
+        {
+            entreprise: 'uh',
+            startYear: '65',
+            endYear: '',
+            task: '',
+
+        }
+    ];
    
     useEffect (() => {
     /**
@@ -12,17 +28,28 @@ function Experiences(props) {
      * false au composant parent afin qu'il n'affiche pas la page
      * experience
      */
-        if (experienceData.length === 0) {
-            setDisplay(false);
-            props.showComponent(false);
-        } else {
-            props.showComponent(true);
+        for(let xp in experienceData) {
+            if (!xp.entreprise || !xp.startYear) {
+                setDisplay(false);
+                props.showComponent(false);
+            } else {
+                props.showComponent(true);
+            }
+            
+            console.log('check experiences')
+
         }
-        
-        console.log('check experiences')
     }, []) //Se declenche uniquement au montage
 
     if (!display) return null; //ne rien afficher si display est false
+
+    const experiences = experienceData.map((xp, index) => {
+        return <div key={index}>
+            <p>Nom de l'entreprise: {xp.entreprise}</p>
+            <p>Année: {xp.startYear}</p>
+            <p>Taches réalisées: {xp.task}</p>
+        </div>
+    })
    
 
     
@@ -30,7 +57,7 @@ function Experiences(props) {
         <>
         <main className={styles.main}>
             <h1>Experiences</h1>
-            
+            {experiences}
         </main>
         </>
     );

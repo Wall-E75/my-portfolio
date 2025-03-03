@@ -1,4 +1,4 @@
-import styles from '../styles/Contact.module.css';
+import styles from '@styles/Contact.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 

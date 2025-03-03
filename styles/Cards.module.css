@@ -1,6 +1,6 @@
 .card {
     /* background-color: rgb(18, 20, 20); */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
     width: 50%;
     height: auto;
@@ -25,7 +25,7 @@
 .cardImage {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px 10px 0 0;
 }
 
