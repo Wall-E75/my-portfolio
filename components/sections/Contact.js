@@ -8,6 +8,9 @@ function Contact() {
         <>
             <main className={styles.mainContact}>
                 <h1 className={styles.title}>Contact</h1>
+                <form>
+                    
+                </form>
             </main>
 
         </>

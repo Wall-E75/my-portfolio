@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css';
-import Buttons from './Buttons';
+import Buttons from '@components/ui/Buttons';
 import { useRouter } from 'next/router';
 
 

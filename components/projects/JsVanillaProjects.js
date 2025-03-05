@@ -23,13 +23,13 @@ function JsVanillaProjects() {
         {
             id: '2',
             name: 'La Panthere',
-            description: 'Agence de web design, pour ce site mon travail consisté à optimiser le referencement naturel (SEO), pour une meilleur visibilité en ligne',
-            image: '/kanap.webp',
+            description: 'Agence de web design, pour ce site mon travail consistait à optimiser le referencement naturel (SEO), pour une meilleur visibilité en ligne',
+            image: '/la_panthere.webp',
             alt: 'Logo panthere',
             techno: 'SEO',
-            github: '',
-            link: '',
-            isDeployed: false,
+            github: 'https://github.com/Wall-E75/la_panthere.github.io',
+            link: 'https://wall-e75.github.io/la_panthere.github.io/',
+            isDeployed: true,
         },
 
         {

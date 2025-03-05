@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    /* justify-content: space-between; */
     height: 100vh;
     background-color: #ffff;
     padding: 0.5rem;
     /* margin-bottom: 1rem; */
 }
+
 .title {
     font-size: 2rem;
     font-weight: 700;
@@ -21,13 +22,18 @@
 }
 
 .icon {
-    width: 70%;
-}
-
-
-.formationInfos {
+    width: 60%;
     height: auto;
+    margin: 1rem 0;
 }
+
+
+.infos {
+    width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+}
+
 
 /*Tablet*/
 
