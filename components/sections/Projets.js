@@ -43,14 +43,14 @@ function Projets() {
             link: 'reactNativeProjects',
         },
 
-        {
-            id: 4,
-            title: 'Full Stack',
-            description: '',
-            image: '/icon-react-native.webp',
-            alt: '',
-            link: '',
-        }
+        // {
+        //     id: 4,
+        //     title: 'Full Stack',
+        //     description: '',
+        //     image: '/icon-react-native.webp',
+        //     alt: '',
+        //     link: '',
+        // }
     ];
 
     const projectCards = projectData.map((project, index) => (
