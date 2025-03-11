@@ -27,9 +27,8 @@ function Contact() {
         <>
             <main className={styles.mainContact}>
                 <h1 className={styles.title}>Contact</h1>
-                <form className="form"> 
+                <form className={styles.form}> 
                     <label htmlFor="lastname">
-                        Nom
                         <input 
                         type="text" 
                         name="lastname" 
@@ -41,7 +40,6 @@ function Contact() {
                     </label>
                     
                     <label htmlFor="firstname">
-                        Prenom
                         <input 
                         type="text" 
                         name="firstname" 
@@ -53,9 +51,9 @@ function Contact() {
                     </label>
                     
                     
-                    <label htmlFor="email">
-                        Email
+                    <label htmlFor="email" className={styles.email}>
                         <input 
+                        
                         type="email" 
                         name="email" 
                         placeholder="Votre email" 
@@ -66,8 +64,7 @@ function Contact() {
                     </label>
                     
 
-                    <label htmlFor="message">
-                        Message
+                    <label htmlFor="message" className={styles.message}>
                         <textarea
                         name="message"
                         placeholder="Votre message"
@@ -78,7 +75,7 @@ function Contact() {
                         
                     </label>
                     
-
+                    <button type="submit" className={styles.btn}>Envoyer</button>
                 </form>
             </main>
 
