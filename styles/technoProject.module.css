@@ -61,7 +61,7 @@
     border: 1px solid black;
 }
 
-.projectDesc P {
+.paragraph {
     display: flex;
     width: 100%;
     height: auto;
@@ -70,7 +70,7 @@
     font-size: 0.7rem;
     border-bottom: 1px solid #d8d8d8;
     margin-bottom: 0.5rem;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
 }
 
 .projectDesc a {
@@ -83,6 +83,7 @@
     margin: 1rem 0;
     font-weight: 700;
     font-size: 1rem;
+    width: 40%;
 }
 
 
@@ -91,6 +92,10 @@
     display: flex;
     justify-content: flex-start;
     
+}
+
+.gitLink {
+    margin: 0.2rem 0;
 }
 
 

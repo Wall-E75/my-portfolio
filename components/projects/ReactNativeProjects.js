@@ -45,7 +45,12 @@ function ReactNativeProjects() {
     ];
 
     const projectList = projectData.map((project, index) => {
-        return <TemplateProjects key={index} {...project} />
+        return <TemplateProjects 
+                    key={index} 
+                    {...project}
+                    front={project.github?.front} 
+                    back={project.github?.back}
+                />
     })
     return (
         <>

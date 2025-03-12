@@ -12,8 +12,8 @@ function TemplateProjects(props) {
     );
     const gitFullStack = (
         <div>
-            <p className={styles.rightText}><span>frontend: </span><Link href={props.front}>{props.front}</Link></p>
-            <p className={styles.rightText}><span>backend: </span><Link href={props.back}>{props.back}</Link></p>
+            <p className={styles.gitLink}><span>Frontend: </span><Link href={props.front}>{props.front}</Link></p>
+            <p className={styles.gitLink}><span>Backend: </span><Link href={props.back}>{props.back}</Link></p>
         </div>
     );
     const githubLink = typeof props.github === 'string' ? gitFrontOnly : gitFullStack;
@@ -36,10 +36,10 @@ function TemplateProjects(props) {
                         <li className={styles.project}>
                             <h2 className={styles.projectTitle}>{props.name}</h2>
                             <div className={styles.projectDesc}>
-                                <p><span className={styles.textTitle}>Description: </span><span className={styles.rightText}>{props.description}</span></p>
-                                <p><span className={styles.textTitle}>Technologies: </span><span className={styles.rightText}>{props.techno}</span></p>
-                                <p><span className={styles.textTitle}>GitHub: </span>{githubLink}</p>
-                                {props.isDeployed && <p><span className={styles.textTitle}>Lien vers le site: </span><span  className={styles.rightText}><Link  href={props.link}>{props.link}</Link></span></p>}
+                                <p className={styles.paragraph}><span className={styles.textTitle}>Description: </span><span className={styles.rightText}>{props.description}</span></p>
+                                <p className={styles.paragraph}><span className={styles.textTitle}>Technologies: </span><span className={styles.rightText}>{props.techno}</span></p>
+                                <span className={styles.paragraph}><span className={styles.textTitle}>GitHub: </span><span className={styles.rightText}>{githubLink}</span></span>
+                                {props.link && <p className={styles.paragraph}><span className={styles.textTitle}>Lien vers le site: </span><span className={styles.rightText}><Link  href={props.link}>{props.link}</Link></span></p>}
                             </div>
                         </li>
                     </ul>                  

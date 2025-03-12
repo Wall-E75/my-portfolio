@@ -17,7 +17,6 @@ function JsVanillaProjects() {
             techno: 'Html, Css, JavaScript',
             github: 'https://github.com/Wall-E75/kanap.git',
             link: '',
-            isDeployed: false,
         },
 
         {
@@ -29,7 +28,6 @@ function JsVanillaProjects() {
             techno: 'SEO',
             github: 'https://github.com/Wall-E75/la_panthere.github.io',
             link: 'https://wall-e75.github.io/la_panthere.github.io/',
-            isDeployed: true,
         },
 
         {
@@ -39,15 +37,37 @@ function JsVanillaProjects() {
             image: '/kanap.webp',
             alt: 'Un train',
             techno: 'Html, Css, JavaScript',
-            github: '',
-            link: '',
-            isDeployed: false,
+            github: {
+                front: 'https://github.com/Wall-E75/ticketHack-frontend.git',
+                back: 'https://github.com/Wall-E75/ticketHack-backend.git'
+            },
+            link: 'https://ticket-hack-frontend-azure.vercel.app/',
         },
+
+        {
+            id: '4',
+            name: 'WeatherApp',
+            description: 'FullStack: Site météo, permettant de consulter la météo de n\'importe quelle ville à l\'aide d\'une api',
+            image: '/weather.avif',
+            alt: 'Une representation de la météo avec plusieurs icônes de temps',
+            techno: 'Html, Css, JavaScript | NodeJs, Express, MongoDb, Mongoose, Vercel, Webservice',
+            github: {
+                front: 'https://github.com/Wall-E75/weatherapp-frontend.git',
+                back: 'https://github.com/Wall-E75/weatherapp-backend.git'
+            },
+            link: 'https://weatherapp-frontend-chi.vercel.app',
+        },
+
 
     ];
 
-    const projectList = projectData.map((project, index) => {
-        return <TemplateProjects key={index}  {...project} />
+    const projectList = projectData.map((project) => {
+        return <TemplateProjects 
+                    key={project.id}  
+                    {...project}
+                    front={project.github?.front} 
+                    back={project.github?.back}
+                />
     })
     return (
         <>
