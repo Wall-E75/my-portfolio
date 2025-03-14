@@ -1,7 +1,164 @@
 import styles from '@styles/Competences.module.css';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+    faHtml5,
+    faCss3,
+    faReact,
+    faNodeJs,
+    faGithub,
+    faSquareJs,
+    faJs
+ } from '@fortawesome/free-brands-svg-icons';
 
+// Icônes classiques (non-marques)
+import { 
+    faDatabase,
+    faSquareCaretUp,
+    faWrench // Icône pour "outils"
+ } from '@fortawesome/free-solid-svg-icons';
 function Competences() {
+    const skillsData = [
+        {
+            title: 'Front-end',
+            skills: [
+                {
+                    name:'JavaScript',
+                    icon: faJs,
+                }, 
+                {
+                    name: 'HTML5',
+                    icon: faHtml5,
+                }, 
+                {
+                    name: 'CSS3',
+                    icon: faCss3,
+                }, 
+                {
+                    name: 'React',
+                    icon: faReact,
+                },
+                {
+                    name: 'Next.js',
+                    icon: faSquareCaretUp,
+                },
+                {
+                    name: 'React-native',
+                    icon: faSquareJs,
+                },
+                {
+                    name: 'Tailwind',
+                    icon: '/Tailwind_CSS_Logo.svg',
+                }
+            ]
+        },
+        {
+            title: 'Back-end',
+            skills: [
+                {
+                    name: 'Node.js',
+                    icon: faNodeJs,
+                },
+                {
+                    name: 'Express',
+                    icon: faNodeJs,
+                },
+                {
+                    name: 'RESTful API',
+                    icon: faWrench,
+                }
+            ]
+        },
+        {
+            title: 'Base de données',
+            skills: [
+                {
+                    name: 'MongoDB',
+                    icon: faDatabase,
+                },
+                {
+                    name: 'Mongoose',
+                    icon: faDatabase,
+                }
+            ]
+        },
+        {
+            title: 'Outils',
+            skills: [
+                {
+                    name: 'Git',
+                    icon: faGithub,
+                },
+                {
+                    name: 'GitHub',
+                    icon: faGithub,
+                },
+                {
+                    name: 'VSCode',
+                    icon: faWrench,
+                },
+                {
+                    name: 'Postman',
+                    icon: faWrench,
+                },
+                {
+                    name: 'ThunderClient',
+                    icon: faWrench,
+                },
+                {
+                    name: 'Expo',
+                    icon: faWrench,
+                }
+            ]
+        },
+        {
+            title: 'Autres compétences',
+            skills: [
+                {
+                    name: 'Responsive design',
+                    icon: faWrench,
+                },
+                {
+                    name: 'SEO',
+                    icon: faWrench,
+                },
+                {
+                    name: 'Accessibilité',
+                    icon: faWrench,
+                },
+                {
+                    name: 'Web sémantique',
+                    icon: faWrench,
+                },
+                {
+                    name: 'Performance web',
+                    icon: faWrench,
+                },
+                {
+                    name: 'Gestion de projet',
+                    icon: faWrench,
+                }
+            ]
+        }
+    ];
+
+    const skills = skillsData.map((skill, index) => {
+        return (
+            <div key={index} className={`${styles.stack} ${styles[skill.title]}`}>
+                <h3 className={styles.titleColor}>{skill.title}</h3>
+                <ul>
+                    {skill.skills.map((skill, index) => {
+                        return (
+                            <li key={index}>
+                                {/* {typeof skill.icon === 'string' ? <Image className={styles.icon} src={skill.icon} alt={skill.name} width={55} height={55}  /> : <FontAwesomeIcon icon={skill.icon} className={styles.icon} />} */}
+                                {skill.name}
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+        )
+    })
     return (
         <>
             <main className={styles.main}>
@@ -17,62 +174,7 @@ function Competences() {
                 {/* <h2 className={styles.titleColor}>Compétences techniques</h2> */}
 
                 <div className={styles.skillsContainer}>
-                    {/* <div className={styles.fullStack}> */}
-                        <div className={`${styles.frontEnd} ${styles.stack}`}>
-                            <h3 className={styles.titleColor}>Front-end</h3>
-                            <ul>
-                                <li>JavaScript</li>
-                                <li>HTML5</li>
-                                <li>CSS3</li>
-                                <li>React</li>
-                                <li>Next.js</li>
-                                <li>React-native</li>
-                                <li>Tailwind</li>
-                            </ul>
-                        </div>
-                        <div className={`${styles.backEnd} ${styles.stack}`}>
-                            <h3 className={styles.titleColor}>Back-end</h3>
-                            <ul>
-                                <li>Node.js</li>
-                                <li>Express</li>
-                                <li>RESTful API</li>
-                            </ul>
-                        </div>
-
-                    {/* </div> */}
-                    {/* <div> */}
-                        <div className={`${styles.database} ${styles.stack}`}>
-                            <h3 className={styles.titleColor}>Base de données</h3>
-                            <ul>
-                                <li>MongoDB</li>
-                                <li>Mongoose</li>
-                            </ul>
-                        </div>
-
-                        <div className={`${styles.tools} ${styles.stack}`}>
-                            <h3 className={styles.titleColor}>Outils</h3>
-                            <ul>
-                                <li>Git</li>
-                                <li>GitHub</li>
-                                <li>VSCode</li>
-                                <li>Postman</li>
-                                <li>ThunderClient</li>
-                                <li>Expo</li>
-                            </ul>
-                        </div>
-
-                    {/* </div> */}
-                    <div className={`${styles.otherSkills} ${styles.stack}`}>
-                        <h3 className={styles.titleColor}>Autres compétences</h3>
-                        <ul>
-                            <li>Responsive design</li>
-                            <li>SEO</li>
-                            <li>Accessibilité</li>
-                            <li>Web sémantique</li>
-                            <li>Performance web</li>
-                            <li>Gestion de projet</li>
-                        </ul>
-                    </div>
+                    {skills}
 
                 </div>
             </main>

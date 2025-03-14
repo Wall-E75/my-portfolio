@@ -1,9 +1,11 @@
 import styles from '@styles/Experiences.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { useVisibility } from '@/context/visibilityContext';
 
 
 function Experiences(props) {
-    const [display, setDisplay] = useState(true)
+    const { displayComponant, setDisplayComponant } = useVisibility();
+
     const experienceData = [
         {
             entreprise: 'uh',
@@ -28,20 +30,14 @@ function Experiences(props) {
      * false au composant parent afin qu'il n'affiche pas la page
      * experience
      */
-        for(let xp in experienceData) {
-            if (!xp.entreprise || !xp.startYear) {
-                setDisplay(false);
-                props.showComponent(false);
-            } else {
-                props.showComponent(true);
-            }
-            
-            console.log('check experiences')
+    const hasValidExperience = experienceData.some(xp => xp.entreprise && xp.startYear);
 
-        }
+        if (!hasValidExperience) {
+            setDisplayComponant(false);
+        };
     }, []) //Se declenche uniquement au montage
 
-    if (!display) return null; //ne rien afficher si display est false
+    if (!displayComponant) return null; //ne rien afficher si display est false
 
     const experiences = experienceData.map((xp, index) => {
         return <div key={index}>

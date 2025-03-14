@@ -72,6 +72,7 @@ function JsVanillaProjects() {
     return (
         <>
             <main className={styles.mainContainer}>
+                <h1 className={styles.themeTitle}>JavaScript Projects</h1>
                 {projectList}  
 
             </main>

@@ -53,6 +53,8 @@
 .skillsContainer li {
     list-style-type: none;
     padding: 0.5rem;
+    text-align: center;
+    /* width: 60%; */
 
 }
 
@@ -82,14 +84,20 @@
 
 .stack ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column;
+    align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .frontEnd {
     border-right: 1px solid  rgb(39 85 4);
 }
-
+.icon {
+    font-size: 1rem;
+    text-align: center;
+    color: #d8d8d8;
+}
 /*.backEnd {
     border: 1px solid black;
     background-color: cadetblue;

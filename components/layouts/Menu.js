@@ -14,6 +14,7 @@ import {
     LaptopOutlined,
     ContactsOutlined,
 } from "@ant-design/icons";
+import { useVisibility } from "@/context/visibilityContext";
 
 // const { 
 //   AppstoreOutlined,
@@ -26,41 +27,10 @@ import {
 // } = icons;
 // const { Button, Menu } = antd;
 
-
-const items = [
-  {
-    key: '1',
-    icon: <PieChartOutlined />,
-    label: <Link href="#projets">Projets</Link>
-  },
-  {
-    key: '2',
-    icon: <DesktopOutlined />,
-    label: <Link href="#competences">Compétences</Link>,
-  },
-  {
-    key: '3',
-    icon: <ContainerOutlined />,
-    label: <Link href='#experiences'>Expériences</Link>,
-  },
-  {
-    key: 4,
-    icon: <LaptopOutlined />,
-    label: <Link href='#formations'>Formations</Link>,
-    
-  },
-  {
-    key: 5,
-    icon: <ContactsOutlined />,
-    label: <Link href='#contact'>Contact</Link>,   
-  },
-  
- 
-  
-];
-
 const App = () => {
   const [collapsed, setCollapsed] = useState(true); // Menu caché au départ
+  const { displayComponant } = useVisibility();
+
 
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -99,7 +69,38 @@ const App = () => {
           mode="inline"
           theme="light"
           inlineCollapsed={false} // Toujours en mode "étendu" lorsqu'il est affiché
-          items={items}
+          items={
+            [
+              {
+                key: '1',
+                icon: <PieChartOutlined />,
+                label: <Link href="/presentation#projets">Projets</Link>
+              },
+              {
+                key: '2',
+                icon: <DesktopOutlined />,
+                label: <Link href="/presentation#competences">Compétences</Link>,
+              },
+            
+              displayComponant && {
+                key: '3',
+                icon: <ContainerOutlined />,
+                label: <Link href='/presentation#experiences'>Expériences</Link>,
+              },
+              {
+                key: 4,
+                icon: <LaptopOutlined />,
+                label: <Link href='/presentation#formations'>Formations</Link>,
+                
+              },
+              {
+                key: 5,
+                icon: <ContactsOutlined />,
+                label: <Link href='/presentation#contact'>Contact</Link>,   
+              },          
+            ]
+            
+          }
         />
       </div>
     </div>

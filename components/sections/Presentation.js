@@ -1,5 +1,7 @@
 import styles from '@styles/Presentation.module.css';
 import { useState, useEffect } from 'react';
+import { VisibilityProvider } from '@/context/visibilityContext';
+import { useVisibility } from '@/context/visibilityContext';
 import Image from 'next/image';
 import Buttons from '@components/ui/Buttons';
 import Projets from '@components/sections/Projets'; 
@@ -10,7 +12,7 @@ import Contact from './Contact';
 
 function Presentation() {
   const [isVisible, setIsVisible] = useState(true);
-  const [displayComponent, setDisplayComponent] = useState(true);
+  const { displayComponent, setDisplayComponent} = useVisibility(); //Recupère la valeur de displayComponent et setDisplayComponent
   useEffect(() => {
     // Vérifie la largeur de l'écran
     const handleResize = () => {
@@ -31,10 +33,10 @@ function Presentation() {
     document.body.removeChild(link);//Supprime l'élément du DOM
   };
 
-  const showComponent = (display) => {
-    console.log("click presentaton")
-    setDisplayComponent(display)
-  }
+  // const showComponent = (display) => {
+  //   console.log("click presentaton")
+  //   setDisplayComponent(display)
+  // }
 
   const presentationContent = (
     <div className={styles.presentationContent}>
@@ -84,7 +86,7 @@ function Presentation() {
           <Competences />
         </section>
         {displayComponent && <section id="experiences" className={styles.experiences}>
-          <Experiences showComponent={showComponent} />
+          <Experiences />
         </section>}
         <section id="formations" className={styles.formations}>
           <Formations />
