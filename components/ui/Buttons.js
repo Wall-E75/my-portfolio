@@ -3,12 +3,12 @@ import { Button } from 'antd';
 
 function Buttons(props) {
   return (
-    <button
+    <Button
       onClick={props.onClick}
       className={styles.button}
     >
       {props.text}
-    </button>
+    </Button>
   );
 }
 export default Buttons;

@@ -4,13 +4,51 @@
     align-items: center;
     /* justify-content: center; */
     min-height: 100vh;
-    background-color: rgb(18, 25, 242);
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
 }
+.wallPaper {
+    position: absolute;
+    z-index: 1;
+    background-image: url('../public/paris.webp');
+    background-size: cover;
+    background-position: 75% 50%;
+    opacity: 0.6;
+    width: 100%;
+    min-height: 100vh;
+}
+
 .title {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
+}
+
+
+.adressContactInfo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    
+}
+
+
+
+.adressContactInfo h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.adressContactInfo p {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
 }
 
 .form {
@@ -19,8 +57,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 1rem;
-    background-color: white;
+    margin: 1rem 0;
+    padding: 1rem 0;
 }
 
 .form label {
@@ -30,25 +68,24 @@
     justify-content: center;
     width: 90%;
     text-align: center;
-    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .input {
     width: 95%;
-    height: 2rem;
-    border: none;
-    border-bottom: 1px solid black;
-    height: auto;
+    height: 4rem;
+    font-size: 1.3rem;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    /* border-bottom: 1px solid black; */
     margin-bottom: 1rem;
-    padding: 1rem 0.4rem 0 0.4rem;
-    color: red;
+    padding: 1rem 0.5rem 0 0.5rem;
 }
 
 .input::placeholder {
-  color: #666363;
-  font-size: 1.5em;
+  color: #000000;
+  font-size: 1.5rem;
 }
 
 .form textarea {
@@ -56,6 +93,12 @@
     border: 1px solid black;
     height: 10rem;
     margin-bottom: 1rem;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
 }
 
 /* .email {
