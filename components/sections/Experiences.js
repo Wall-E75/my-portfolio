@@ -1,6 +1,6 @@
 import styles from '@styles/Experiences.module.css';
 import { useEffect, useState, useContext } from 'react';
-import { useVisibility } from '@/context/visibilityContext';
+import { useVisibility } from "../../context/VisibilityContext";
 
 
 function Experiences(props) {

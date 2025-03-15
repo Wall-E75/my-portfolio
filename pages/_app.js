@@ -2,7 +2,8 @@ import '../styles/globals.css';
 import Head from 'next/head';
 import Header from '@/components/layouts/Header';
 import { useRouter } from 'next/router';
-import { VisibilityProvider } from '@/context/visibilityContext';
+import { VisibilityProvider } from '../context/VisibilityContext';
+
 
 function App({ Component, pageProps }) {
   const router = useRouter();

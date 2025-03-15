@@ -1,7 +1,7 @@
 import styles from '@styles/Presentation.module.css';
 import { useState, useEffect } from 'react';
-import { VisibilityProvider } from '@/context/visibilityContext';
-import { useVisibility } from '@/context/visibilityContext';
+import { VisibilityProvider } from '../../context/VisibilityContext';
+import { useVisibility } from "../../context/VisibilityContext";
 import Image from 'next/image';
 import Buttons from '@components/ui/Buttons';
 import Projets from '@components/sections/Projets'; 
