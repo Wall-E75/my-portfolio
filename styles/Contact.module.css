@@ -5,18 +5,22 @@
     /* justify-content: center; */
     min-height: 100vh;
     margin-bottom: 1rem;
-    position: relative;
-    z-index: 2;
+   
 }
 .wallPaper {
-    position: absolute;
+    position: relative;
     z-index: 1;
     background-image: url('../public/paris.webp');
     background-size: cover;
     background-position: 75% 50%;
     opacity: 0.6;
     width: 100%;
-    min-height: 100vh;
+    min-height: 50vh;
+}
+
+.adress {
+    position: absolute;
+    z-index: 2;
 }
 
 .title {
@@ -25,21 +29,20 @@
     margin-bottom: 1rem;
 }
 
-
-.adressContactInfo {
-    position: relative;
+.column {
     display: flex;
     flex-direction: column;
+}
+.adressContactInfo {
     align-items: center;
     width: 100%;
-    height: auto;
-    
+    height: auto;    
 }
 
 
 
-.adressContactInfo h2 {
-    font-size: 2rem;
+.adressContactInfo h3 {
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -74,7 +77,7 @@
 
 .input {
     width: 95%;
-    height: 4rem;
+    height: 3rem;
     font-size: 1.3rem;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 15px;

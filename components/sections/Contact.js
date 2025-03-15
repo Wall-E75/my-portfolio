@@ -129,7 +129,6 @@ function Contact() {
     )
     return(
         <>
-            <div className={styles.wallPaper}>HELLO</div>
             <main className={styles.mainContact}>
             
                 <h1 className={styles.title}>Contact</h1>
@@ -138,12 +137,16 @@ function Contact() {
 
                     </div>
                     <div className={styles.adressContactInfo}>
-                        <h2>Mon adresse</h2>
-                        <p><FontAwesomeIcon className={styles.icon} icon={faLocationDot} />Metro Porte des Lilas</p>
-                        <p><FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />75019 Paris, France</p>
-                        <p><FontAwesomeIcon className={styles.icon} icon={faPhone} /> 06 60 27 89 40</p>
-                        <p><FontAwesomeIcon className={styles.icon} icon={faCar} /> Permis B</p>
-                        <p><FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />Permis A</p>
+                        <div className={styles.wallPaper}>HELLO</div>
+                        <div className={styles.adress}>
+                            <h3>Mon adresse</h3>
+                            <p><FontAwesomeIcon className={styles.icon} icon={faLocationDot} />Metro Porte des Lilas</p>
+                            <p><FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />75019 Paris, France</p>
+                            <p><FontAwesomeIcon className={styles.icon} icon={faPhone} /> 06 60 27 89 40</p>
+                            <p><FontAwesomeIcon className={styles.icon} icon={faCar} /> Permis B</p>
+                            <p><FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />Permis A</p>
+
+                        </div>
                     </div>
 
                 </section>
