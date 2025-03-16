@@ -7,8 +7,23 @@
     margin-bottom: 1rem;
    
 }
-.wallPaper {
+
+.map {
     position: relative;
+    width: 100%;
+    height: 50vh;
+}
+.adressContact {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.wallPaper {
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 1;
     background-image: url('../public/paris.webp');
     background-size: cover;
@@ -20,6 +35,8 @@
 
 .adress {
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: 2;
 }
 
@@ -34,9 +51,11 @@
     flex-direction: column;
 }
 .adressContactInfo {
+    position: relative;
     align-items: center;
     width: 100%;
-    height: auto;    
+    height: auto;  
+    min-height: 50vh;  
 }
 
 
@@ -52,6 +71,14 @@
     font-weight: 700;
     margin-bottom: 1rem;
 
+}
+
+.formContact {
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    clear: both;
 }
 
 .form {

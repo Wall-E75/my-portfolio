@@ -150,6 +150,7 @@ function Contact() {
                     </div>
 
                 </section>
+                
                 <section className={styles.formContact}>
                     {success ? 
                         <div className={styles.successMsg}>
