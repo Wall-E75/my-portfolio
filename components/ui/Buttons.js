@@ -4,6 +4,7 @@ import { Button } from 'antd';
 function Buttons(props) {
   return (
     <Button
+      htmlType={props.type}
       onClick={props.onClick}
       className={styles.button}
     >

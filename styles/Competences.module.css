@@ -6,7 +6,7 @@
     width: 100%;
     min-height: 100vh;
     /* background-color: rgb(242, 227, 18); */
-    background-color: rgba(238, 205, 221, 0.2);
+    background-color: rgba(238, 205, 221, 0.1);
     color: black;
 
 }
@@ -19,11 +19,11 @@
     margin-bottom: 1rem;
 }
 
-.titleColor {
+/* .titleColor {
     color: rgb(39 85 4);
 
 
-}
+} */
 
 .skillsIntro {    
     width: 100%;
@@ -55,7 +55,21 @@
     padding: 0.5rem;
     text-align: center;
     /* width: 60%; */
+    border: 1px solid rgb(39 85 4);
+    border-radius: 15px;
+    margin: 0.5rem;
+    /* background-color: rgba(238, 205, 221, 0.2); */
+    box-shadow: 5px 3px 5px rgba(238, 205, 221, 0.6);
+     background-color: rgba(39, 85, 4, 0.2);
+    box-shadow: 5px 3px 5px rgba(39, 85, 4, 0.6);
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
 
+.skillsContainer li:hover {
+    border: 1px solid #ee99ff;
+    box-shadow: 5px 3px 5px rgba(39, 85, 4, 0.9);
+    transform: scale(1.02);
 }
 
 /* .fullStack {

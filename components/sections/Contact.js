@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBiking, faCar, faEnvelope, faHome, faLocation, faLocationArrow, faLocationDot, faMotorcycle, faPhone } from '@fortawesome/free-solid-svg-icons';
 import Buttons from '../ui/Buttons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 function Contact() {
     // State pour les informations contact
@@ -124,7 +125,7 @@ function Contact() {
                         ></textarea>
                         {infosContact.message.length} / 200
                     </label>
-                    <Buttons text="Envoyer" htmlType="submit" />
+                    <Buttons text="Envoyer" type="submit" />
                 </form>
     )
     return(
@@ -139,25 +140,24 @@ function Contact() {
                     <div className={styles.adressContactInfo}>
                         <div className={styles.wallPaper}>HELLO</div>
                         <div className={styles.adress}>
-                            <h3>Mon adresse</h3>
+                            <h2>Mon adresse</h2>
                             <p><FontAwesomeIcon className={styles.icon} icon={faLocationDot} />Metro Porte des Lilas</p>
                             <p><FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />75019 Paris, France</p>
                             <p><FontAwesomeIcon className={styles.icon} icon={faPhone} /> 06 60 27 89 40</p>
                             <p><FontAwesomeIcon className={styles.icon} icon={faCar} /> Permis B</p>
                             <p><FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />Permis A</p>
-
                         </div>
                     </div>
 
                 </section>
-                
+
                 <section className={styles.formContact}>
+                <h2>Envoyez moi un message</h2> 
                     {success ? 
                         <div className={styles.successMsg}>
-                            <h2 className={styles.success}>Message envoyé !</h2> 
-                            {/* <button onClick={resetForm} className={styles.btn}>Envoyer un nouveau message</button> */}
+                            <p className={styles.success}>Message envoyé !</p> 
                             <Buttons text="Envoyer un nouveau message" onClick={resetForm} />
-                        </div> :  formulaire 
+                        </div> : formulaire 
                     }
                     {error.length > 0 && (
                         <ul className={styles.error}>
@@ -168,7 +168,8 @@ function Contact() {
                     )}
                 </section>
                 <section className={styles.socialContact}>
-                    <FontAwesomeIcon className={styles.icon} icon={faLinkedin} />
+                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/'><FontAwesomeIcon className={styles.icon} color='blue' icon={faLinkedin} /></Link>
+                    <Link href='https://github.com/Wall-E75'><FontAwesomeIcon className={styles.icon} icon={faGithub} /></Link>
                 </section>
                 
             </main>

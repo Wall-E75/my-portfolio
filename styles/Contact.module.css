@@ -5,6 +5,7 @@
     /* justify-content: center; */
     min-height: 100vh;
     margin-bottom: 1rem;
+    background-color: rgba(238, 205, 221, 0.1);
    
 }
 
@@ -35,9 +36,17 @@
 
 .adress {
     position: absolute;
-    top: 0;
-    left: 0;
+    /* top: 0;
+    left: 0; */
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+    
 }
 
 .title {
@@ -60,24 +69,25 @@
 
 
 
-.adressContactInfo h3 {
+.mainContact h2 {
+    text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin: 0.5rem 0;
 }
 
 .adressContactInfo p {
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
 }
 
 .formContact {
     position: relative;
     width: 100%;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
+    margin-top: 0.5rem;
+    /* padding-top: 1rem; */
     clear: both;
 }
 
@@ -129,6 +139,27 @@
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;
+}
+.successMsg {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+}
+.success {
+    color: green;
+    font-weight: 700;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.socialContact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
 }
 
 /* .email {

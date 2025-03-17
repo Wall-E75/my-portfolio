@@ -74,6 +74,7 @@ function Presentation() {
           </div>
           {!isVisible && presentationContent}
           <Buttons 
+          className={styles.button}
           text="Télécharger CV"
           onClick={handleClick} />
 

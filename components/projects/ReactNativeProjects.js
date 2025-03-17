@@ -6,29 +6,29 @@ import Link from 'next/link';
 function ReactNativeProjects() {
     const [isDeployed, setIsDeployed] = useState(false)
     const projectData = [
-        {
-            id: 1,
-            name: 'Booki',
-            description: 'Plateforme de réservation d\'hébergements et d\'activités.',
-            image: '/booki_logement.webp',
-            alt: 'logo booki',
-            techno: 'html, Css',
-            github: 'https://github.com/Wall-E75/booki.git',
-            link: '',
-            isDeployed: false,
-        },
+        // {
+        //     id: 1,
+        //     name: 'Booki',
+        //     description: 'Plateforme de réservation d\'hébergements et d\'activités.',
+        //     image: '/booki_logement.webp',
+        //     alt: 'logo booki',
+        //     techno: 'html, Css',
+        //     github: 'https://github.com/Wall-E75/booki.git',
+        //     link: '',
+        //     isDeployed: false,
+        // },
 
-        {
-            id: 2,
-            name: 'OhMyFood',
-            description: 'Site de commande de repas en ligne, conçu avec Sass pour une meilleure organisation du CSS et des animations gérées via @keyframes.',
-            image: '/ohmyfood_restaurant.webp',
-            alt: 'logo oh my food',
-            techno: 'html, Css, Saas, keyframe',
-            github: 'https://github.com/Wall-E75/ohmyfood.github.io',
-            link: 'https://wall-e75.github.io/ohmyfood.github.io/',
-            isDeployed: true,
-        },
+        // {
+        //     id: 2,
+        //     name: 'OhMyFood',
+        //     description: 'Site de commande de repas en ligne, conçu avec Sass pour une meilleure organisation du CSS et des animations gérées via @keyframes.',
+        //     image: '/ohmyfood_restaurant.webp',
+        //     alt: 'logo oh my food',
+        //     techno: 'html, Css, Saas, keyframe',
+        //     github: 'https://github.com/Wall-E75/ohmyfood.github.io',
+        //     link: 'https://wall-e75.github.io/ohmyfood.github.io/',
+        //     isDeployed: true,
+        // },
 
         // {
         //     id: 3,

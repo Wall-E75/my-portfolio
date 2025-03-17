@@ -37,6 +37,19 @@
     width: 100%;
     height: auto;
     margin: 1.5rem 0;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    padding: 0 10px;
+    background-color: rgba(238, 205, 221, 0.2);
+    box-shadow: 5px 3px 5px rgba(238, 205, 221, 0.6);
+    scale: 1;
+    transition: all 0.3s ease;
+}
+
+.infos:hover {
+    border: 1px solid #ee99ff;
+    box-shadow: 5px 3px 5px rgba(238, 205, 221, 0.9);
+    scale: 1.02;
 }
 
 .infos h2 {
