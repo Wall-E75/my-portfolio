@@ -72,6 +72,10 @@
     transform: scale(1.02);
 }
 
+.skillsText {
+    font-weight: 500;
+}
+
 /* .fullStack {
     display: flex;
     width: 100%;

@@ -24,7 +24,7 @@ function Formations() {
                         <h2>Langues</h2>
                         <p>Français : langue maternelle</p>
                         <p>Anglais : compréhension écrite avancée, expression orale intermédiaire</p>
-                        <p>Soninké : parlé</p>
+                        <p>Soninké : compréhension oral avancé, expression orale intermédiaire</p>
                         <p>Arabe : compréhension orale basique, lu et écrit</p>
                     </div>
 

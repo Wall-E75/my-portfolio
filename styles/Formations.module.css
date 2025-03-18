@@ -3,9 +3,9 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: space-between; */
-    height: 100vh;
+    min-height: 100vh;
     background-color: #ffff;
-    padding: 0.5rem;
+    padding: 0.5rem 0.3rem;
     /* margin-bottom: 1rem; */
 }
 
@@ -38,7 +38,7 @@
     height: auto;
     margin: 1.5rem 0;
     /* border: 1px solid rgba(238,205,221,1); */
-    border: 1px solid rgb(215, 92, 202);
+    /* border: 1px solid rgb(215, 92, 202); */
     border-radius: 15px;
     padding: 0 10px;
     background-color: rgba(238, 205, 221, 0.2);

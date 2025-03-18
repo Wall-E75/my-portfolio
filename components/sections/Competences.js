@@ -164,12 +164,12 @@ function Competences() {
             <main className={styles.main}>
             <h1 className={`${styles.title} ${styles.titleColor}`}>Mes compétences</h1>
                 <div className={styles.skillsIntro}>
-                    <p className={styles.skillsText}>
-                        Mes expériences antérieur, mon permis de développé des compétences transversales et une grande adaptabilité. 
+                    <q className={styles.skillsText}>
+                        <i>Mes expériences antérieures, mon permis de développé des compétences transversales et une grande adaptabilité. 
                         Autonome et rigoureux, je sais faire face aux défis avec efficacité. 
                         De plus mes différentes formations continues m'ont permis d'acquérir et d'affiner des compétences techniques, 
-                        dont voici un aperçu :
-                    </p>
+                        dont voici un aperçu : </i>
+                    </q>
                 </div>
                 {/* <h2 className={styles.titleColor}>Compétences techniques</h2> */}
 
