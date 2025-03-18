@@ -87,13 +87,28 @@
 
 .stack {
     display: flex;
-    min-width: 48%;
+    width: 100%;
     /* height: auto; */
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    border-bottom: 1px solid rgb(39 85 4);
-    margin-bottom: 1rem;
+    border: 1px solid rgb(39 85 4);
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.64); 
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.64);
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    transition: all 0.3s ease;
+}
+
+.stack:hover {
+    border: 1px solid #ee99ff;
+    -webkit-box-shadow: 5px 3px 5px rgba(39, 85, 4, 0.9);
+    box-shadow: 5px 3px 5px rgba(39, 85, 4, 0.9);
+    transform: scale(1.02);
+    font-weight: 500;
+    background-color: rgba(39, 85, 4, 0.2);
 }
 
 .stack ul {
