@@ -20,19 +20,33 @@ function Header() {
       
             <ul className={styles.list}>
                 <li className={styles.project} title="projets">
-                  <Link href="/presentation#projets">Projets</Link>
+                  <div className={styles.wallPaper}>
+                    <Link href="/presentation#projets">Projets</Link>
+
+                  </div>
                 </li>
                 <li className={styles.competences}>
-                  <Link href="/presentation#competences">Compétences</Link>
+                  <div className={styles.wallPaper}>
+                    <Link href="/presentation#competences">Compétences</Link>
+
+                  </div>
                 </li>
                 <li className={styles.experiences}>
-                  <Link href='/presentation#experiences'>Expériences</Link>
+                  <div className={styles.wallPaper}>
+
+                    <Link href='/presentation#experiences'>Expériences</Link>
+                  </div>
                 </li>
                 <li className={styles.formations}>
-                  <Link href='/presentation#formations'>Formations</Link>
+                  <div className={styles.wallPaper}>
+                    <Link href='/presentation#formations'>Formations</Link>
+                  </div>
                 </li>
                 <li className={styles.contact}>
-                  <Link href='/presentation#contact'>Contact</Link>
+                  <div className={styles.wallPaper}>
+
+                    <Link href='/presentation#contact'>Contact</Link>
+                  </div>
                 </li>
             </ul>
         </nav>

@@ -94,8 +94,9 @@
         border: 1px solid #000000;
         /* padding: 1rem 0.5rem; */
         cursor: pointer;
-        height: 100%;
-        width: 100vw;
+        height: 12vh;
+        width: 100%;
+        padding: 0;
         text-align: center;
         cursor: pointer;
 
@@ -106,14 +107,33 @@
         color: #000000;
     }
 
+    .wallPaper {
+        background-color: rgba(201, 150, 125, 0.4);
+        width: 100%;
+        height: 12vh;
+        /* position: absolute; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(0);
+        transition: all 0.5s ease-in-out;
+
+    }
+
+    .wallPaper:hover {
+        background-color: rgba(201, 150, 125, 0.8);
+        transform: translateX(1rem);
+    }
+
     .project {
         background-image: url('/project.avif');
         background-size: cover;
     }
 
     .competences {
-        background-image: url('/project.avif');
+        background-image: url('/competences.webp');
         background-size: cover;
+        background-position-y: 40%;
     }
 
     .experiences {
@@ -123,12 +143,14 @@
     }
 
     .formations {
-        background-image: url('/project.avif');
+        background-image: url('/work_pix1.webp');
+        width: calc(100vw * 0.8);
         background-size: cover;
     }
 
     .contact {
-        background-image: url('/project.avif');
+        background-image: url('/contact.webp');
+        width: calc(100vw * 0.8);
         background-size: cover;
     }
 
@@ -173,7 +195,6 @@
     }
 
     .list li {
-        padding: 0 0.5rem;
         text-decoration: none;
         cursor: pointer;
     }
