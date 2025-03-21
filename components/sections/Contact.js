@@ -12,7 +12,7 @@ function Contact() {
         lastname: '',
         firstname: '',
         email: '',
-        message: '',
+        messages: '',
     });
     const [error, setError] = useState([]); 
     const [success, setSuccess] = useState(false); // Message de confirmation
@@ -26,7 +26,7 @@ function Contact() {
             lastname: '',
             firstname: '',
             email: '',
-            message: '',
+            messages: '',
         });
 
         setError([]);
@@ -42,7 +42,7 @@ function Contact() {
     };
 
     const validateForm = () => {
-        const fields = ['lastname', 'firstname', 'email', 'message'];
+        const fields = ['lastname', 'firstname', 'email', 'messages'];
         let errors = [];
 
         // On vérifie si chaque champ est vide
@@ -63,18 +63,44 @@ function Contact() {
         return errors.length === 0; // On retourne true si le tableau d'erreurs est vide
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault(); // On empêche le comportement par défaut du formulaire
         if (validateForm()) {
+            console.log(infosContact)
+            try {
+                const response = await fetch("http://localhost:3000/message", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(infosContact),
+                });
+                if (!response.ok) {
+                    const errorData = await response.json()
+                    console.log('Throw response =>', response.json())
+                    throw new Error( errorData.message || "Une erreur est survenue lors de la soumission !");
+                };
+    
+                const data = await response.json();
+                if (!data.result) {
+                    setSuccess(false);
+                    console.log('AUcune data reçu')
+                }
+                console.log(data)
+                console.log('envoie des données');
+                setSuccess(true); // On affiche le message de success
+                console.log('msg success =>', success);
+            } catch(error) {
+                console.error("Erreur", error)
+            }
             // On envoie les données
-            console.log('envoie des données');
-            setSuccess(true); // On affiche le message de success
-            console.log('msg success =>', success);
+           
 
             // resetForm();
         } else {
             setSuccess(false); // On n'affiche pas le message de success
         };
+
+        
+
     };
     let formulaire;
     formulaire = (
@@ -114,16 +140,16 @@ function Contact() {
                         {emailError && error.includes("L'email n\'est pas validé") && (
                             <p className={styles.emailError}>L'email n'est pas validé</p>)}
                     </label>
-                    <label htmlFor="message" className={styles.message}>
+                    <label htmlFor="messages" className={styles.message}>
                         <textarea
                         className={styles.input} 
-                        name="message"
+                        name="messages"
                         placeholder="Votre message"
                         required
                         onChange={handleChange}
-                        value={infosContact.message}
+                        value={infosContact.messages}
                         ></textarea>
-                        {infosContact.message.length} / 200
+                        {infosContact.messages.length} / 200
                     </label>
                     <Buttons text="Envoyer" type="submit" />
                 </form>
