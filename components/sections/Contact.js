@@ -17,6 +17,7 @@ function Contact() {
     const [error, setError] = useState([]); 
     const [success, setSuccess] = useState(false); // Message de confirmation
     const [emailError, setEmailError] = useState(false); // Message d'erreur pour l'email
+    const maxChars = 200;
     // Regex pour l'email
     const EMAIL_REGEX =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -35,9 +36,12 @@ function Contact() {
     }
 
     const handleChange = (e) => {
+        const { name, value } = e.target;
+        if (name === 'messages' && value.length > maxChars) return; // On ne peut écrire plus que maxChars
+        
         setInfosContact({
             ...infosContact,
-            [e.target.name]: e.target.value
+            [name]: value
         });        
     };
 
@@ -102,6 +106,7 @@ function Contact() {
         
 
     };
+
     let formulaire;
     formulaire = (
         <form onSubmit={handleSubmit} className={styles.form} noValidate> 
@@ -142,18 +147,19 @@ function Contact() {
                     </label>
                     <label htmlFor="messages" className={styles.message}>
                         <textarea
-                        className={styles.input} 
-                        name="messages"
-                        placeholder="Votre message"
-                        required
-                        onChange={handleChange}
-                        value={infosContact.messages}
+                            className={styles.input} 
+                            name="messages"
+                            placeholder="Votre message"
+                            required
+                            maxLength={maxChars} //limite en HTML mais pas en js
+                            onChange={handleChange}
+                            value={infosContact.messages}
                         ></textarea>
-                        {infosContact.messages.length} / 200
+                        <p>{infosContact.messages.length} / {maxChars} caractères</p>
                     </label>
                     <Buttons text="Envoyer" type="submit" />
                 </form>
-    )
+    );
     return(
         <>
             <main className={styles.mainContact}>
