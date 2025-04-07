@@ -115,15 +115,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translateX(0);
+        /* transform: translateX(0); */
+        width: 0%;
         transition: all 0.5s ease-in-out;
-
     }
+
 
     .wallPaper:hover {
         background-color: rgba(201, 150, 125, 0.8);
-        transform: translateX(1rem);
+        /* transform: translateX(1rem); */
+        width: 100%;
     }
+
+
 
     .project {
         background-image: url('/project.avif');

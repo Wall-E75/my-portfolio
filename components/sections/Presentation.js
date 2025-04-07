@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { VisibilityProvider } from '../../context/VisibilityContext';
 import { useVisibility } from "../../context/VisibilityContext";
 import Image from 'next/image';
-import Buttons from '@components/ui/Buttons';
+// import Buttons from '@components/ui/Buttons';
 import Projets from '@components/sections/Projets'; 
 import Experiences from '@components/sections/Experiences';
 import Formations from '@components/sections/Formations';
@@ -73,10 +73,10 @@ function Presentation() {
             </div>
           </div>
           {!isVisible && presentationContent}
-          <Buttons 
+          {/* <Buttons 
           className={styles.button}
           text="Télécharger CV"
-          onClick={handleClick} />
+          onClick={handleClick} /> */}
 
         </section>
           

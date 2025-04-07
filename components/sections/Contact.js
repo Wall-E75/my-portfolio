@@ -2,7 +2,8 @@ import styles from '@styles/Contact.module.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBiking, faCar, faEnvelope, faHome, faLocation, faLocationArrow, faLocationDot, faMotorcycle, faPhone } from '@fortawesome/free-solid-svg-icons';
-import Buttons from '../ui/Buttons';
+// import Buttons from '../ui/Buttons';
+import Map from '../ui/Map';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 
@@ -157,7 +158,7 @@ function Contact() {
                         ></textarea>
                         <p>{infosContact.messages.length} / {maxChars} caractères</p>
                     </label>
-                    <Buttons text="Envoyer" type="submit" />
+                    {/* <Buttons text="Envoyer" type="submit" /> */}
                 </form>
     );
     return(
@@ -167,7 +168,7 @@ function Contact() {
                 <h1 className={styles.title}>Contact</h1>
                 <section className={styles.adressContact}>
                     <div className={styles.map}>
-
+                        <Map />
                     </div>
                     <div className={styles.adressContactInfo}>
                         <div className={styles.wallPaper}>HELLO</div>

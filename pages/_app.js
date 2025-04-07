@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from '@/components/layouts/Header';
 import { useRouter } from 'next/router';
 import { VisibilityProvider } from '../context/VisibilityContext';
+// import 'antd/dist/reset.css'; // Import global pour Ant Design v5
 
 
 function App({ Component, pageProps }) {

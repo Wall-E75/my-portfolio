@@ -10,9 +10,13 @@
 }
 
 .map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 100%;
     height: 50vh;
+    border-radius: 50%;
 }
 .adressContact {
     position: relative;

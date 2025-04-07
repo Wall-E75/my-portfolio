@@ -1,6 +1,7 @@
 .card {
     /* background-color: rgb(18, 20, 20); */
     /* border: 1px solid black; */
+
     border-radius: 10px;
     width: 50%;
     height: auto;
@@ -16,6 +17,7 @@
 
 .imageContainer {
     display: flex;
+    justify-content: center;
     width: 100%;
     height: auto;
     /* overflow: hidden; */
