@@ -50,10 +50,6 @@ function Header() {
                 </li>
             </ul>
         </nav>
-
-        <span className={styles.icon}>
-          <FontAwesomeIcon icon={faMoon} />
-        </span>
       </header>
     </>
   );
