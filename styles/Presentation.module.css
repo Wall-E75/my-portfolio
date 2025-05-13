@@ -36,7 +36,7 @@
     height: 90vh;
     /* margin-bottom: 1rem; */
     /* padding: 1rem; */
-    background-image: url('../public/photo_de_profil.webp');
+    background-image: var(--bg-img);
     background-size: cover;
 }
 
@@ -84,9 +84,18 @@
     width: 100%;
     height: auto;
     /* background-color: rgba(238, 205, 221, 0.2); */
-    background-color: var(--background-color);
+    background-color: var(--presentation-bg);
     padding-bottom: 0.5rem;
 
+}
+
+.presentationContent ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -99,7 +108,7 @@
 
 .presentationContent ul li span {
     font-weight: 700;
-    color: rgb(0, 0, 0);
+    color: var(--text-color);
     margin-right: 1rem;
 }
 
@@ -119,7 +128,7 @@
 
 @media (min-width: 768px) {
     .presentation {
-        margin-top: 10vh;
+        /* margin-top: 10vh; */
         padding-top: 1.5rem;
         height: auto;
         background-color: rgba(238, 205, 221, 0.2);

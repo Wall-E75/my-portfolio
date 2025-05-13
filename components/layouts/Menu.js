@@ -24,15 +24,15 @@ function Menu() {
 
     return (
         <>
-            <button className={styles.openBtn} onClick={handleOpen}><FontAwesomeIcon icon={faBars} /></button>
+            <button className={styles.openBtn} onClick={handleOpen}><FontAwesomeIcon className={`${styles.icon} ${styles.faBars}`} icon={faBars} /></button>
             <nav className={!open ? styles.menu  : `${styles.menu} ${styles.open}`}>
                 <FontAwesomeIcon className={styles.close} onClick={handleClose} icon={faTimes} />
                 <ul>
-                <Link href="/presentation#projets"><li><FontAwesomeIcon icon={faBarsProgress} /> Projets</li></Link>
-                <Link href="/presentation#competences"><li><FontAwesomeIcon icon={faGears} /> Compétences</li></Link>
-                    {displayComponant && <Link href='/presentation#experiences'><li><FontAwesomeIcon icon={faSuitcase} /> Expériences</li></Link>}
-                    <Link href='/presentation#formations'><li><FontAwesomeIcon icon={faUserGraduate} />Formations</li></Link>
-                    <Link href='/presentation#contact'><li><FontAwesomeIcon icon={faAddressCard} /> Contact</li></Link>
+                <Link href="/#projets"><li><FontAwesomeIcon icon={faBarsProgress} /> Projets</li></Link>
+                <Link href="/#competences"><li><FontAwesomeIcon icon={faGears} /> Compétences</li></Link>
+                    {displayComponant && <Link href='/#experiences'><li><FontAwesomeIcon icon={faSuitcase} /> Expériences</li></Link>}
+                    <Link href='/#formations'><li><FontAwesomeIcon icon={faUserGraduate} /> Formations</li></Link>
+                    <Link href='/#contact'><li><FontAwesomeIcon icon={faAddressCard} /> Contact</li></Link>
                 </ul>
             </nav>        
         </>

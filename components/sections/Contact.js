@@ -2,8 +2,8 @@ import styles from '@styles/Contact.module.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBiking, faCar, faEnvelope, faHome, faLocation, faLocationArrow, faLocationDot, faMotorcycle, faPhone } from '@fortawesome/free-solid-svg-icons';
-// import Buttons from '../ui/Buttons';
-import Map from '../ui/Map';
+import Buttons from '../ui/Buttons';
+// import Map from '../ui/Map';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 
@@ -167,9 +167,9 @@ function Contact() {
             
                 <h1 className={styles.title}>Contact</h1>
                 <section className={styles.adressContact}>
-                    <div className={styles.map}>
+                    {/* <div className={styles.map}>
                         <Map />
-                    </div>
+                    </div> */}
                     <div className={styles.adressContactInfo}>
                         <div className={styles.wallPaper}>HELLO</div>
                         <div className={styles.adress}>

@@ -1,20 +1,23 @@
 import styles from '@styles/Header.module.css';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Menu from '@components/layouts/Menu';
+import ThemeSwitcher from '@components/ui/ThemeSwitcher';
+
 
 function Header() {
   return (
     <>
       <header className={styles.header}>
        
-        <span className={styles.logo}>
-          <Link href="/presentation"><FontAwesomeIcon icon={faUser} /></Link>
-        </span>
-        {/* <FontAwesomeIcon icon={faCoffee} /> */}
+        <div className={styles.logo}>
+          <Link href="/#presentation"><FontAwesomeIcon icon={faUser} className={styles.icon} /></Link>
+          <ThemeSwitcher />
+        </div>
         <div className={styles.menu}>
-          <Menu />
+          {/* <ThemeSwitcher className={styles.icon} /> */}
+          <Menu className={styles.icon} />
         </div>
         <nav className={styles.nav}>
       
@@ -50,6 +53,7 @@ function Header() {
                 </li>
             </ul>
         </nav>
+
       </header>
     </>
   );

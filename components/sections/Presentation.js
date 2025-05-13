@@ -37,14 +37,15 @@ function Presentation() {
   //   console.log("click presentaton")
   //   setDisplayComponent(display)
   // }
+  
 
   const presentationContent = (
     <div className={styles.presentationContent}>
       <ul>
-        <li><span>ID:</span> Sylla Wali</li>
-        <li><span>JOB:</span> Developpeur Web Full Stack</li>
-        <li><span>Age:</span> 34 ans</li>
-        <li><span>Ville:</span> Paris</li>
+        <li><span>ID :</span> Sylla Wali</li>
+        <li><span>JOB :</span> Developpeur Web Full Stack</li>
+        <li><span>Age :</span> 34 ans</li>
+        <li><span>Ville :</span> Paris</li>
       </ul>
     </div> 
   )

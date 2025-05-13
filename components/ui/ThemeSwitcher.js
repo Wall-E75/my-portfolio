@@ -1,7 +1,7 @@
 import styles from '@styles/ThemeSwitcher.module.css'; // On importe le css du composant ThemeSwitcher
 import { useTheme} from "@context/ThemeContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon, faPalette } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
 
 
 function ThemeSwitcher() {
@@ -9,7 +9,7 @@ function ThemeSwitcher() {
 
     const handleChangeTheme = () => {
         // Toggle entre light et dark, au clic on change de theme
-        const newTheme = theme === "light" ? "dark" : theme === "dark" ? "colorful" : "light";
+        const newTheme = theme === "light" ? "dark" : theme === "dark" ? "light" : "light";
         setTheme(newTheme);
         console.log("Theme changé en : ", newTheme);
     };
@@ -19,8 +19,8 @@ function ThemeSwitcher() {
             <button className={styles.themeSwitcher} onClick={handleChangeTheme} title='Changer de thème'>
                 <FontAwesomeIcon icon={
                     theme === "light" ? faMoon : 
-                    theme === "dark" ? faPalette : 
-                    faSun
+                    theme === "dark" ? faSun : 
+                    faMoon
                     } className={styles.icon} 
                 />
             </button>

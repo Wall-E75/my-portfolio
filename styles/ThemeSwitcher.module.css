@@ -1,8 +1,23 @@
 .themeSwitcher {
     display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: none;
     transition: transform 0.3s ease;
 }
 
 .themeSwitcher:hover {
     transform: scale(1.05);
+}
+
+.icon {
+    width: 100%;
+    height: 100%;
+    color: var(--icon-color);
+    transition: transform 0.3s ease;
+}
+
+.themeSwitcher:hover .icon {
+    transform: rotate(360deg);
 }
