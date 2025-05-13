@@ -9,6 +9,7 @@ import Experiences from '@components/sections/Experiences';
 import Formations from '@components/sections/Formations';
 import Competences from '@components/sections/Competences';
 import Contact from './Contact';
+import Buttons from '../ui/Buttons';
 
 function Presentation() {
   const [isVisible, setIsVisible] = useState(true);
@@ -74,10 +75,11 @@ function Presentation() {
             </div>
           </div>
           {!isVisible && presentationContent}
-          {/* <Buttons 
+          <Buttons 
           className={styles.button}
+          title="Télécharger CV"
           text="Télécharger CV"
-          onClick={handleClick} /> */}
+          onClick={handleClick} />
 
         </section>
           

@@ -15,7 +15,8 @@
     width: 100%;
     height: 100%;
     color: var(--icon-color);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
 }
 
 .themeSwitcher:hover .icon {

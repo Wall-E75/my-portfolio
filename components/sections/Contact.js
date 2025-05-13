@@ -53,12 +53,12 @@ function Contact() {
         // On vérifie si chaque champ est vide
         fields.forEach((field) => {
             if (!infosContact[field]) {
-                errors.push(`Le champ "${field}" est obligatoire`);
+                errors.push(`*Le champ "${field}" est obligatoire`);
             }
         });
        
         if (!EMAIL_REGEX.test(infosContact.email)) {
-            errors.push('L\'email n\'est pas valide');
+            errors.push('*L\'email n\'est pas valide');
             setEmailError(true); 
         } else {
             setEmailError(false); // On remet à false si l'email est correct
@@ -73,7 +73,7 @@ function Contact() {
         if (validateForm()) {
             console.log(infosContact)
             try {
-                const response = await fetch("http://localhost:3000/message", {
+                const response = await fetch("https://my-portfolio-backend-sage.vercel.app/message", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(infosContact),
@@ -158,7 +158,7 @@ function Contact() {
                         ></textarea>
                         <p>{infosContact.messages.length} / {maxChars} caractères</p>
                     </label>
-                    {/* <Buttons text="Envoyer" type="submit" /> */}
+                    <Buttons text="Envoyer" title='Envoyer le message' type="submit" />
                 </form>
     );
     return(
@@ -171,7 +171,7 @@ function Contact() {
                         <Map />
                     </div> */}
                     <div className={styles.adressContactInfo}>
-                        <div className={styles.wallPaper}>HELLO</div>
+                        <div className={styles.wallPaper}></div>
                         <div className={styles.adress}>
                             <h2>Mon adresse</h2>
                             <p><FontAwesomeIcon className={styles.icon} icon={faLocationDot} />Metro Porte des Lilas</p>
@@ -189,7 +189,11 @@ function Contact() {
                     {success ? 
                         <div className={styles.successMsg}>
                             <p className={styles.success}>Message envoyé !</p> 
-                            <Buttons text="Envoyer un nouveau message" onClick={resetForm} />
+                            <Buttons 
+                                text="Envoyer un nouveau message"
+                                title="Envoyer un nouveau message" 
+                                onClick={resetForm} 
+                            />
                         </div> : formulaire 
                     }
                     {error.length > 0 && (
@@ -201,8 +205,8 @@ function Contact() {
                     )}
                 </section>
                 <section className={styles.socialContact}>
-                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/'><FontAwesomeIcon className={styles.icon} color='blue' icon={faLinkedin} /></Link>
-                    <Link href='https://github.com/Wall-E75'><FontAwesomeIcon className={styles.icon} icon={faGithub} /></Link>
+                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/'><FontAwesomeIcon className={styles.icon} color='blue' icon={faLinkedin} aria-label="LinkdIn"  /></Link>
+                    <Link href='https://github.com/Wall-E75'><FontAwesomeIcon className={styles.icon} icon={faGithub} aria-label="GitHub" /></Link>
                 </section>
                 
             </main>

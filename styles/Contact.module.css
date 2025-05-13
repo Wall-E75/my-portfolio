@@ -166,6 +166,13 @@
     cursor: pointer;
 }
 
+.error {
+    color: red;
+    font-weight: 700;
+    margin: 1rem 0;
+    text-align: center;
+}
+
 /* .email {
     width: 95% !important;
 }
