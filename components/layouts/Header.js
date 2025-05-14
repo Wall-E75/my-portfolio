@@ -1,7 +1,7 @@
 import styles from '@styles/Header.module.css';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Menu from '@components/layouts/Menu';
 import ThemeSwitcher from '@components/ui/ThemeSwitcher';
 
@@ -24,31 +24,31 @@ function Header() {
             <ul className={styles.list}>
                 <li className={styles.project} title="projets">
                   <div className={styles.wallPaper}>
-                    <Link href="/presentation#projets">Projets</Link>
+                    <Link href="/#projets">Projets</Link>
 
                   </div>
                 </li>
                 <li className={styles.competences}>
                   <div className={styles.wallPaper}>
-                    <Link href="/presentation#competences">Compétences</Link>
+                    <Link href="/#competences">Compétences</Link>
 
                   </div>
                 </li>
                 <li className={styles.experiences}>
                   <div className={styles.wallPaper}>
 
-                    <Link href='/presentation#experiences'>Expériences</Link>
+                    <Link href='/#experiences'>Expériences</Link>
                   </div>
                 </li>
                 <li className={styles.formations}>
                   <div className={styles.wallPaper}>
-                    <Link href='/presentation#formations'>Formations</Link>
+                    <Link href='/#formations'>Formations</Link>
                   </div>
                 </li>
                 <li className={styles.contact}>
                   <div className={styles.wallPaper}>
 
-                    <Link href='/presentation#contact'>Contact</Link>
+                    <Link href='/#contact'>Contact</Link>
                   </div>
                 </li>
             </ul>

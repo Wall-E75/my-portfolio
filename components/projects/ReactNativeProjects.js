@@ -1,4 +1,4 @@
-import styles from '@styles/technoProject.module.css';
+import styles from '@styles/TechnoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
 import Link from 'next/link';

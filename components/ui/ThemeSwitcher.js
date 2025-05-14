@@ -1,7 +1,7 @@
 import styles from '@styles/ThemeSwitcher.module.css'; // On importe le css du composant ThemeSwitcher
 import { useTheme} from "@context/ThemeContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-regular-svg-icons';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 
 function ThemeSwitcher() {

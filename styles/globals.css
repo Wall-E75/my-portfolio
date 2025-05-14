@@ -28,6 +28,7 @@ body {
   --bg-box: rgba(39, 85, 4, 0.1);
   --skill-bg: rgba(238, 205, 221, 0.9);
   --icon-color: #000000;
+  --header-bg: rgba(255, 255, 255, 0.9);
 }
 
 .theme-dark {
@@ -43,10 +44,10 @@ body {
   --skill-bg: rgba(0, 0, 54.5, 0.9);
   --icon-color: #ffffff;
   --icon-bg: none;
-  --header-bg: rgba(255, 255, 255, 0.4);
+  --header-bg: rgba(0, 0, 0, 0.9);
 }
 
-.theme-colorful {
+/* .theme-colorful {
   --background-color:linear-gradient(to right, #ff9a9e, rgba(255, 255, 255, 0.1));
   --bg-img: url('../public/photo_de_profil.webp');
   --text-color: #333;
@@ -58,7 +59,7 @@ body {
   --card-border-color: rgb(39 85 4);
   --icon-color: #ff6347;
   --header-bg: rgba(255, 255, 255, 0.4);
-}
+} */
 
 body, html {
   scroll-behavior: smooth;

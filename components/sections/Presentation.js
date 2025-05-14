@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { VisibilityProvider } from '../../context/VisibilityContext';
 import { useVisibility } from "../../context/VisibilityContext";
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 // import Buttons from '@components/ui/Buttons';
 import Projets from '@components/sections/Projets'; 
 import Experiences from '@components/sections/Experiences';
@@ -76,10 +78,12 @@ function Presentation() {
           </div>
           {!isVisible && presentationContent}
           <Buttons 
-          className={styles.button}
-          title="Télécharger CV"
-          text="Télécharger CV"
-          onClick={handleClick} />
+            className={styles.button}
+            title="Télécharger CV"
+            text="Télécharger CV"
+            icon={faDownload}
+            onClick={handleClick} 
+          />
 
         </section>
           

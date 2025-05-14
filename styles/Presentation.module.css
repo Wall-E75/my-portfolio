@@ -11,6 +11,7 @@
 
 .mainPresentation section {
     width: 100%;
+    padding-top: 5vh;
 }
 
 .presentation {
@@ -127,6 +128,10 @@
 /*Tablet*/
 
 @media (min-width: 768px) {
+    .mainPresentation section {
+        padding-top: 12vh;
+
+    }
     .presentation {
         /* margin-top: 10vh; */
         padding-top: 1.5rem;

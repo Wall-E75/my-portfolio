@@ -6,11 +6,11 @@
 }
 
 .themeTitle {
-    color: #000000;
+    color: var(--text-color);
     font-size: 2rem;
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--text-color);
 }
 
 .projectContainer {
@@ -41,7 +41,7 @@
 .imageContainer img {
     width: calc(100vw * 0.95) !important;   
     object-fit: cover;
-    border: 1px solid black !important;
+    border: 1px solid var(--text-color) !important;
     border-radius: 5% !important;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .projectDesc {
-    border: 1px solid black;
+    border: 1px solid var(--text-color);
 }
 
 .paragraph {
@@ -75,7 +75,7 @@
 
 .projectDesc a {
     text-decoration: none;
-    color: #000000;
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -90,6 +90,7 @@
 .rightText {
     width: 65%;
     display: flex;
+    color: var(--text-color);
     justify-content: flex-start;
     
 }

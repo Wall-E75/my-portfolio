@@ -1,4 +1,5 @@
 import styles from '@styles/Button.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 function Buttons(props) {
@@ -9,7 +10,9 @@ function Buttons(props) {
       className={styles.button}
       title={props.title}
     >
+      {props.icon&& (<FontAwesomeIcon icon={props.icon} />)}
       {props.text}
+     
     </button>
   );
 }
