@@ -16,14 +16,17 @@ function Home() {
 
   return (
     <>
-    {/* <div className={styles.wallpaper}><h2>Filtre</h2></div> */}
       <main className={styles.main}>
-        <section className={styles.home}>
+        <section className={`${styles.home} ${styles.container}`}>
+           <div className={styles.cell1}>2</div>
+          <div className={styles.cell}>1</div>
+
           <p className={styles.name}>Wali Sylla</p>
         <h1 className={styles.title}>
           Developpeur Web Full Stack
         </h1>
         </section>
+      
         
       {/* <Buttons
         onClick={handleClick}//Au clic sur le bouton, on est redirigé vers la page /presentation
