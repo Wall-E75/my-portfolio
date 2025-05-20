@@ -26,7 +26,7 @@ body {
   --shadow-box:  0 4px 8px rgba(0, 0, 0, 0.1);
   /* --bg-box: rgba(39, 85, 4, 0.1); */
   --bg-box: #ffffff;
-  --skill-bg: rgba(238, 205, 221, 0.9);
+  --skill-bg: rgba(238, 205, 221, 0.3);
   --icon-color: #000000;
   --header-bg: rgba(255, 255, 255, 0.9);
 }
