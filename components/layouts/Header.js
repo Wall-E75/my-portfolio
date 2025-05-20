@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Menu from '@components/layouts/Menu';
+import { useVisibility } from "../../context/VisibilityContext";
 import ThemeSwitcher from '@components/ui/ThemeSwitcher';
 
 
 function Header() {
+  const { displayComponant } = useVisibility();
   return (
     <>
       <header className={styles.header}>
@@ -34,12 +36,12 @@ function Header() {
 
                   </div>
                 </li>
-                <li className={styles.experiences}>
+                {displayComponant && <li className={styles.experiences}>
                   <div className={styles.wallPaper}>
 
                     <Link href='/#experiences'>Expériences</Link>
                   </div>
-                </li>
+                </li>}
                 <li className={styles.formations}>
                   <div className={styles.wallPaper}>
                     <Link href='/#formations'>Formations</Link>
