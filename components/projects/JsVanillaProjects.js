@@ -34,7 +34,7 @@ function JsVanillaProjects() {
             id: '3',
             name: 'Tickethack',
             description: 'Site de réservation de billet de train',
-            image: '/kanap.webp',
+            image: '/tickethack.webp',
             alt: 'Un train',
             techno: 'Html, Css, JavaScript',
             github: {

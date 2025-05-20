@@ -120,6 +120,8 @@
     .projectContainer {
         flex-direction: row;
         align-items: flex-start;
+        /* position: relative; */
+        border-bottom: 1px solid black;
     }
 
     .projectContainer ul {
@@ -134,18 +136,22 @@
     }
 
     .imageContainer img {
-        width: calc(100vw * 0.8) !important;
+        width: calc(40vw * 0.8) !important;
     }
 
     .projectTitle {
         margin-top: 0;
-
+        /* position: absolute;
+        left: 10%;
+        font-size: 2rem;
+        rotate: -45deg; */
     }
 
     .projectDesc {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        border: none;
     }
 
     .projectDesc p {
