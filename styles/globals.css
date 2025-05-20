@@ -19,13 +19,15 @@ body {
 
 .theme-light {
   --background-color: #ffffff;
+  --hover-background-color: #f0f0f0;
   --bg-img: url('../public/photo_de_profil.webp');
   --text-color: #000000;
   --link-color: #1a0dab;
   --quote-bg: rgba(181, 181, 181, 0.5);
   --presentation-bg: rgba(238, 205, 221, 0.2);
-  --shadow-box: rgba(0,0,0,0.64);
-  --bg-box: rgba(39, 85, 4, 0.1);
+  --shadow-box:  0 4px 8px rgba(0, 0, 0, 0.1);
+  /* --bg-box: rgba(39, 85, 4, 0.1); */
+  --bg-box: #ffffff;
   --skill-bg: rgba(238, 205, 221, 0.9);
   --icon-color: #000000;
   --header-bg: rgba(255, 255, 255, 0.9);
@@ -33,12 +35,13 @@ body {
 
 .theme-dark {
   --background-color: #000000;
+  --hover-background-color: #1a1a1a;
   --bg-img: url('../public/photo_de_profil.webp');
   --text-color: #ffffff;
   --link-color: #4e9af1;
   --quote-bg: rgba(181, 181, 181, 0.5);
   --presentation-bg: rgba(0, 0, 54.5, 1);
-  --shadow-box: rgba(0, 0, 0, 0.5);
+  --shadow-box: rgb(255, 255, 255);
   --border-box: #333333;
   --bg-box: #212121;
   --skill-bg: rgba(0, 0, 54.5, 0.9);

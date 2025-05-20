@@ -1,5 +1,6 @@
 import styles from '@styles/Competences.module.css';
 import Image from 'next/image';
+import Carousel from '../layouts/Carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faHtml5,
@@ -141,24 +142,28 @@ function Competences() {
             ]
         }
     ];
-
+   
     const skills = skillsData.map((skill, index) => {
-        return (
-            <div key={index} className={`${styles.stack} ${styles[skill.title]}`}>
-                <h3 className={styles.titleColor}>{skill.title}</h3>
-                <ul>
-                    {skill.skills.map((skill, index) => {
-                        return (
-                            <li key={index}>
-                                {/* {typeof skill.icon === 'string' ? <Image className={styles.icon} src={skill.icon} alt={skill.name} width={55} height={55}  /> : <FontAwesomeIcon icon={skill.icon} className={styles.icon} />} */}
-                                {skill.name}
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-        )
-    })
+        // return (
+        //     <div key={index} className={`${styles.stack} ${styles[skill.title]}`}>
+        //         <h3 className={styles.titleColor}>{skill.title}</h3>
+        //         <ul>
+        //             {skill.skills.map((skill, index) => {
+        //                 return (
+        //                     <li key={index}>
+        //                         {/* {typeof skill.icon === 'string' ? <Image className={styles.icon} src={skill.icon} alt={skill.name} width={55} height={55}  /> : <FontAwesomeIcon icon={skill.icon} className={styles.icon} />} */}
+        //                         {skill.name}
+        //                     </li>
+        //                 )
+        //             })}
+        //         </ul>
+        //     </div>
+        // )
+    });
+
+     const skillsCarousel = skillsData.map((skill, index) => {
+        return <Carousel key={index} {...skill} />
+     });
     return (
         <>
             <main className={styles.main}>
@@ -174,7 +179,9 @@ function Competences() {
                 {/* <h2 className={styles.titleColor}>Compétences techniques</h2> */}
 
                 <div className={styles.skillsContainer}>
-                    {skills}
+                    {/* {skills} */}
+                    {skillsCarousel}
+                    {/* <Carousel {...skillsData} /> */}
 
                 </div>
             </main>
