@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Raleway:wght@300;400;500;600;700&display=swap');
 body {
   padding: 0;
   margin: 0;
@@ -15,23 +15,48 @@ body {
   padding: 0;
 }
 
-.theme-light {
-  --background-color: #ffffff;
-  --hover-background-color: #f0f0f0;
+/* .theme-light {
+  --background-color: #F8F9FA;
+  --hover-background-color: #E9ECEF;
   --bg-img: url('../public/photo_de_profil.webp');
-  --text-color: #000000;
-  --link-color: #1a0dab;
+  --text-color: #212529;
+  --link-color: #2B3A67;
   --quote-bg: rgba(181, 181, 181, 0.5);
+   --quote-bg: rgba(156, 56, 72, 0.1);
   --presentation-bg: rgba(238, 205, 221, 0.2);
   --shadow-box:  0 4px 8px rgba(0, 0, 0, 0.1);
-  /* --bg-box: rgba(39, 85, 4, 0.1); */
+  --bg-box: rgba(39, 85, 4, 0.1);
   --bg-box: #ffffff;
   --skill-bg: rgba(238, 205, 221, 0.3);
   --icon-color: #000000;
   --header-bg: rgba(255, 255, 255, 0.9);
-}
+} */
 
-.theme-dark {
+.theme-light {
+  --background-color: #F8F9FA;
+  --hover-background-color: #E9ECEF;
+  --bg-img: url('../public/photo_de_profil.webp');
+  --text-color: #212529;
+  --link-color: #2B3A67; /* Bleu profond */
+  --quote-bg: rgba(156, 56, 72, 0.1); /* Bordeaux avec transparence */
+  --presentation-bg: rgba(227, 178, 60, 0.05); /* Doré avec transparence */
+  --shadow-box: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --bg-box: #ffffff;
+  --skill-bg: rgba(43, 58, 103, 0.05); /* Bleu avec transparence */
+  --icon-color: #2B3A67; /* Bleu profond */
+  --header-bg: rgba(248, 249, 250, 0.9);
+  
+  /* Charte graphique */
+  --primary-color: #2B3A67; /* Bleu profond */
+  --secondary-color: #9C3848; /* Bordeaux élégant */
+  --accent-color: #E3B23C; /* Doré subtil */
+  --text-dark: #212529; /* Texte sur fond clair */
+  --text-light: #E5E5E5; /* Texte sur fond sombre */
+  --gray-100: #F8F9FA; /* Gris très clair */
+  --gray-200: #E9ECEF; /* Gris clair */
+  --gray-500: #6C757D; /* Gris moyen */
+}
+/* .theme-dark {
   --background-color: #000000;
   --hover-background-color: #1a1a1a;
   --bg-img: url('../public/photo_de_profil.webp');
@@ -46,7 +71,7 @@ body {
   --icon-color: #ffffff;
   --icon-bg: none;
   --header-bg: rgba(0, 0, 0, 0.9);
-}
+} */
 
 /* .theme-colorful {
   --background-color:linear-gradient(to right, #ff9a9e, rgba(255, 255, 255, 0.1));
@@ -62,10 +87,83 @@ body {
   --header-bg: rgba(255, 255, 255, 0.4);
 } */
 
+.theme-dark {
+  /* Couleurs principales en mode sombre */
+  --primary-color: #F8A5B9;     /* Rose inchangé pour garder l'identité */
+  --secondary-color: #5F8A6E;   /* Vert plante plus lumineux */
+  --accent-color: #E5BA8F;      /* Bois plus lumineux */
+  
+  /* Variantes et nuances */
+  --primary-light: #FFCAD5;
+  --primary-dark: #E38198;
+  --secondary-light: #7DA68E;
+  --secondary-dark: #3F6A4E;
+  --accent-light: #F2D1AF;
+  --accent-dark: #BF8F61;
+  
+  /* Neutres */
+  --neutral-light: #F0EBE4;     /* Blanc cassé plus chaud */
+  --neutral-medium: #BCBAB5;    /* Gris moyen */
+  --neutral-dark: #222529;      /* Presque noir */
+  
+  /* Couleurs de structure */
+  --background-color: #1E1E24;  /* Fond sombre non agressif */
+  --hover-background-color: #2A2A32;
+  --text-color: #E5E5E5;
+  --link-color: #F8A5B9;        /* Liens en rose */
+  --quote-bg: rgba(248, 165, 185, 0.12);
+  --presentation-bg: rgba(95, 138, 110, 0.1);
+  --shadow-box: 0 4px 15px rgba(0, 0, 0, 0.2);
+  --border-box: #32323A;
+  --bg-box: #26262E;
+  --skill-bg: rgba(248, 165, 185, 0.08);
+  --icon-color: #7DA68E;        /* Icônes en vert clair */
+  --header-bg: rgba(30, 30, 36, 0.95);
+}
+
 body, html {
   scroll-behavior: smooth;
   background: var(--background-color);
   color: var(--text-color);
   transition: var(--background-color) 0.3s ease, color 0.3s ease;
 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* Définir des classes utilitaires que vous pourrez utiliser dans vos composants existants */
+.font-primary {
+  font-family: "Merriweather", serif;
+}
+
+.font-secondary {
+  font-family: "Raleway", sans-serif;
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--accent-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.bg-accent {
+  background-color: var(--accent-color);
 }

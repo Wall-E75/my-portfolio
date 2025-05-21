@@ -18,13 +18,15 @@ function Home() {
     <>
       <main className={styles.main}>
         <section className={`${styles.home} ${styles.container}`}>
-           <div className={styles.cell1}>2</div>
-          <div className={styles.cell}>1</div>
+          <div className={styles.cell1}></div>
+          <div className={styles.cell2}>2</div>
 
-          <p className={styles.name}>Wali Sylla</p>
-        <h1 className={styles.title}>
-          Developpeur Web Full Stack
-        </h1>
+          <div className={styles.titleContainer}>
+            <p className={styles.name}>Wali Sylla</p>
+            <h1 className={styles.title}>
+              Developpeur Web Full Stack
+            </h1>
+          </div>
         </section>
       
         
