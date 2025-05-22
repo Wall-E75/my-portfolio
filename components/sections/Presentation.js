@@ -12,6 +12,7 @@ import Formations from '@components/sections/Formations';
 import Competences from '@components/sections/Competences';
 import Contact from './Contact';
 import Buttons from '../ui/Buttons';
+import { merriweather, raleway } from '../ui/fonts';
 
 function Presentation() {
   const [isVisible, setIsVisible] = useState(true);
@@ -25,6 +26,7 @@ function Presentation() {
     handleResize();//Vérifie la largeur de l'écran
     return () => window.removeEventListener('resize', handleResize);//Supprime l'écouteur d'événements lors du démontage du composant
   }, []);//[] signifie que le hook useEffect ne s'exécute qu'une seule fois après le premier rendu du composant
+ 
   // Fonction pour télécharger le CV
   const handleClick = () => {   
     // Crée un élément <a> invisible
@@ -54,7 +56,7 @@ function Presentation() {
   )
   return (
     <>
-      <main className={styles.mainPresentation}>
+      <main className={`${styles.mainPresentation} ${raleway.className}`}>
         <section id="presentation" className={styles.presentation}>
           <div className={styles.presentationIntro}>
             <div className={styles.imageContainer}>
@@ -70,9 +72,9 @@ function Presentation() {
 
          
             <div className={styles.greeting}>
-              <h1 className={styles.greetingTitle}>Salut !</h1>
+              <h1 className={`${styles.greetingTitle} ${merriweather.className}`}>Salut !</h1>
               <q className={styles.greetingText}>Je suis Wali Sylla, un développeur web fullstack passionné par les nouvelles technologies et les projets innovants.</q>
-              <div className={styles.line}></div>
+              {/* <div className={styles.line}></div> */}
               {isVisible && presentationContent}
             </div>
           </div>
@@ -93,7 +95,7 @@ function Presentation() {
         <section id="competences" className={styles.competences}>
           <Competences />
         </section>
-        {displayComponent && <section id="experiences" className={styles.experiences}>
+        {!displayComponent && <section id="experiences" className={styles.experiences}>
           <Experiences />
         </section>}
         <section id="formations" className={styles.formations}>

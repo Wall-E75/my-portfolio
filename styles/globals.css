@@ -33,28 +33,37 @@ body {
 } */
 
 .theme-light {
-  --background-color: #F8F9FA;
-  --hover-background-color: #E9ECEF;
-  --bg-img: url('../public/photo_de_profil.webp');
-  --text-color: #212529;
-  --link-color: #2B3A67; /* Bleu profond */
-  --quote-bg: rgba(156, 56, 72, 0.1); /* Bordeaux avec transparence */
-  --presentation-bg: rgba(227, 178, 60, 0.05); /* Doré avec transparence */
-  --shadow-box: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --bg-box: #ffffff;
-  --skill-bg: rgba(43, 58, 103, 0.05); /* Bleu avec transparence */
-  --icon-color: #2B3A67; /* Bleu profond */
-  --header-bg: rgba(248, 249, 250, 0.9);
+  /* Couleurs principales */
+  --primary-color: #F8A5B9;     /* Rose poudré/saumon, comme votre chemise */
+  --secondary-color: #3F6A4E;   /* Vert plante, élégant et naturel */
+  --accent-color: #D8A97A;      /* Bois chaud, comme la table de travail */
   
-  /* Charte graphique */
-  --primary-color: #2B3A67; /* Bleu profond */
-  --secondary-color: #9C3848; /* Bordeaux élégant */
-  --accent-color: #E3B23C; /* Doré subtil */
-  --text-dark: #212529; /* Texte sur fond clair */
-  --text-light: #E5E5E5; /* Texte sur fond sombre */
-  --gray-100: #F8F9FA; /* Gris très clair */
-  --gray-200: #E9ECEF; /* Gris clair */
-  --gray-500: #6C757D; /* Gris moyen */
+  /* Variantes et nuances */
+  --primary-light: #FFCAD5;     /* Rose plus clair */
+  --primary-dark: #E38198;      /* Rose plus foncé */
+  --secondary-light: #5F8A6E;   /* Vert plus clair */
+  --secondary-dark: #2A4A38;    /* Vert plus foncé */
+  --accent-light: #EBC8A0;      /* Bois plus clair */
+  --accent-dark: #A67A52;       /* Bois plus foncé */
+  
+  /* Neutres */
+  --neutral-light: #F5F1EB;     /* Blanc cassé/crème, comme l'arrière-plan */
+  --neutral-medium: #E5E0D8;    /* Beige très clair */
+  --neutral-dark: #1E2126;      /* Presque noir, comme l'écran */
+  
+  /* Couleurs de structure existantes (mises à jour) */
+  --background-color: #F5F1EB;
+  --hover-background-color: #E9E4DD;
+  --bg-img: url('../public/photo_de_profil.webp');
+  --text-color: #333333;
+  --link-color: #E38198;        /* Liens en rose foncé */
+  --quote-bg: rgba(255, 255, 255, 0.8);
+  --presentation-bg: rgba(63, 106, 78, 0.05);
+  --shadow-box: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --bg-box: #FFFFFF;
+  --skill-bg: rgba(248, 165, 185, 0.05);
+  --icon-color: #3F6A4E;
+  --header-bg: rgba(245, 241, 235, 0.95);
 }
 /* .theme-dark {
   --background-color: #000000;
