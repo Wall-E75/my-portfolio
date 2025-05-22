@@ -4,40 +4,249 @@
     align-items: center;
     padding-top: 10vh;
     /* justify-content: flex-start; */
-    /* min-height: 80vh; */
-    /* background-color: rgba(39, 85, 4, 0.2); */
+    min-height: 80vh;
+    background-color: var(--background-color);
+    position: relative;
     /* padding: 1rem 0; */
     /* margin-bottom: 1rem; */
 
 }
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 50%,
+        var(--accent-color) 100%
+    );
+}
+
 .title {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-color) 0%,
+        var(--accent-color) 50%,
+    );
+    border-radius: 2px;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 0.1rem;
+    max-width: 1200px;
+    width: 100%;
     /* margin: 1rem; */
 
 }
 
 .cardContainer {
     display: flex;
-    width: 50%;
-    height: auto;
+    width: calc(50% - 0.75rem);
+    min-height: 300px;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--bg-box);
+    border-radius: 12px;
+    box-shadow: var(--shadow-box);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--neutral-medium);
 }
+
+.cardContainer:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cardContainer:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+.cardContainer:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--accent-color); /* Bois pour JS Vanilla */
+}
+
+.cardContainer:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: var(--secondary-color); /* Vert pour React */
+}
+
+.cardContainer:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--primary-color) 0%,
+        var(--secondary-color) 100%
+    ); /* Dégradé pour React Native */
+}
+
+.cardContainer h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.cardContainer h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(50%);
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent-color);
+    border-radius: 1px;
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cardContainer {
+    animation: cardFadeIn 0.6s ease-out;
+
+}
+.cardContainer:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.cardContainer:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.cardContainer:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.cardContainer:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+
+
 /*Tablet*/
 
 @media (min-width: 768px) {
     .main {
         height: auto;
-        padding: 1rem 0;
+        padding: 2rem 0;
+    }
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .title::after {
+        width: 100px;
+        height: 4px;
+    }
+    
+    .container {
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+    
+    .cardContainer {
+        width: calc(50% - 1rem);
+        min-height: 350px;
+        padding: 2rem;
+    }
+
+    .cardContainer h3 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+     .title {
+        font-size: 3rem;
+    }
+    
+    .container {
+        gap: 2.5rem;
+    }
+
+    .cardContainer {
+        width: calc(25% - 1.875rem); /* 4 cartes par ligne sur desktop */
+        min-height: 400px;
+    }
+
+    .cardContainer h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        gap: 3rem;
+    }
+    
+    .cardContainer {
+        width: calc(25% - 2.25rem);
+        padding: 2.5rem;
     }
 }

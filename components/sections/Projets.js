@@ -1,5 +1,6 @@
 import styles from '@styles/Projets.module.css';
 import Cards from '@components/ui/Cards';
+import { merriweather, raleway } from '../ui/fonts';
 
 function Projets() {
     const projectData = [
@@ -58,15 +59,15 @@ function Projets() {
             <Cards 
                { ...project }
             />
-            <h3>{project.title}</h3>
+            <h3 className={merriweather.className}>{project.title}</h3>
 
         </div>
     ));
 
     return(
         <>
-            <main className={styles.main}>
-                <h1 className={styles.title}>Projets</h1>
+            <main className={`${styles.main} ${raleway.className}`}>
+                <h1 className={`${styles.title} ${merriweather.className}`}>Projets</h1>
                 <div className={styles.container}>
                     {projectCards}
                 </div>
