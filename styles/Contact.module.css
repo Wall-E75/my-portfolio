@@ -346,27 +346,157 @@
     margin: 0;
 }
 
-/*NEXT*/
+
+/*ERROR*/
+
+.input:invalid:not(:placeholder-shown) {
+    border-color: #dc2626;
+}
+
+.input:valid:not(:placeholder-shown) {
+    border-color: var(--secondary-color);
+}
+
 .error {
-    color: red;
-    font-weight: 700;
+    background-color: rgba(220, 38, 38, 0.1);
+    border: 2px solid #dc2626;
+    border-radius: 8px;
+    padding: 1rem;
     margin: 1rem 0;
-    text-align: center;
+    width: 100%;
 }
 
-/* .email {
-    width: 95% !important;
+.error li {
+    color: #dc2626;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    list-style: none;
+    position: relative;
+    padding-left: 1.5rem;
 }
 
-.message {
-    width: 95% !important;
-} */
+.error li::before {
+    content: '⚠️';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.emailError {
+    color: #dc2626;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+
+/* Animation pour les éléments */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.formContact,
+.adressContact,
+.socialContact {
+    animation: slideIn 0.6s ease-out;
+}
+
+.formContact { animation-delay: 0.1s; }
+.adressContact { animation-delay: 0.2s; }
+.socialContact { animation-delay: 0.3s; }
 
 
 /*Tablet*/
 
 @media (min-width: 768px) {
-    .main {
-        height: auto;
+    .mainContact {
+        padding: 3rem 2rem;
+}
+    .title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .title::after {
+        width: 100px;
+        height: 4px;
+    }
+
+    .adressContact {
+        margin-bottom: 4rem;
+    }
+
+    .adress {
+        padding: 2.5rem;
+        max-width: 500px;
+    }
+
+    .adress h2 {
+        font-size: 1.7rem;
+    }
+
+    .formContact {
+        padding: 3rem;
+        max-width: 700px;
+    }
+
+    .mainContact h2 {
+        font-size: 1.7rem;
+    }
+
+    .input {
+        height: 3.5rem;
+        font-size: 1.1rem;
+    }
+
+    .socialContact {
+        gap: 3rem;
+        padding: 2rem;
+    }
+
+    .socialContact a {
+        width: 60px;
+        height: 60px;
+    }
+
+    .socialContact .icon {
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
+
+/*PC*/
+
+@media (min-width: 992px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .mainContact h2 {
+        font-size: 1.8rem;
+    }
+
+    .adressContactInfo p {
+        font-size: 1.1rem;
+    }
+
+    .mainContact {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .contactContent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        width: 100%;
     }
 }

@@ -168,55 +168,58 @@ function Contact() {
             <main className={`${styles.mainContact} ${raleway.className}`}>
             
                 <h1 className={`${styles.title} ${merriweather.className}`}>Contactez-moi</h1>
-                <section className={styles.adressContact}>
-                    <div className={styles.adressContactInfo}>
-                        <div className={styles.wallPaper}></div>
-                        <div className={styles.adress}>
-                            <h2 className={merriweather.className}>Mon adresse</h2>
-                            <p>
-                                <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
-                                Metro Porte des Lilas
-                            </p>
-                            <p>
-                                <FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />
-                                75019 Paris, France
-                            </p>
-                            <p>
-                                <FontAwesomeIcon className={styles.icon} icon={faPhone} /> 
-                                06 60 27 89 40
-                            </p>
-                            <p>
-                                <FontAwesomeIcon className={styles.icon} icon={faCar} /> 
-                                Permis B
-                            </p>
-                            <p>
-                                <FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />
-                                Permis A
-                            </p>
+                <div className={styles.contactContent}>
+                    <section className={styles.adressContact}>
+                        <div className={styles.adressContactInfo}>
+                            <div className={styles.wallPaper}></div>
+                            <div className={styles.adress}>
+                                <h2 className={merriweather.className}>Mon adresse</h2>
+                                <p>
+                                    <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
+                                    Metro Porte des Lilas
+                                </p>
+                                <p>
+                                    <FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />
+                                    75019 Paris, France
+                                </p>
+                                <p>
+                                    <FontAwesomeIcon className={styles.icon} icon={faPhone} /> 
+                                    06 60 27 89 40
+                                </p>
+                                <p>
+                                    <FontAwesomeIcon className={styles.icon} icon={faCar} /> 
+                                    Permis B
+                                </p>
+                                <p>
+                                    <FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />
+                                    Permis A
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
 
-                <section className={styles.formContact}>
-                <h2>Envoyez moi un message</h2> 
-                    {success ? 
-                        <div className={styles.successMsg}>
-                            <p className={styles.success}>Message envoyé avec succès !</p> 
-                            <Buttons 
-                                text="Envoyer un nouveau message"
-                                title="Envoyer un nouveau message" 
-                                onClick={resetForm} 
-                            />
-                        </div> : formulaire 
-                    }
-                    {error.length > 0 && (
-                        <ul className={styles.error}>
-                            {error.map((err, index) => (
-                                <li key={index}>{err}</li>
-                            ))}
-                        </ul>
-                    )}
-                </section>
+                    <section className={styles.formContact}>
+                        <h2>Envoyez moi un message</h2> 
+                        {success ? 
+                            <div className={styles.successMsg}>
+                                <p className={styles.success}>Message envoyé avec succès !</p> 
+                                <Buttons 
+                                    text="Envoyer un nouveau message"
+                                    title="Envoyer un nouveau message" 
+                                    onClick={resetForm} 
+                                />
+                            </div> : formulaire 
+                        }
+                        {error.length > 0 && (
+                            <ul className={styles.error}>
+                                {error.map((err, index) => (
+                                    <li key={index}>{err}</li>
+                                ))}
+                            </ul>
+                        )}
+                    </section>
+                </div>
+
 
                 <section className={styles.socialContact}>
                     <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/'>
