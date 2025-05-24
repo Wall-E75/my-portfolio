@@ -1,6 +1,7 @@
 import styles from '@styles/Competences.module.css';
 import Image from 'next/image';
 import Carousel from '../layouts/Carousel';
+import { merriweather, raleway } from '../ui/fonts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
     faHtml5,
@@ -143,31 +144,31 @@ function Competences() {
         }
     ];
    
-    const skills = skillsData.map((skill, index) => {
-        // return (
-        //     <div key={index} className={`${styles.stack} ${styles[skill.title]}`}>
-        //         <h3 className={styles.titleColor}>{skill.title}</h3>
-        //         <ul>
-        //             {skill.skills.map((skill, index) => {
-        //                 return (
-        //                     <li key={index}>
-        //                         {/* {typeof skill.icon === 'string' ? <Image className={styles.icon} src={skill.icon} alt={skill.name} width={55} height={55}  /> : <FontAwesomeIcon icon={skill.icon} className={styles.icon} />} */}
-        //                         {skill.name}
-        //                     </li>
-        //                 )
-        //             })}
-        //         </ul>
-        //     </div>
-        // )
-    });
+    // const skills = skillsData.map((skill, index) => {
+    //     return (
+    //         <div key={index} className={`${styles.stack} ${styles[skill.title]}`}>
+    //             <h3 className={styles.titleColor}>{skill.title}</h3>
+    //             <ul>
+    //                 {skill.skills.map((skill, index) => {
+    //                     return (
+    //                         <li key={index}>
+    //                             {/* {typeof skill.icon === 'string' ? <Image className={styles.icon} src={skill.icon} alt={skill.name} width={55} height={55}  /> : <FontAwesomeIcon icon={skill.icon} className={styles.icon} />} */}
+    //                             {skill.name}
+    //                         </li>
+    //                     )
+    //                 })}
+    //             </ul>
+    //         </div>
+    //     )
+    // });
 
-     const skillsCarousel = skillsData.map((skill, index) => {
-        return <Carousel key={index} {...skill} />
-     });
+    //  const skillsCarousel = skillsData.map((skill, index) => {
+    //     return <Carousel key={index} {...skill} />
+    //  });
     return (
         <>
-            <main className={styles.main}>
-            <h1 className={`${styles.title} ${styles.titleColor}`}>Mes compétences</h1>
+            <main className={`${styles.main} ${raleway.className}`}>
+            <h1 className={`${styles.title} ${styles.titleColor} ${merriweather.className}`}>Mes compétences</h1>
                 <div className={styles.skillsIntro}>
                     <q className={styles.skillsText}>
                         <i>Mes expériences antérieures, mon permis de développé des compétences transversales et une grande adaptabilité. 
@@ -176,12 +177,12 @@ function Competences() {
                         dont voici un aperçu : </i>
                     </q>
                 </div>
-                {/* <h2 className={styles.titleColor}>Compétences techniques</h2> */}
 
                 <div className={styles.skillsContainer}>
                     {/* {skills} */}
-                    {skillsCarousel}
+                    {/* {skillsCarousel} */}
                     {/* <Carousel {...skillsData} /> */}
+                    <Carousel skillsData={skillsData} />
 
                 </div>
             </main>
