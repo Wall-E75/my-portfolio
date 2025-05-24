@@ -69,7 +69,6 @@ function Presentation() {
                 style={{borderRadius: '5%'}}
               />
             </div>
-
          
             <div className={styles.greeting}>
               <h1 className={`${styles.greetingTitle} ${merriweather.className}`}>Salut !</h1>
