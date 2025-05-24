@@ -2,29 +2,64 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     min-height: 100vh;
     margin-bottom: 1rem;
-    background-color: rgba(238, 205, 221, 0.1);
-   
+    background-color: var(--background-color);
+    padding: 2rem 1rem;
+    position: relative;
 }
 
-.map {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    border-radius: 50%;
+.mainContact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-color) 0%,
+        var(--accent-color) 50%,
+        var(--primary-color) 100%
+    );
 }
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-color) 0%,
+        var(--accent-color) 100%
+    );
+    border-radius: 2px;
+}
+
 .adressContact {
     position: relative;
     width: 100%;
     min-height: 50vh;
-    margin-bottom: 20px;
+    margin-bottom: 3rem;
     overflow: hidden;
+    border-radius: 16px;
+    box-shadow: var(--shadow-box);
 }
+
 .wallPaper {
     position: absolute;
     top: 0;
@@ -33,36 +68,69 @@
     background-image: url('../public/paris.webp');
     background-size: cover;
     background-position: 75% 50%;
-    opacity: 0.6;
+    opacity: 0.7;
     width: 100%;
     min-height: 50vh;
 }
 
+/* Overlay */
+.wallPaper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(248, 165, 185, 0.2) 0%,
+        rgba(63, 106, 78, 0.1) 100%
+    );
+}
+
 .adress {
     position: absolute;
-    /* top: 0;
-    left: 0; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: auto;
-    padding-top: 1rem;
-    
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);    
+    border-radius: 16px;
+    box-shadow: var(--shadow-box);
+    border-left: 4px solid var(--secondary-color);
 }
 
-.title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.adress h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.adress h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-color);
+    border-radius: 1px;
 }
 
 .column {
     display: flex;
     flex-direction: column;
 }
+
 .adressContactInfo {
     position: relative;
     align-items: center;
@@ -71,28 +139,44 @@
     min-height: 50vh;  
 }
 
-
-
-.mainContact h2 {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0.5rem 0;
-}
-
 .adressContactInfo p {
     font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: rgba(248, 165, 185, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
 
+.adressContactInfo p:hover {
+    background-color: var(--skill-bg);
+    transform: translateX(5px);
 }
 
 .formContact {
     position: relative;
     width: 100%;
-    margin-top: 0.5rem;
-    /* padding-top: 1rem; */
-    clear: both;
+    max-width: 600px;
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: var(--bg-box);
+    border-radius: 16px;
+    box-shadow: var(--shadow-box);
+    border-top: 4px solid var(--primary-color);
+}
+
+.formContact h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1.5rem 0;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 0.5rem;
 }
 
 .form {
@@ -108,54 +192,108 @@
 .form label {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    width: 90%;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 .input {
-    width: 95%;
+    width: 100%;
     height: 3rem;
-    font-size: 1.3rem;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    /* border-bottom: 1px solid black; */
-    margin-bottom: 1rem;
-    padding: 1rem 0.5rem 0 0.5rem;
+    font-size: 1rem;
+    border: 2px solid var(--neutral-medium);
+    border-radius: 12px;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(248, 165, 185, 0.1);
+    background-color: var(--bg-box);
 }
 
 .input::placeholder {
-  color: #000000;
+  color: #a1a1a1;
   font-size: 1.5rem;
 }
 
 .form textarea {
-    /* width: 95% !important; */
-    border: 1px solid black;
-    height: 10rem;
-    margin-bottom: 1rem;
+    height: 8rem;
+    padding: 1rem;
+    resize: vertical;
+    min-height: 6rem;
+    max-height: 12rem;
+    font-family: inherit;
+}
+
+.message {
+    position: relative;
+}
+
+.message p {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    margin-top: 0.25rem;
 }
 
 .icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 0.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.75rem;
+    color: var(--secondary-color);
+    transition: all 0.3s ease;
 }
+
+.adressContactInfo p:hover .icon {
+    color: var(--primary-color);
+}
+
 .successMsg {
     display: flex;
     width: 100%;
     height: auto;
     flex-direction: column;
     align-items: center;
+    padding: 2rem;
+    background: linear-gradient(
+        135deg,
+        rgba(63, 106, 78, 0.1) 0%,
+        rgba(248, 165, 185, 0.05) 100%
+    );
+    border-radius: 12px;
+    border: 2px solid var(--secondary-color);
 }
+
 .success {
-    color: green;
+    color: var(--secondary-color);
     font-weight: 700;
+    font-size: 1.2rem;
     margin: 1rem 0;
     text-align: center;
+    position: relative;
+}
+
+.success::before {
+    content: '✓';
+    display: inline-block;
+    margin-right: 0.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 14px;
 }
 
 .socialContact {
@@ -163,9 +301,52 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    cursor: pointer;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-box);
+    border-radius: 12px;
+    box-shadow: var(--shadow-box);
 }
 
+.socialContact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: 2px solid var(--neutral-medium);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.socialContact a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/**/
+
+.socialContact a:first-child {
+    border-color: var(--primary-color);
+}
+
+
+.socialContact a:last-child {
+    border-color: var(--secondary-color);
+}
+
+
+.socialContact .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+}
+
+/*NEXT*/
 .error {
     color: red;
     font-weight: 700;

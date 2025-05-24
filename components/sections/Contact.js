@@ -6,6 +6,7 @@ import Buttons from '../ui/Buttons';
 // import Map from '../ui/Map';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+import { merriweather, raleway } from '../ui/fonts';
 
 function Contact() {
     // State pour les informations contact
@@ -22,7 +23,8 @@ function Contact() {
     // Regex pour l'email
     const EMAIL_REGEX =
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    console.log('msg errors', error);
+    
+    //Fonction pour réinitialiser le formulaire
     const resetForm = () => {
         setInfosContact({
             lastname: '',
@@ -35,7 +37,8 @@ function Contact() {
         setEmailError(false);
         setSuccess(false);
     }
-
+    // Fonction pour gérer le changement d'état des inputs
+    // On utilise le destructuring pour récupérer le nom et la valeur de l'input
     const handleChange = (e) => {
         const { name, value } = e.target;
         if (name === 'messages' && value.length > maxChars) return; // On ne peut écrire plus que maxChars
@@ -45,7 +48,7 @@ function Contact() {
             [name]: value
         });        
     };
-
+    // Fonction pour valider le formulaire
     const validateForm = () => {
         const fields = ['lastname', 'firstname', 'email', 'messages'];
         let errors = [];
@@ -68,6 +71,7 @@ function Contact() {
         return errors.length === 0; // On retourne true si le tableau d'erreurs est vide
     };
 
+    // Fonction pour gérer l'envoi du formulaire
     const handleSubmit = async (e) => {
         e.preventDefault(); // On empêche le comportement par défaut du formulaire
         if (validateForm()) {
@@ -89,17 +93,12 @@ function Contact() {
                     setSuccess(false);
                     console.log('AUcune data reçu')
                 }
-                console.log(data)
-                console.log('envoie des données');
                 setSuccess(true); // On affiche le message de success
                 console.log('msg success =>', success);
             } catch(error) {
                 console.error("Erreur", error)
-            }
-            // On envoie les données
-           
+            }           
 
-            // resetForm();
         } else {
             setSuccess(false); // On n'affiche pas le message de success
         };
@@ -108,87 +107,101 @@ function Contact() {
 
     };
 
-    let formulaire;
-    formulaire = (
+    let formulaire = (
         <form onSubmit={handleSubmit} className={styles.form} noValidate> 
-                    <label htmlFor="lastname">
-                        <input
-                        className={styles.input} 
-                        type="text" 
-                        name="lastname" 
-                        placeholder="Votre nom" 
-                        required 
-                        onChange={handleChange} 
-                        value={infosContact.lastname} 
-                        />
-                    </label>
-                    <label htmlFor="firstname">
-                        <input 
-                        className={styles.input} 
-                        type="text" 
-                        name="firstname" 
-                        placeholder="Votre prenom" 
-                        required 
-                        onChange={handleChange} 
-                        value={infosContact.firstname}
-                        />
-                    </label> 
-                    <label htmlFor="email" >
-                        <input        
-                            className={styles.input} 
-                            type="email" 
-                            name="email" 
-                            placeholder="Votre email" 
-                            required 
-                            onChange={handleChange} 
-                            value={infosContact.email}
-                        />
-                        {emailError && error.includes("L'email n\'est pas validé") && (
-                            <p className={styles.emailError}>L'email n'est pas validé</p>)}
-                    </label>
-                    <label htmlFor="messages" className={styles.message}>
-                        <textarea
-                            className={styles.input} 
-                            name="messages"
-                            placeholder="Votre message"
-                            required
-                            maxLength={maxChars} //limite en HTML mais pas en js
-                            onChange={handleChange}
-                            value={infosContact.messages}
-                        ></textarea>
-                        <p>{infosContact.messages.length} / {maxChars} caractères</p>
-                    </label>
-                    <Buttons text="Envoyer" title='Envoyer le message' type="submit" />
-                </form>
+            <label htmlFor="lastname">
+                Nom *
+                <input
+                    className={styles.input} 
+                    type="text" 
+                    name="lastname" 
+                    placeholder="Votre nom" 
+                    required 
+                    onChange={handleChange} 
+                    value={infosContact.lastname} 
+                />
+            </label>
+            <label htmlFor="firstname">
+                Prénom *
+                <input 
+                    className={styles.input} 
+                    type="text" 
+                    name="firstname" 
+                    placeholder="Votre prenom" 
+                    required 
+                    onChange={handleChange} 
+                    value={infosContact.firstname}
+                />
+            </label> 
+            <label htmlFor="email" >
+                Email *
+                <input        
+                    className={styles.input} 
+                    type="email" 
+                    name="email" 
+                    placeholder="Votre email" 
+                    required 
+                    onChange={handleChange} 
+                    value={infosContact.email}
+                />
+                {emailError && error.includes("L'email n\'est pas validé") && (
+                    <p className={styles.emailError}>L'email n'est pas valide</p>)}
+            </label>
+            <label htmlFor="messages" className={styles.message}>
+                Message *
+                <textarea
+                    className={styles.input} 
+                    name="messages"
+                    placeholder="Votre message..."
+                    required
+                    maxLength={maxChars} //limite en HTML mais pas en js
+                    onChange={handleChange}
+                    value={infosContact.messages}
+                ></textarea>
+                <p>{infosContact.messages.length} / {maxChars} caractères</p>
+            </label>
+            <Buttons text="Envoyer" title='Envoyer le message' type="submit" />
+        </form>
     );
     return(
         <>
-            <main className={styles.mainContact}>
+            <main className={`${styles.mainContact} ${raleway.className}`}>
             
-                <h1 className={styles.title}>Contact</h1>
+                <h1 className={`${styles.title} ${merriweather.className}`}>Contactez-moi</h1>
                 <section className={styles.adressContact}>
-                    {/* <div className={styles.map}>
-                        <Map />
-                    </div> */}
                     <div className={styles.adressContactInfo}>
                         <div className={styles.wallPaper}></div>
                         <div className={styles.adress}>
-                            <h2>Mon adresse</h2>
-                            <p><FontAwesomeIcon className={styles.icon} icon={faLocationDot} />Metro Porte des Lilas</p>
-                            <p><FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />75019 Paris, France</p>
-                            <p><FontAwesomeIcon className={styles.icon} icon={faPhone} /> 06 60 27 89 40</p>
-                            <p><FontAwesomeIcon className={styles.icon} icon={faCar} /> Permis B</p>
-                            <p><FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />Permis A</p>
+                            <h2 className={merriweather.className}>Mon adresse</h2>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
+                                Metro Porte des Lilas
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />
+                                75019 Paris, France
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faPhone} /> 
+                                06 60 27 89 40
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faCar} /> 
+                                Permis B
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />
+                                Permis A
+                            </p>
                         </div>
                     </div>
-
                 </section>
 
                 <section className={styles.formContact}>
                 <h2>Envoyez moi un message</h2> 
                     {success ? 
                         <div className={styles.successMsg}>
-                            <p className={styles.success}>Message envoyé !</p> 
+                            <p className={styles.success}>Message envoyé avec succès !</p> 
                             <Buttons 
                                 text="Envoyer un nouveau message"
                                 title="Envoyer un nouveau message" 
@@ -204,11 +217,23 @@ function Contact() {
                         </ul>
                     )}
                 </section>
+
                 <section className={styles.socialContact}>
-                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/'><FontAwesomeIcon className={styles.icon} color='blue' icon={faLinkedin} aria-label="LinkdIn"  /></Link>
-                    <Link href='https://github.com/Wall-E75'><FontAwesomeIcon className={styles.icon} icon={faGithub} aria-label="GitHub" /></Link>
+                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/'>
+                        <FontAwesomeIcon 
+                            className={styles.icon}  
+                            icon={faLinkedin} aria-label="LinkdIn"
+                            aria-label="LinkdIn"  
+                        />
+                    </Link>
+                    <Link href='https://github.com/Wall-E75'>
+                        <FontAwesomeIcon 
+                            className={styles.icon} 
+                            icon={faGithub} aria-label="GitHub" 
+                            aria-label="GitHub"
+                        />
+                    </Link>
                 </section>
-                
             </main>
         </>
     );
