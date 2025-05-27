@@ -2,18 +2,30 @@ import styles from '@styles/technoProject.module.css';
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { merriweather, raleway } from '../ui/fonts';
 
 function TemplateProjects(props) {
-    // const [isDeployed, setIsDeployed] = useState(false)
     const gitFrontOnly = (
         <span  className={styles.rightText}>
-            <Link href={props.github}>{props.github}</Link>
+            <Link href={props.github} target='_blank' rel='noopener noreferrer'>
+                {props.github}
+            </Link>
         </span>
     );
     const gitFullStack = (
         <div>
-            <p className={styles.gitLink}><span>Frontend: </span><Link href={props.front}>{props.front}</Link></p>
-            <p className={styles.gitLink}><span>Backend: </span><Link href={props.back}>{props.back}</Link></p>
+            <p className={styles.gitLink}>
+                <span>Frontend: </span>
+                <Link href={props.front} target='_blank' rel='noopener noreferrer'>
+                    {props.front}
+                </Link>
+            </p>
+            <p className={styles.gitLink}>
+                <span>Backend: </span>
+                <Link href={props.back} target='_blank' rel='noopener noreferrer'>
+                    {props.back}
+                </Link>
+            </p>
         </div>
     );
     const githubLink = typeof props.github === 'string' ? gitFrontOnly : gitFullStack;

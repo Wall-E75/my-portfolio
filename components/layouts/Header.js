@@ -13,7 +13,7 @@ function Header() {
     <>
       <header className={`${styles.header} ${raleway.className || ''}`}>
         <div className={styles.logo}>
-          <Link href="/#presentation" aria-label='Retour à l'accueil>
+          <Link href="/#presentation" aria-label="Retour à l'accueil">
             <FontAwesomeIcon icon={faUser} className={styles.icon} />
           </Link>
           <ThemeSwitcher />
@@ -25,34 +25,30 @@ function Header() {
         <nav className={styles.nav} aria-label='Navigation principal'>
             <ul className={styles.list}>
                 <li className={styles.project} title="Découvrez mes projets">
-                  <div className={styles.wallPaper}>
+                  <div className={styles.wallPaper}></div>
                     <Link href="/#projets">Projets</Link>
-                  </div>
                 </li>
 
                 <li className={styles.competences} title='Mes compétences techniques'>
-                  <div className={styles.wallPaper}>
+                  <div className={styles.wallPaper}></div>
                     <Link href="/#competences">Compétences</Link>
-                  </div>
                 </li>
 
                 {displayComponant && (
                   <li className={styles.experiences}>
-                    <div className={styles.wallPaper}>
                       <Link href='/#experiences'>Expériences</Link>
-                    </div>
+                    <div className={styles.wallPaper}></div>
                   </li>
                 )}
 
                 <li className={styles.formations} title='Ma formation et mes certifications'>
-                  <div className={styles.wallPaper}>
-                    <Link href='/#formations'>Formations</Link>
-                  </div>
+                  <Link href='/#formations'>Formations</Link>
+                  <div className={styles.wallPaper}></div>
                 </li>
 
                 <li className={styles.contact} title='Contactez-moi'>
+                  <Link href='/#contact'>Contact</Link>
                   <div className={styles.wallPaper}>
-                    <Link href='/#contact'>Contact</Link>
                   </div>
                 </li>
             </ul>

@@ -80,16 +80,15 @@
     color: white;
     font-weight: 600;
     font-size: 1rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
     z-index: 2;
     position: relative;
 }
 
 .list li:hover a {
     color: var(--accent-color);
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
-    transform: scale(1.05);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .logo {
@@ -160,9 +159,10 @@
     );
     transition: width 0.4s ease-in-out;
     z-index: 1;
+    pointer-events: none;
 }
 
-.wallPaper:hover {
+.list li:hover .wallPaper {
     width: 100%;
 }
 
@@ -172,12 +172,22 @@
     background-image: url('/project.avif');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+}
+
+.project .wallPaper {
+    background: linear-gradient(
+        135deg,
+        rgba(248, 165, 185, 0.85) 0%,
+        rgba(248, 165, 185, 0.85) 100%
+    );
 }
 
 .competences {
     background-image: url('/competences.webp');
     background-size: cover;
     background-position-y: 40%;
+    background-repeat: no-repeat;
 }
 
 .competences .wallPaper {
@@ -192,8 +202,8 @@
     background-image: url('/experiences.webp');
     background-size: cover;
     width: calc(100vw * 0.8);
-    /* background-position: center; */
-
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .experiences .wallPaper {
@@ -208,6 +218,7 @@
     background-image: url('/work_pix1.webp');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .formations .wallPaper {
@@ -221,7 +232,8 @@
 .contact {
     background-image: url('/contact.webp');
     background-size: cover;
-    background-position-x: 40%;
+    background-position: 40%;
+    background-repeat: no-repeat;
 }
 
 .contact .wallPaper {
@@ -279,6 +291,9 @@
         text-align: center;
         position: relative;
         overflow: hidden;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
     }
 
     .list li:last-child {
@@ -288,6 +303,10 @@
     .list li a {
         font-size: 1.1rem;
         font-weight: 600;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* .wallPaper {
@@ -389,13 +408,26 @@
     }
 
     .list li {
-       height: 10vh;
-       border-right: 2px solid var(--neutral-medium);
+        height: 10vh;
+        border-right: 2px solid var(--neutral-medium);
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
     }
 
     .list li a {
         font-size: 1.2rem;
         font-weight: 600;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: none !important; /* Empeche tout mouvement du texte */
+    }
+
+     /* IMPORTANT: Supprime le transform sur le hover pour stabiliser */
+    .list li:hover a {
+        transform: none !important;
     }
 
     .logo {
@@ -439,16 +471,17 @@
         background: linear-gradient(
             90deg,
             transparent,
-            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.15),
             transparent
         );
         transition: left 0.6s ease;
-        z-index: 2;
+        z-index: 1;
+        pointer-events: none;
     }
 
     .list li:hover::after {
         left: 100%;
-}
+    }
 
     /* États pour l'accessibilité */
     .list li a:focus,
@@ -458,9 +491,19 @@
     }
 }
 
+.experiences {
+    /* Ajuste la position de l'image pour une meilleure visibilité */
+    background-position: center 30% !important;
+}
+
+.contact {
+    /* Ajuste la position de l'image pour une meilleure visibilité */
+    background-position: 40% center !important;
+}
+
 /* Mode sombre - ajustements spécifiques */
 .theme-dark .list li a {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 .theme-dark .wallPaper {
