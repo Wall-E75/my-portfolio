@@ -72,7 +72,7 @@ function Presentation() {
          
             <div className={styles.greeting}>
               <h1 className={`${styles.greetingTitle} ${merriweather.className}`}>Salut !</h1>
-              <q className={styles.greetingText}>Je suis Wali Sylla, un développeur web fullstack passionné par les nouvelles technologies et les projets innovants.</q>
+              <q className={styles.greetingText}>Je suis Wali Sylla, un développeur web fullstack passionné par les nouvelles technologies.</q>
               {/* <div className={styles.line}></div> */}
               {isVisible && presentationContent}
             </div>

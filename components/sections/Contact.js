@@ -75,28 +75,36 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault(); // On empêche le comportement par défaut du formulaire
         if (validateForm()) {
-            console.log(infosContact)
             try {
                 const response = await fetch("https://my-portfolio-backend-sage.vercel.app/message", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(infosContact),
                 });
+
                 if (!response.ok) {
                     const errorData = await response.json()
-                    console.log('Throw response =>', response.json())
+                    console.log('Errueur response =>', response.json())
+                    setError([errorData.message || "Une erreur est survenue lors de la soumission !"])
                     throw new Error( errorData.message || "Une erreur est survenue lors de la soumission !");
                 };
     
                 const data = await response.json();
-                if (!data.result) {
+                if (data.result) {
+                    setSuccess(true);
+                    console.log('Message envoyé avec succès')
+                } else {
                     setSuccess(false);
-                    console.log('AUcune data reçu')
+                console.log([data.message || 'Erreur lors de l\'envoi']);
                 }
-                setSuccess(true); // On affiche le message de success
-                console.log('msg success =>', success);
+               
             } catch(error) {
                 console.error("Erreur", error)
+                setSuccess(false);
+                // Ne pas écraser les erreurs déjà définies
+                if (error.length === 0) {
+                    setError(["Une erreur réseau est survenue"]);
+                }
             }           
 
         } else {
@@ -144,7 +152,7 @@ function Contact() {
                     onChange={handleChange} 
                     value={infosContact.email}
                 />
-                {emailError && error.includes("L'email n\'est pas validé") && (
+                {emailError && error.includes("L'email n'est pas validé") && (
                     <p className={styles.emailError}>L'email n'est pas valide</p>)}
             </label>
             <label htmlFor="messages" className={styles.message}>
