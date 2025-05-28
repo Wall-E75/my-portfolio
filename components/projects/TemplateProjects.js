@@ -30,36 +30,58 @@ function TemplateProjects(props) {
     );
     const githubLink = typeof props.github === 'string' ? gitFrontOnly : gitFullStack;
     return (
-        <>
-            <h2 className={styles.title}>{props.title}</h2>
-            
-            <div className={styles.projectContainer}>
+        <> 
+            <div 
+                className={styles.projectContainer}
+                data-deployed={props.link ? "true" : "false"}
+            >
                 <div className={styles.imageContainer}>
                     <Image 
                         src={props.image}
                         alt={props.alt}
-                        width={200}
-                        height={200}
+                        width={400}
+                        height={300}
+                        priority={false}
                     />
-
-
                 </div>
-                    <ul>
-                        <li className={styles.project}>
-                            <h2 className={styles.projectTitle}>{props.name}</h2>
-                            <div className={styles.projectDesc}>
-                                <p className={styles.paragraph}><span className={styles.textTitle}>Description: </span><span className={styles.rightText}>{props.description}</span></p>
-                                <p className={styles.paragraph}><span className={styles.textTitle}>Technologies: </span><span className={styles.rightText}>{props.techno}</span></p>
-                                <span className={styles.paragraph}><span className={styles.textTitle}>GitHub: </span><span className={styles.rightText}>{githubLink}</span></span>
-                                {props.link && <p className={styles.paragraph}><span className={styles.textTitle}>Lien vers le site: </span><span className={styles.rightText}><Link  href={props.link}>{props.link}</Link></span></p>}
+
+                <ul>
+                    <li className={styles.project}>
+                        <h2 className={`${styles.projectTitle} ${merriweather?.className || ''}`}>
+                            {props.name}
+                        </h2>
+                        <div className={styles.projectDesc}>
+                            <div className={styles.paragraph}>
+                                <span className={styles.textTitle}>Description: </span>
+                                <span className={styles.rightText}>{props.description}</span>
                             </div>
-                        </li>
-                    </ul>                  
+                            <div className={styles.paragraph}>
+                                <span className={styles.textTitle}>Technologies: </span>
+                                <span className={styles.rightText}>{props.techno}</span>
+                            </div>
+                            <div className={styles.paragraph}>
+                                <span className={styles.textTitle}>GitHub: </span>
+                                <span className={styles.rightText}>{githubLink}</span>
+                            </div>
+                            {props.link && (
+                                <div className={styles.paragraph}>
+                                    <span className={styles.textTitle}>Lien vers le site: </span>
+                                    <span className={styles.rightText}>
+                                        <Link  
+                                            href={props.link}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                        >
+                                            {props.link}
+                                        </Link>
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                    </li>
+                </ul>                  
             
             </div>
-                
-           
-
         
         </>
     );

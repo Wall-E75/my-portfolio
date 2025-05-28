@@ -1,8 +1,7 @@
 import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
-import Link from 'next/link';
-
+import { merriweather, raleway } from '../ui/fonts';
 function ReactProjects() {
     const [isDeployed, setIsDeployed] = useState(false)
     const projectData = [
@@ -34,18 +33,6 @@ function ReactProjects() {
             link: 'https://mymoviz-frontend-theta-pied.vercel.app/',
         },
 
-        // {
-        //     id: 3,
-        //     name: 'projet1',
-        //     description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 1',
-        //     image: '',
-        //     alt: '',
-        //     techno: '',
-        //     github: '',
-        //     link: '',
-        //     isDeployed: false,
-        // },
-
     ];
 
     const projectList = projectData.map((project) => {
@@ -55,11 +42,13 @@ function ReactProjects() {
                     front={project.github?.front} 
                     back={project.github?.back}
                 />
-    })
+    });
     return (
         <>
-        <main className={styles.mainContainer}>
-            <h1 className={styles.themeTitle}>React Projects</h1>
+        <main className={`${styles.mainContainer} ${raleway?.className || ''}`}>
+            <h1 className={`${styles.themeTitle} ${merriweather?.className || ''}`}>
+                Projets React
+            </h1>
                 {projectList}    
         </main>
         </>

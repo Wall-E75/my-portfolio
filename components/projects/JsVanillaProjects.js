@@ -1,8 +1,8 @@
 import styles from '@styles/technoProject.module.css';
 import { useState } from 'react';
 import TemplateProjects from '@components/projects/TemplateProjects';
-import Link from 'next/link';
 import Image from 'next/image';
+import { merriweather, raleway } from '../ui/fonts';
 
 function JsVanillaProjects() {
     // const [isDeployed, setIsDeployed] = useState(false)
@@ -71,8 +71,10 @@ function JsVanillaProjects() {
     })
     return (
         <>
-            <main className={styles.mainContainer}>
-                <h1 className={styles.themeTitle}>JavaScript Projects</h1>
+            <main className={`${styles.mainContainer} ${raleway?.className || ''}`}>
+                <h1 className={`${styles.themeTitle} ${merriweather?.className || ''}`}>
+                    JavaScript Projects
+                </h1>
                 {projectList}  
 
             </main>

@@ -51,7 +51,7 @@
     height: 90vh;
     /* margin-bottom: 1rem; */
     /* padding: 1rem; */
-    background-image: var(--bg-img);
+    background-image: url('/photo_de_profil.webp');
     background-size: cover;
     position: relative;
 }

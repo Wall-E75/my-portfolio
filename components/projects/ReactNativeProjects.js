@@ -1,8 +1,7 @@
 import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
-import Link from 'next/link';
-
+import { merriweather, raleway } from '../ui/fonts';
 function ReactNativeProjects() {
     const [isDeployed, setIsDeployed] = useState(false)
     const projectData = [
@@ -54,8 +53,10 @@ function ReactNativeProjects() {
     })
     return (
         <>
-        <main className={styles.mainContainer}>
-            <h1 className={styles.title}>React Native Projects</h1>
+        <main className={`${styles.mainContainer} ${raleway?.className || ''}`}>
+            <h1 className={`${styles.themeTitle} ${merriweather?.className || ''}`}>
+                React Native Projects
+            </h1>
             {projectList}
         </main>
         </>

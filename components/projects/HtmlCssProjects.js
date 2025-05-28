@@ -2,6 +2,7 @@ import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
 import Link from 'next/link';
+import { merriweather, raleway } from '../ui/fonts';
 
 function HtmlCssProjects() {
     const [isDeployed, setIsDeployed] = useState(false)
@@ -49,8 +50,10 @@ function HtmlCssProjects() {
     })
     return (
         <>
-        <main className={styles.mainContainer}>
-            <h1 className={styles.themeTitle}>HTML/CSS</h1>
+        <main className={`${styles.mainContainer} ${raleway?.className || ''}`}>
+            <h1 className={`${styles.themeTitle} ${merriweather?.className || ''}`}>
+                HTML/CSS
+            </h1>
                {projectList}
 
         </main>
