@@ -54,7 +54,6 @@ body {
   /* Couleurs de structure existantes (mises à jour) */
   --background-color: #F5F1EB;
   --hover-background-color: #E9E4DD;
-  --bg-img: url('../public/photo_de_profil.webp');
   --text-color: #333333;
   --link-color: #E38198;        /* Liens en rose foncé */
   --quote-bg: rgba(255, 255, 255, 0.8);
