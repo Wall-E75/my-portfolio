@@ -215,7 +215,7 @@
 }
 
 .formations {
-    background-image: url('/work_pix1.webp');
+    background-image: url('/formation.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -232,7 +232,7 @@
 .contact {
     background-image: url('/contact.webp');
     background-size: cover;
-    background-position: 40%;
+    /* background-position: 40%; */
     background-repeat: no-repeat;
 }
 
@@ -292,7 +292,7 @@
         position: relative;
         overflow: hidden;
         background-size: cover !important;
-        background-position: center !important;
+        /* background-position: center !important; */
         background-repeat: no-repeat !important;
     }
 
@@ -411,7 +411,7 @@
         height: 10vh;
         border-right: 2px solid var(--neutral-medium);
         background-size: cover !important;
-        background-position: center !important;
+        /* background-position: center !important; */
         background-repeat: no-repeat !important;
     }
 
@@ -498,7 +498,7 @@
 
 .contact {
     /* Ajuste la position de l'image pour une meilleure visibilité */
-    background-position: 40% center !important;
+    background-position: center 15% !important;
 }
 
 /* Mode sombre - ajustements spécifiques */
