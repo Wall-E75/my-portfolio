@@ -9,7 +9,7 @@ function ReactProjects() {
             id: 1,
             name: 'La Sauce',
             description: 'Site web réalisé en 10 jours avec une équipe de 3 lors de mes études de developpement web. La sauce est une plateforme de mise en relation entre association et particulier.',
-            image: '/la_Sauce.webp',
+            image: '/la_sauce.webp',
             alt: 'logo la sauce',
             techno: 'FullStack - Front: React, NextJs, Redux, JSX, CSS | Back: NodeJs, Express, MongoDb, Mongoose, Cloudinary',
             github: {
