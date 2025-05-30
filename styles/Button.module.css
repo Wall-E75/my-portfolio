@@ -122,6 +122,19 @@
     position: relative;
 }
 
+.button:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.primary:focus {
+  outline-color: var(--primary-light, #FFCAD5);
+}
+
+.secondary:focus {
+  outline-color: var(--secondary-light, #5F8A6E);
+}
+
 
 .theme-dark .button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
