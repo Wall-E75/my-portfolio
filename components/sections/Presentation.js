@@ -79,11 +79,12 @@ function Presentation() {
           </div>
           {!isVisible && presentationContent}
           <Buttons 
-            className={styles.button}
+            // className={styles.button}
             title="Télécharger CV"
             text="Télécharger CV"
             icon={faDownload}
             onClick={handleClick} 
+            variant="accent"
           />
 
         </section>

@@ -1,9 +1,18 @@
 import styles from '@styles/Contact.module.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBiking, faCar, faEnvelope, faHome, faLocation, faLocationArrow, faLocationDot, faMotorcycle, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { 
+    faBiking, 
+    faCar, 
+    faEnvelope, 
+    faHome, 
+    faLocation, 
+    faLocationArrow, 
+    faLocationDot, 
+    faMotorcycle, 
+    faPaperPlane, 
+    faPhone } from '@fortawesome/free-solid-svg-icons';
 import Buttons from '../ui/Buttons';
-// import Map from '../ui/Map';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import { merriweather, raleway } from '../ui/fonts';
@@ -169,7 +178,13 @@ function Contact() {
                 ></textarea>
                 <p>{infosContact.messages.length} / {maxChars} caractères</p>
             </label>
-            <Buttons text="Envoyer" title='Envoyer le message' type="submit" />
+            <Buttons 
+                text="Envoyer" 
+                title='Envoyer le message' 
+                type="submit"
+                variant="primary"
+                icon={faPaperPlane}
+            />
         </form>
     );
     return(
@@ -216,6 +231,7 @@ function Contact() {
                                     text="Envoyer un nouveau message"
                                     title="Envoyer un nouveau message" 
                                     onClick={resetForm} 
+                                    variant="secondary"
                                 />
                             </div> : formulaire 
                         }
