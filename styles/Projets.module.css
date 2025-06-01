@@ -211,7 +211,7 @@
     
     .cardContainer {
         width: calc(50% - 1rem);
-        min-height: 350px;
+        min-height: 300px;
         padding: 2rem;
     }
 
@@ -232,7 +232,7 @@
 
     .cardContainer {
         width: calc(25% - 1.875rem); /* 4 cartes par ligne sur desktop */
-        min-height: 400px;
+        /* min-height: 400px; */
     }
 
     .cardContainer h3 {

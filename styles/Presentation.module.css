@@ -290,10 +290,6 @@
 /*Tablet*/
 
 @media (min-width: 768px) {
-    .mainPresentation section {
-        /* padding-top: 12vh; */
-
-    }
     .presentation {
         padding-top: 1.5rem;
         height: auto;
@@ -400,7 +396,11 @@
 /*PC*/
 
 @media (min-width: 992px) {
-      .greetingTitle {
+    .imageContainer {
+        width: 30%;
+    }
+
+    .greetingTitle {
         font-size: 2.5rem;
     }
     
