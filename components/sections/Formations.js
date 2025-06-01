@@ -31,8 +31,6 @@ function Formations() {
                         <h2 className={merriweather.className}>Langues</h2>
                         <p><strong>Français</strong> : langue maternelle</p>
                         <p><strong>Anglais</strong> : compréhension écrite avancée, expression orale intermédiaire</p>
-                        <p><strong>Soninké</strong> : compréhension oral avancé, expression orale intermédiaire</p>
-                        <p><strong>Arabe</strong> : compréhension orale basique, lu et écrit</p>
                     </div>
                 </div>
             </main>
