@@ -31,8 +31,8 @@ function Presentation() {
   const handleClick = () => {   
     // Crée un élément <a> invisible
     const link = document.createElement('a');    
-    link.href = '/CV_Wali_Sylla.pdf'; // URL du fichier à télécharger
-    link.download = 'CV_Wali_Sylla.pdf'; // Nom du fichier à télécharger
+    link.href = '/CV_Wali_Sylla_Developpeur_Web_JS.pdf'; // URL du fichier à télécharger
+    link.download = 'CV_Wali_Sylla_Developpeur_Web_JS.pdf'; // Nom du fichier à télécharger
     document.body.appendChild(link);//Ajoute l'élément au DOM (nécessaire pour Firefox)
     link.click();//Déclenche le téléchargement
     document.body.removeChild(link);//Supprime l'élément du DOM
