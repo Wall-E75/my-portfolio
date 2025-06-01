@@ -169,7 +169,7 @@
 /* Section */
 
 .project {
-    background-image: url('/project.avif');
+    /* background-image: url('/project.avif'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -184,7 +184,7 @@
 }
 
 .competences {
-    background-image: url('/competences.webp');
+    /* background-image: url('/competences.webp'); */
     background-size: cover;
     background-position-y: 40%;
     background-repeat: no-repeat;
@@ -199,7 +199,7 @@
 }
 
 .experiences {
-    background-image: url('/experiences.webp');
+    /* background-image: url('/experiences.webp'); */
     background-size: cover;
     width: calc(100vw * 0.8);
     background-position: center;
@@ -215,7 +215,7 @@
 }
 
 .formations {
-    background-image: url('/formation.webp');
+    /* background-image: url('/formation.webp'); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -230,7 +230,7 @@
 }
 
 .contact {
-    background-image: url('/contact.webp');
+    /* background-image: url('/contact.webp'); */
     background-size: cover;
     /* background-position: 40%; */
     background-repeat: no-repeat;
