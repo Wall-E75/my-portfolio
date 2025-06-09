@@ -66,6 +66,60 @@
 
 }
 
+/*Section du carousel*/
+.carouselSection {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1rem;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--secondary-color) 0%,
+        var(--accent-color) 100%
+    );
+    border-radius: 2px;
+}
+
+.sectionDescription {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categoriesSection {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem;
+    border-top: 1px solid var(--neutral-medium);
+    margin-top: 4rem;
+}
+
 .cardContainer {
     display: flex;
     width: calc(50% - 0.75rem);
@@ -207,6 +261,7 @@
     .container {
         gap: 2rem;
         padding: 0 2rem;
+
     }
     
     .cardContainer {

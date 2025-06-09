@@ -445,6 +445,7 @@
     .formContact {
         padding: 3rem;
         max-width: 700px;
+        margin: 0;
     }
 
     .mainContact h2 {
@@ -483,6 +484,10 @@
         font-size: 1.8rem;
     }
 
+    .adressContact {
+        height: 50vh;
+    }
+
     .adressContactInfo p {
         font-size: 1.1rem;
     }
@@ -497,5 +502,9 @@
         grid-template-columns: 1fr 1fr;
         gap: 3rem;
         width: 100%;
+    }
+
+    .wallPaper {
+        height: 10px;
     }
 }

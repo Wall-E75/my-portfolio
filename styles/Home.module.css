@@ -33,9 +33,10 @@
 }
 
 .cell2 {
-  background-image: url('../public/work_pix1.webp');
+  /* background-image: url('../public/work_pix1.webp');
   background-size: cover;  
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: var(--secondary-color);
   background-position: 70% 50%;
   grid-area: 1 / 1 / 2 / 2;
   text-align: center;

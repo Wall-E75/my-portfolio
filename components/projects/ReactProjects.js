@@ -2,9 +2,8 @@ import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
 import { merriweather, raleway } from '../ui/fonts';
-function ReactProjects() {
-    const [isDeployed, setIsDeployed] = useState(false)
-    const projectData = [
+
+export const reactProjectsData = [
         {
             id: 1,
             name: 'La Sauce',
@@ -17,6 +16,7 @@ function ReactProjects() {
                 back: 'https://github.com/victor-blanchard/assos-backend.git'
                 },
             link: 'https://assos-frontend.vercel.app/',
+            category: 'React'
         },
 
         {
@@ -31,11 +31,14 @@ function ReactProjects() {
                 back: 'https://github.com/Wall-E75/mymoviz-backend.git',
             },
             link: 'https://mymoviz-frontend-theta-pied.vercel.app/',
+            category: 'React'
         },
 
     ];
+function ReactProjects() {
+    const [isDeployed, setIsDeployed] = useState(false)
 
-    const projectList = projectData.map((project) => {
+    const projectList = reactProjectData.map((project) => {
         return <TemplateProjects 
                     key={project.id} 
                     {...project} 

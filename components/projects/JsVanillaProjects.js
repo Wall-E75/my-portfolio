@@ -4,9 +4,9 @@ import TemplateProjects from '@components/projects/TemplateProjects';
 import Image from 'next/image';
 import { merriweather, raleway } from '../ui/fonts';
 
-function JsVanillaProjects() {
-    // const [isDeployed, setIsDeployed] = useState(false)
-    const projectData = [
+// EXPORT DES DATA POUR LES REUTILISER
+
+export const jsVanillaProjectsData = [
         
         {
             id: '1',
@@ -17,6 +17,7 @@ function JsVanillaProjects() {
             techno: 'Html, Css, JavaScript',
             github: 'https://github.com/Wall-E75/kanap.git',
             link: '',
+            category: 'JavaScript'
         },
 
         {
@@ -28,6 +29,7 @@ function JsVanillaProjects() {
             techno: 'SEO',
             github: 'https://github.com/Wall-E75/la_panthere.github.io',
             link: 'https://wall-e75.github.io/la_panthere.github.io/',
+            category: 'JavaScript'
         },
 
         {
@@ -42,6 +44,7 @@ function JsVanillaProjects() {
                 back: 'https://github.com/Wall-E75/ticketHack-backend.git'
             },
             link: 'https://ticket-hack-frontend-azure.vercel.app/',
+            category: 'JavaScript'
         },
 
         {
@@ -56,12 +59,16 @@ function JsVanillaProjects() {
                 back: 'https://github.com/Wall-E75/weatherapp-backend.git'
             },
             link: 'https://weatherapp-frontend-chi.vercel.app',
+            category: 'JavaScript'
         },
 
 
     ];
 
-    const projectList = projectData.map((project) => {
+function JsVanillaProjects() {
+    // const [isDeployed, setIsDeployed] = useState(false)
+
+    const projectList = jsVanillaProjectsData.map((project) => {
         return <TemplateProjects 
                     key={project.id}  
                     {...project}

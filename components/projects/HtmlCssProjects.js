@@ -1,5 +1,6 @@
 import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
+import CarouselProject from '@components/layouts/CarouselProject';
 import { useState } from 'react';
 import Link from 'next/link';
 import { merriweather, raleway } from '../ui/fonts';
@@ -45,17 +46,22 @@ function HtmlCssProjects() {
 
     ];
 
-    const projectList = projectData.map((project, index) => {
-        return <TemplateProjects key={index} {...project} />
-    })
+    // const projectList = projectData.map((project, index) => {
+    //     return <TemplateProjects key={index} {...project} />
+    // });
+
+    // const projectCarousel = projectData.map((projet, index) => {
+    //     return <CarouselProject key={index} desc="decription" />
+    // });
     return (
         <>
         <main className={`${styles.mainContainer} ${raleway?.className || ''}`}>
             <h1 className={`${styles.themeTitle} ${merriweather?.className || ''}`}>
                 HTML/CSS
             </h1>
-               {projectList}
-
+               {/* {projectList} */}
+               {/* {projectCarousel} */}
+               <CarouselProject />
         </main>
         </>
     );
