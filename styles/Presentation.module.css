@@ -79,7 +79,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 90%;
+    width: 95%;
     height: auto;
     background-color: var(--quote-bg);
     color: var(--text-color);
@@ -116,8 +116,8 @@
 }
 
 .greetingText {
-    font-size: 1.2rem;
-    font-weight: 200;
+    font-size: 1rem;
+    font-weight: 400;
     font-style: italic;
     margin: 0.5rem 0.5rem 2rem 0.5rem;
     letter-spacing: 0.1rem;
@@ -279,14 +279,6 @@
     );
 }
 
-/* rgb(39 85 4) */
-
-/*small phone*/
-
-@media only screen and (min-width: 600px) {
-    
-  }
-
 /*Tablet*/
 
 @media (min-width: 768px) {
@@ -363,7 +355,7 @@
     }
 
     .greetingText {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         margin-bottom: 1rem;
     }
 
@@ -400,12 +392,16 @@
         width: 30%;
     }
 
+    .greeting {
+        margin-top: 0;
+    }
+
     .greetingTitle {
         font-size: 2.5rem;
     }
     
     .greetingText {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
     }
     
     .presentationContent ul li {

@@ -117,13 +117,13 @@
     margin: 0 auto;
     padding: 4rem 1rem 2rem;
     border-top: 1px solid var(--neutral-medium);
-    margin-top: 4rem;
+    /* margin-top: 2rem; */
 }
 
 .cardContainer {
     display: flex;
     width: calc(50% - 0.75rem);
-    min-height: 300px;
+    min-height: 215px;
     flex-direction: column;
     align-items: center;
     padding: 1.5rem;
@@ -280,6 +280,14 @@
      .title {
         font-size: 3rem;
     }
+
+    .categoriesSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }   
     
     .container {
         gap: 2.5rem;

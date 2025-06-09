@@ -8,7 +8,7 @@ function Carousel({ skillsData }) {
     const [currentIndex, setCurrentIndex] = useState(0); //Indique l'index de l'image actuelle
     const [isPlaying, setIsPlaying] = useState(true); //Indique si le carousel est en lecture automatique
     const autoplayRef = useRef(null); //Référence pour l'intervalle d'autoplay
-    const intervalTime = 3000; //Temps entre chaque image
+    const intervalTime = 6000; //Temps entre chaque image
 
    
    

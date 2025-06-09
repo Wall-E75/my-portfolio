@@ -78,7 +78,7 @@ function Projets() {
                 <h1 className={`${styles.title} ${merriweather.className}`}>Projets</h1>
                 <section className={styles.carouselSection}>
                     <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        Quelques projets
+                        Selection de projets
                     </h2>
                     <p className={styles.sectionDescription}>
                         Découvrez mes projets React et JavaScript qui témoignent de mon évolution en développement web full-stack.

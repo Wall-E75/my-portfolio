@@ -49,8 +49,9 @@ function Presentation() {
       <ul>
         <li><span>ID :</span> Sylla Wali</li>
         <li><span>JOB :</span> Developpeur Web Full Stack</li>
-        <li><span>Age :</span> 34 ans</li>
+        <li><span>Age :</span> 35 ans</li>
         <li><span>Ville :</span> Paris</li>
+        <li><span>Mail :</span> sylla.wali@me.com</li>
       </ul>
     </div> 
   )
@@ -72,7 +73,12 @@ function Presentation() {
          
             <div className={styles.greeting}>
               <h1 className={`${styles.greetingTitle} ${merriweather.className}`}>Salut !</h1>
-              <q className={styles.greetingText}>Je suis Wali Sylla, un développeur web fullstack passionné par les nouvelles technologies.</q>
+              <q className={styles.greetingText}>
+                Je suis Wali Sylla, développeur fullstack passionné par la creation d'applications web et les nouvelles technologies.
+                Ma curiosité et ma soif d'apprendre me poussent à aller au bout de chaque projets avec rigueur.
+                Grâce à mes expériences (professionnelles, sportives) et à mon adaptabilité, 
+                je m'intégre facilement au sein d'une équipe et je m'investie pleinement dans les challenges.
+              </q>
               {/* <div className={styles.line}></div> */}
               {isVisible && presentationContent}
             </div>

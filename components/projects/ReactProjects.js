@@ -10,7 +10,7 @@ export const reactProjectsData = [
             description: 'Site web réalisé en 10 jours avec une équipe de 3 lors de mes études de developpement web. La sauce est une plateforme de mise en relation entre association et particulier.',
             image: '/la_sauce.webp',
             alt: 'logo la sauce',
-            techno: 'FullStack - Front: React, NextJs, Redux, JSX, CSS | Back: NodeJs, Express, MongoDb, Mongoose, Cloudinary',
+            techno: 'FullStack - Front: React, NextJs, Redux, JSX, CSS, Antd Design | Back: NodeJs, Express, MongoDb, Mongoose, Cloudinary',
             github: {
                 front: 'https://github.com/victor-blanchard/assos-frontend.git', 
                 back: 'https://github.com/victor-blanchard/assos-backend.git'
@@ -38,7 +38,7 @@ export const reactProjectsData = [
 function ReactProjects() {
     const [isDeployed, setIsDeployed] = useState(false)
 
-    const projectList = reactProjectData.map((project) => {
+    const projectList = reactProjectsData.map((project) => {
         return <TemplateProjects 
                     key={project.id} 
                     {...project} 

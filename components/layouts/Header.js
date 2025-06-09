@@ -17,7 +17,9 @@ function Header() {
             <FontAwesomeIcon icon={faUser} className={styles.icon} />
           </Link>
           <ThemeSwitcher />
+          <p className={styles.logoMail}>sylla.wali@me.com</p>
         </div>
+        
         <div className={styles.menu}>
           <Menu className={styles.icon} />
         </div>

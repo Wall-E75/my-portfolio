@@ -35,7 +35,7 @@ export const jsVanillaProjectsData = [
         {
             id: '3',
             name: 'Tickethack',
-            description: 'Site de réservation de billet de train',
+            description: 'Site de réservation de billet de train, mise en place de fonctionnalités clés tel que la gestion de panier (ajout, suppression, sauveagrde).',
             image: '/tickethack.webp',
             alt: 'Un train',
             techno: 'Html, Css, JavaScript',

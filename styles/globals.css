@@ -15,23 +15,6 @@ body {
   padding: 0;
 }
 
-/* .theme-light {
-  --background-color: #F8F9FA;
-  --hover-background-color: #E9ECEF;
-  --bg-img: url('../public/photo_de_profil.webp');
-  --text-color: #212529;
-  --link-color: #2B3A67;
-  --quote-bg: rgba(181, 181, 181, 0.5);
-   --quote-bg: rgba(156, 56, 72, 0.1);
-  --presentation-bg: rgba(238, 205, 221, 0.2);
-  --shadow-box:  0 4px 8px rgba(0, 0, 0, 0.1);
-  --bg-box: rgba(39, 85, 4, 0.1);
-  --bg-box: #ffffff;
-  --skill-bg: rgba(238, 205, 221, 0.3);
-  --icon-color: #000000;
-  --header-bg: rgba(255, 255, 255, 0.9);
-} */
-
 .theme-light {
   /* Couleurs principales */
   --primary-color: #F8A5B9;     /* Rose poudré/saumon, comme votre chemise */
@@ -56,7 +39,7 @@ body {
   --hover-background-color: #E9E4DD;
   --text-color: #333333;
   --link-color: #E38198;        /* Liens en rose foncé */
-  --quote-bg: rgba(255, 255, 255, 0.8);
+  --quote-bg: rgba(255, 255, 255, 0.7);
   --presentation-bg: rgba(63, 106, 78, 0.05);
   --shadow-box: 0 4px 12px rgba(0, 0, 0, 0.06);
   --bg-box: #FFFFFF;
@@ -64,36 +47,6 @@ body {
   --icon-color: #3F6A4E;
   --header-bg: rgba(245, 241, 235, 0.95);
 }
-/* .theme-dark {
-  --background-color: #000000;
-  --hover-background-color: #1a1a1a;
-  --bg-img: url('../public/photo_de_profil.webp');
-  --text-color: #ffffff;
-  --link-color: #4e9af1;
-  --quote-bg: rgba(181, 181, 181, 0.5);
-  --presentation-bg: rgba(0, 0, 54.5, 1);
-  --shadow-box: rgb(255, 255, 255);
-  --border-box: #333333;
-  --bg-box: #212121;
-  --skill-bg: rgba(0, 0, 54.5, 0.9);
-  --icon-color: #ffffff;
-  --icon-bg: none;
-  --header-bg: rgba(0, 0, 0, 0.9);
-} */
-
-/* .theme-colorful {
-  --background-color:linear-gradient(to right, #ff9a9e, rgba(255, 255, 255, 0.1));
-  --bg-img: url('../public/photo_de_profil.webp');
-  --text-color: #333;
-  --link-color: #ff6347;
-  --quote-bg: rgba(181, 181, 181, 0.5);
-  --presentation-bg: rgba(238, 205, 221, 0.2);
-  --shadow-box: rgba(39, 85, 4, 0.6);
-  --skill-bg: rgba(238, 205, 221, 0.9);
-  --card-border-color: rgb(39 85 4);
-  --icon-color: #ff6347;
-  --header-bg: rgba(255, 255, 255, 0.4);
-} */
 
 .theme-dark {
   /* Couleurs principales en mode sombre */
@@ -119,7 +72,8 @@ body {
   --hover-background-color: #2A2A32;
   --text-color: #E5E5E5;
   --link-color: #F8A5B9;        /* Liens en rose */
-  --quote-bg: rgba(248, 165, 185, 0.12);
+  /* --quote-bg: rgba(248, 165, 185, 0.12); */
+  --quote-bg: rgba(206, 206, 206, 0.7);
   --presentation-bg: rgba(95, 138, 110, 0.1);
   --shadow-box: 0 4px 15px rgba(0, 0, 0, 0.2);
   --border-box: #32323A;

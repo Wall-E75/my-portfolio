@@ -141,6 +141,11 @@
     transform: scale(1.1);
 }
 
+.logoMail {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
 .wallPaper {
     position: absolute;
     top: 0;
@@ -435,7 +440,7 @@
         font-weight: 700;
         margin: 0 2rem;
         padding: 1.1rem;
-        min-width: 200px;
+        min-width: 295px;
     }
 
     .logo .icon {

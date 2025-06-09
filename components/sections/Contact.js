@@ -247,14 +247,14 @@ function Contact() {
 
 
                 <section className={styles.socialContact}>
-                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/'>
+                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/' target='_blank' rel='noopener'>
                         <FontAwesomeIcon 
                             className={styles.icon}  
                             icon={faLinkedin} aria-label="LinkdIn"
                             aria-label="LinkdIn"  
                         />
                     </Link>
-                    <Link href='https://github.com/Wall-E75'>
+                    <Link href='https://github.com/Wall-E75' target='_blank' rel='noopener'>
                         <FontAwesomeIcon 
                             className={styles.icon} 
                             icon={faGithub} aria-label="GitHub" 
