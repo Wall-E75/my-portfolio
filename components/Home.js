@@ -19,7 +19,7 @@ function Home() {
       <main className={styles.main}>
         <section className={`${styles.home} ${styles.container}`}>
           <div className={styles.cell1}></div>
-          <div className={styles.cell2}>2</div>
+          <div className={styles.cell2}></div>
 
           <div className={styles.titleContainer}>
             <p className={styles.name}>Wali Sylla</p>
