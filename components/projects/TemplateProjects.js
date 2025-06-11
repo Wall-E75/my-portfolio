@@ -41,7 +41,7 @@ function TemplateProjects(props) {
                         alt={props.alt}
                         width={400}
                         height={300}
-                        priority={false}
+                        priority={props.priority || false}
                     />
                 </div>
 

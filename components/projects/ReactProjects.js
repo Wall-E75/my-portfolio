@@ -2,6 +2,7 @@ import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
 import { merriweather, raleway } from '../ui/fonts';
+import { printCustomRoutes } from 'next/dist/build/utils';
 
 export const reactProjectsData = [
         {
@@ -16,7 +17,8 @@ export const reactProjectsData = [
                 back: 'https://github.com/victor-blanchard/assos-backend.git'
                 },
             link: 'https://assos-frontend.vercel.app/',
-            category: 'React'
+            category: 'React',
+            priority: true
         },
 
         {
