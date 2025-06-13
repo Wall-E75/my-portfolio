@@ -2,14 +2,13 @@ import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useState } from 'react';
 import { merriweather, raleway } from '../ui/fonts';
-import { printCustomRoutes } from 'next/dist/build/utils';
 
 export const reactProjectsData = [
         {
             id: 1,
             name: 'La Sauce',
-            description: 'Site web réalisé en 10 jours avec une équipe de 3 lors de mes études de developpement web. La sauce est une plateforme de mise en relation entre association et particulier.',
-            image: '/la_sauce.webp',
+            description: 'Site web réalisé en 10 jours avec une équipe de 3 étudiants développeurs. La sauce est une plateforme de mise en relation entre association et particulier.',
+            image: '/lasauce.webp',
             alt: 'logo la sauce',
             techno: 'FullStack - Front: React, NextJs, Redux, JSX, CSS, Antd Design | Back: NodeJs, Express, MongoDb, Mongoose, Cloudinary',
             github: {
@@ -18,7 +17,6 @@ export const reactProjectsData = [
                 },
             link: 'https://assos-frontend.vercel.app/',
             category: 'React',
-            priority: true
         },
 
         {
