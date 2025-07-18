@@ -1,0 +1,29 @@
+.languageSwitcher {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    border: 1px solid var(--neutral-medium);
+    padding: 4px;
+    background: var(--bg-box);
+    border-radius: 10px;
+    box-shadow: var(--shadow-box);
+    transition: all 0.2s ease;
+}
+
+.langBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border: none;
+    background-color: red;
+    cursor: pointer;
+}
+
+.flag {
+    background: transparent;
+    width: 24px;
+    height: 24px;
+
+}

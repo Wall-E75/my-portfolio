@@ -1,8 +1,9 @@
 import styles from '@styles/technoProject.module.css';
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { merriweather, raleway } from '../ui/fonts';
+import NextImageModule from 'next/image';
+const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function TemplateProjects(props) {
     const gitFrontOnly = (

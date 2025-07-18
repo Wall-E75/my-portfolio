@@ -5,6 +5,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import Menu from '@components/layouts/Menu';
 import { useVisibility } from "../../context/VisibilityContext";
 import ThemeSwitcher from '@components/ui/ThemeSwitcher';
+import LanguageSwitcher from '@components/ui/LanguageSwitcher';
 import { raleway } from '../ui/fonts'; 
 
 function Header() {
@@ -17,6 +18,7 @@ function Header() {
             <FontAwesomeIcon icon={faUser} className={styles.icon} />
           </Link>
           <ThemeSwitcher />
+          <LanguageSwitcher />
           <p className={styles.logoMail}>sylla.wali@me.com</p>
         </div>
         

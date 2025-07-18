@@ -2,8 +2,9 @@ import styles from '@styles/CarouselProject.module.css';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
-import Image from 'next/image';
 import TemplateProjects from '@components/projects/TemplateProjects';
+import NextImageModule from 'next/image';
+const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function CarouselProject({ 
     projects = [],

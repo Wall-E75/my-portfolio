@@ -6,6 +6,8 @@
             "@components/*": ["components/*"],
             "@styles/*": ["styles/*"],
             "@context/*": ["context/*"],
+            "@lib/*": ["lib/*"],
+            "@public/*": ["public/*"]
         },
         "checkJs": false
     },

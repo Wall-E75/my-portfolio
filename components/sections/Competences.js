@@ -1,5 +1,4 @@
 import styles from '@styles/Competences.module.css';
-import Image from 'next/image';
 import Carousel from '../layouts/Carousel';
 import { merriweather, raleway } from '../ui/fonts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,14 +10,17 @@ import {
     faGithub,
     faSquareJs,
     faJs
- } from '@fortawesome/free-brands-svg-icons';
+} from '@fortawesome/free-brands-svg-icons';
 
 // Icônes classiques (non-marques)
 import { 
     faDatabase,
     faSquareCaretUp,
     faWrench // Icône pour "outils"
- } from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/free-solid-svg-icons';
+import NextImageModule from 'next/image';
+const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
+
 function Competences() {
     const skillsData = [
         {

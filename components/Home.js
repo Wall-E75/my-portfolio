@@ -1,17 +1,17 @@
 import styles from '../styles/Home.module.css';
-// import Buttons from '@components/ui/Buttons';
+import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import Presentation from './sections/Presentation';
+import Presentation from '@components/sections/Presentation.js';
 
 
 
 function Home() {
-  console.log('client side');
+  const { t } = useTranslation('common');
   const router = useRouter();//Permet le changement de page
+
   const handleClick = () => {
     console.log('Clic');
     router.push('/presentation');
-    
   }
 
   return (
@@ -22,19 +22,16 @@ function Home() {
           <div className={styles.cell2}></div>
 
           <div className={styles.titleContainer}>
-            <p className={styles.name}>Wali Sylla</p>
+            <p className={styles.name}>{t('home.name')}</p>
             <h1 className={styles.title}>
-              Developpeur Web Full Stack
+              {t('home.job')}
             </h1>
+            {/* <p className={styles.description}>
+              {t('home.welcome')}
+            </p> */}
           </div>
         </section>
       
-        
-      {/* <Buttons
-        onClick={handleClick}//Au clic sur le bouton, on est redirigé vers la page /presentation
-        text="En savoir plus" 
-      /> */}
-      {/* <button onClick={handleClick}>presentation</button> */}
       <section id='presentation' className={styles.presentation}>
         <Presentation />
       </section>

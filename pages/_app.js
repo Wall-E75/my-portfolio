@@ -6,14 +6,18 @@ import { useEffect } from 'react';
 import { VisibilityProvider } from '../context/VisibilityContext';
 import { ThemeProvider, useTheme } from '@context/ThemeContext';
 import { merriweather } from '@/components/ui/fonts';
-// import 'antd/dist/reset.css'; // Import global pour Ant Design v5
+import { appWithTranslation } from 'next-i18next';
 
 function LayoutWrapper({children}) {
   const { theme } = useTheme();
   useEffect(() => {
-    document.body.classList.remove("theme-light", "theme-dark", "theme-colorful"); // On retire les classes de theme
-    document.body.classList.add(`theme-${theme}`); // On ajoute la classe theme-${theme} pour changer le thème de l'application
-  })
+    const body = document.body;
+    body.classList.remove("theme-light", "theme-dark", "theme-colorful"); // On retire les classes de theme
+    body.classList.add(`theme-${theme}`); // On ajoute la classe theme-${theme} pour changer le thème de l'application
+    return () => {
+      body.classList.remove(`theme-${theme}`); // On retire la classe theme-${theme} lors du démontage du composant
+    };
+  }, [theme])
   return <>{children}</>;
   
       
@@ -22,17 +26,22 @@ function LayoutWrapper({children}) {
 
 function App({ Component, pageProps }) {
   const router = useRouter();
-  const isHomePage = router.pathname === '/'; //On vérifie si on est sur la page d'accueil
+  // const isHomePage = router.pathname === '/'; //On vérifie si on est sur la page d'accueil
   return (
     
       <VisibilityProvider>
         <Head>
           <title>SyllaDev | Portfolio</title>
+          <meta name="description" content="Portfolio de Wali Sylla, développeur fullstack React/NextJS, Redux, NodeJS, ExpressJs, MongoDB" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta httpEquiv="content-language" content={router.locale} />
         </Head>
         <ThemeProvider>
         <LayoutWrapper>
           <Header />
-          <Component className={`${merriweather.className}`} {...pageProps} />
+          <main className={`${merriweather.className}`}>
+            <Component {...pageProps} />
+          </main>
         </LayoutWrapper>
         </ThemeProvider>
 
@@ -40,4 +49,4 @@ function App({ Component, pageProps }) {
   );
 }
 
-export default App;
+export default appWithTranslation(App);

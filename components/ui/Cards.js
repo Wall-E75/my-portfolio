@@ -1,6 +1,7 @@
 import style from '@styles/Cards.module.css';
 import Link from 'next/link';
-import Image from 'next/image';
+import NextImageModule from 'next/image';
+const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function Cards(props) { 
     if(props.image2) {

@@ -2,7 +2,9 @@ import styles from '@styles/Carousel.module.css';
 import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import Image from 'next/image';
+import NextImageModule from 'next/image';
+
+const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function Carousel({ skillsData }) {
     const [currentIndex, setCurrentIndex] = useState(0); //Indique l'index de l'image actuelle
