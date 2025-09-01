@@ -22,7 +22,34 @@
       "email": "sylla.wali@me.com"
     }
   },
-  "Projects": {
-
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Project Selection",
+    "sectionDescription": "Here's a selection of projects I've worked on. Feel free to click on the links to learn more!",
+    "categoriesTitle": "Browse my projects organized by technologies",
+    "categories": {
+      "htmlCss": {
+        "title": "HTML/CSS",
+        "description": "Projects built with core web technologies: HTML5 and CSS3. These projects focus on semantic structure and responsive design."
+      },
+      "jsVanilla": {
+        "title": "Vanilla JavaScript",
+        "description": "Applications developed in pure JavaScript, without frameworks. These projects demonstrate my mastery of language fundamentals and DOM manipulation."
+      },
+      "react": {
+        "title": "React",
+        "description": "Modern web applications built with React. These projects illustrate my ability to create interactive and performant user interfaces."
+      },
+      "reactNative": {
+        "title": "React Native",
+        "description": "Cross-platform mobile applications developed with React Native. These projects showcase my expertise in mobile development."
+      }
+    },
+    "buttons": {
+      "viewProject": "View project",
+      "viewCode": "View code",
+      "liveDemo": "Live demo",
+      "learnMore": "Learn more"
+    }
   }
 }

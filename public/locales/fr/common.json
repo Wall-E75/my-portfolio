@@ -23,7 +23,36 @@
         }
 
     },
-    "Projects": {
-
+    "projects": {
+        "title": "Projets",
+        "subtitle": "Sélection de projets",
+        "sectionlDescription": "Voici une sélection de projets sur lesquels j'ai travaillé. N'hésitez pas à cliquer sur les liens pour en savoir plus !",
+        "categorieTitle": "Parcourez mes projets organisés par technologies",
+        "carouselTitle": "Projets JS Vanilla et React",
+        "categories": {
+            "htmlCss": {
+                "title": "HTML/CSS",
+                "description": "Projets réalisés avec les technologies de base du web : HTML5 et CSS3. Ces projets mettent l'accent sur la structure sémantique et le design responsive."
+            },
+            "jsVanilla": {
+                "title": "JavaScript Vanilla",
+                "description": "Applications développées en JavaScript pur, sans framework. Ces projets démontrent ma maîtrise des fondamentaux du langage et de la manipulation du DOM."
+            },
+            "react": {
+                "title": "React",
+                "description": "Applications web modernes construites avec React. Ces projets illustrent ma capacité à créer des interfaces utilisateur interactives et performantes."
+            },
+            "reactNative": {
+                "title": "React Native",
+                "description": "Applications mobiles cross-platform développées avec React Native. Ces projets montrent mon expertise dans le développement mobile."
+            }
+        },
+        "buttons": {
+            "viewProject": "Voir le projet",
+            "viewCode": "Voir le code",
+            "liveDemo": "Démo en direct",
+            "learnMore": "En savoir plus"
+        }
     }
+
 }

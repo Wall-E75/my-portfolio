@@ -4,13 +4,16 @@ import CarouselProject from '@components/layouts/CarouselProject';
 import { merriweather, raleway } from '../ui/fonts';
 import { jsVanillaProjectsData } from '../projects/JsVanillaProjects';
 import { reactProjectsData } from '../projects/ReactProjects';
+import { useTranslation } from 'next-i18next';
 
 function Projets() {
+    const { t } = useTranslation('common');
+
     const projectData = [
         {
             id: 1,
-            title: 'HTML/CSS',
-            description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 1',
+            title: t('projects.categories.htmlCss.title'),
+            description: t('projects.categories.description'),
             image: '/html5_icon.webp', 
             alt:'Logo html5', 
             image2: '/css_logo_icon.webp', 
@@ -20,8 +23,8 @@ function Projets() {
         },
         {
             id: 2,
-            title: 'Js Vanilla',
-            description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 2',
+            title: t('projects.categories.jsVanilla.title'),
+            description: t('projects.categories.jsVanilla.description'),
             image: '/Js_logo.webp',
             alt: 'Logo JavaScript',
             priority: false,
@@ -29,8 +32,8 @@ function Projets() {
         },
         {
             id: 3,
-            title: 'React',
-            description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 3',
+            title: t('projects.categories.react.title'),
+            description: t('projects.categories.react.description'),
             image: '/React_logo.webp',
             alt: 'Logo React',
             // priority: false,
@@ -39,8 +42,8 @@ function Projets() {
 
         {
             id: 4,
-            title: 'React native',
-            description: 'Lorem ipsum odor amet, consectetuer adipiscing elit. Consectetur fringilla cras nascetur conubia nisl, ut tincidunt? Vel duis fringilla class auctor mattis at penatibus. du projet 3',
+            title: t('projects.categories.reactNative.title'),
+            description: t('projects.categories.reactNative.description'),
             image: '/React_logo.webp',
             alt: 'Logo React',
             // priority: false,
@@ -75,13 +78,13 @@ function Projets() {
     return(
         <>
             <main className={`${styles.main} ${raleway.className}`}>
-                <h1 className={`${styles.title} ${merriweather.className}`}>Projets</h1>
+                <h1 className={`${styles.title} ${merriweather.className}`}>{t('projects.title')}</h1>
                 <section className={styles.carouselSection}>
                     <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        Selection de projets
+                        {t('projects.subtitle')}
                     </h2>
                     <p className={styles.sectionDescription}>
-                        Découvrez mes projets React et JavaScript qui témoignent de mon évolution en développement web full-stack.
+                        {t('projects.sectionDescription')}
                     </p>
 
                     <CarouselProject 
