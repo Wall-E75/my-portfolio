@@ -26,6 +26,7 @@
     "title": "Projects",
     "subtitle": "Project Selection",
     "sectionDescription": "Here's a selection of projects I've worked on. Feel free to click on the links to learn more!",
+    "carouselTitle": "JS Vanilla and React Projects",
     "categoriesTitle": "Browse my projects organized by technologies",
     "categories": {
       "htmlCss": {

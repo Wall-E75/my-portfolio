@@ -93,13 +93,13 @@ function Projets() {
                         autoplayInterval={6000}
                         showCategory={true}
                         showAutoplay={true}
-                        title="Projets JS Vanilla et React"
+                        title={t('projects.carouselTitle')}
                     />
                 </section>
 
                 <section className={styles.categoriesSection}>
                     <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        Parcourez mes projets organisés par technologies
+                        {t('projects.categoriesTitle')}
                     </h2>
 
                     <div className={styles.container}>

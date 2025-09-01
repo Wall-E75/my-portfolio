@@ -4,8 +4,10 @@ import CarouselProject from '@components/layouts/CarouselProject';
 import { useState } from 'react';
 import Link from 'next/link';
 import { merriweather, raleway } from '../ui/fonts';
+import { useTranslation } from 'next-i18next';
 
 function HtmlCssProjects() {
+    const { t } = useTranslation('common');
     const [isDeployed, setIsDeployed] = useState(false)
     const projectData = [
         {
