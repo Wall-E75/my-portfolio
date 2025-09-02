@@ -41,7 +41,7 @@ function Experiences(props) {
 
     const experiences = experienceData.map((xp, index) => {
         return <div key={index}>
-            <p>Nom de l'entreprise: {xp.entreprise}</p>
+            <p>Nom de l&apos;entreprise: {xp.entreprise}</p>
             <p>Année: {xp.startYear}</p>
             <p>Taches réalisées: {xp.task}</p>
         </div>

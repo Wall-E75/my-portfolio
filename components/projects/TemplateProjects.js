@@ -2,10 +2,12 @@ import styles from '@styles/technoProject.module.css';
 import { useState } from 'react';
 import Link from 'next/link';
 import { merriweather, raleway } from '../ui/fonts';
+import { useTranslation } from 'next-i18next';
 import NextImageModule from 'next/image';
 const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function TemplateProjects(props) {
+    const { t } = useTranslation('common');
     const gitFrontOnly = (
         <span  className={styles.rightText}>
             <Link href={props.github} target='_blank' rel='noopener noreferrer'>
@@ -16,13 +18,13 @@ function TemplateProjects(props) {
     const gitFullStack = (
         <div>
             <p className={styles.gitLink}>
-                <span>Frontend: </span>
+                <span>{t('projects.labels.frontend')}: </span>
                 <Link href={props.front} target='_blank' rel='noopener noreferrer'>
                     {props.front}
                 </Link>
             </p>
             <p className={styles.gitLink}>
-                <span>Backend: </span>
+                <span>{t('projects.labels.backend')}: </span>
                 <Link href={props.back} target='_blank' rel='noopener noreferrer'>
                     {props.back}
                 </Link>
@@ -53,20 +55,20 @@ function TemplateProjects(props) {
                         </h2>
                         <div className={styles.projectDesc}>
                             <div className={styles.paragraph}>
-                                <span className={styles.textTitle}>Description: </span>
+                                <span className={styles.textTitle}>{t('projects.labels.description')}: </span>
                                 <span className={styles.rightText}>{props.description}</span>
                             </div>
                             <div className={styles.paragraph}>
-                                <span className={styles.textTitle}>Technologies: </span>
+                                <span className={styles.textTitle}>{t('projects.labels.technologies')}: </span>
                                 <span className={styles.rightText}>{props.techno}</span>
                             </div>
                             <div className={styles.paragraph}>
-                                <span className={styles.textTitle}>GitHub: </span>
+                                <span className={styles.textTitle}>{t('projects.labels.github')}: </span>
                                 <span className={styles.rightText}>{githubLink}</span>
                             </div>
                             {props.link && (
                                 <div className={styles.paragraph}>
-                                    <span className={styles.textTitle}>Lien vers le site: </span>
+                                    <span className={styles.textTitle}>{t('projects.labels.website')}: </span>
                                     <span className={styles.rightText}>
                                         <Link  
                                             href={props.link}

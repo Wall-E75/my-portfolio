@@ -99,7 +99,7 @@ function Projets() {
 
                 <section className={styles.categoriesSection}>
                     <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        {t('projects.categoriesTitle')}
+                        {t('projects.categorieTitle')}
                     </h2>
 
                     <div className={styles.container}>

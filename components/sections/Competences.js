@@ -175,7 +175,7 @@ function Competences() {
                     <q className={styles.skillsText}>
                         <i>Mes expériences antérieures, mon permis de développé des compétences transversales et une grande adaptabilité. 
                         Autonome et rigoureux, je sais faire face aux défis avec efficacité. 
-                        De plus mes différentes formations continues m'ont permis d'acquérir et d'affiner des compétences techniques, 
+                        De plus mes différentes formations continues m&apos;ont permis d&apos;acquérir et d&apos;affiner des compétences techniques, 
                         dont voici un aperçu : </i>
                     </q>
                 </div>

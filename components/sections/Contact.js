@@ -163,7 +163,7 @@ function Contact() {
                     value={infosContact.email}
                 />
                 {emailError && error.includes("*L'email n'est pas valide") && (
-                    <p className={styles.emailError}>L'email n'est pas valide</p>)}
+                    <p className={styles.emailError}>L&apos;email n&apos;est pas valide</p>)}
             </label>
             <label htmlFor="messages" className={styles.message}>
                 Message *
@@ -250,15 +250,15 @@ function Contact() {
                     <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/' target='_blank' rel='noopener'>
                         <FontAwesomeIcon 
                             className={styles.icon}  
-                            icon={faLinkedin} aria-label="LinkdIn"
+                            icon={faLinkedin} 
                             aria-label="LinkdIn"  
                         />
                     </Link>
                     <Link href='https://github.com/Wall-E75' target='_blank' rel='noopener'>
                         <FontAwesomeIcon 
                             className={styles.icon} 
-                            icon={faGithub} aria-label="GitHub" 
-                            aria-label="GitHub"
+                            icon={faGithub} 
+                            aria-label="GitHub" 
                         />
                     </Link>
                 </section>

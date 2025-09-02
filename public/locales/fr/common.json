@@ -21,14 +21,13 @@
             "city": "Paris",
             "email": "sylla.wali@me.com"
         }
-
     },
     "projects": {
         "title": "Projets",
         "subtitle": "Sélection de projets",
-        "sectionlDescription": "Voici une sélection de projets sur lesquels j'ai travaillé. N'hésitez pas à cliquer sur les liens pour en savoir plus !",
-        "categorieTitle": "Parcourez mes projets organisés par technologies",
+        "sectionDescription": "Voici une sélection de projets sur lesquels j'ai travaillé. N'hésitez pas à cliquer sur les liens pour en savoir plus !",
         "carouselTitle": "Projets JS Vanilla et React",
+        "categorieTitle": "Parcourez mes projets organisés par technologies",
         "categories": {
             "htmlCss": {
                 "title": "HTML/CSS",
@@ -47,12 +46,13 @@
                 "description": "Applications mobiles cross-platform développées avec React Native. Ces projets montrent mon expertise dans le développement mobile."
             }
         },
-        "buttons": {
-            "viewProject": "Voir le projet",
-            "viewCode": "Voir le code",
-            "liveDemo": "Démo en direct",
-            "learnMore": "En savoir plus"
+        "labels": {
+            "description": "Description",
+            "technologies": "Technologies",
+            "github": "GitHub",
+            "website": "Lien vers le site",
+            "frontend": "Frontend",
+            "backend": "Backend"
         }
     }
-
 }
