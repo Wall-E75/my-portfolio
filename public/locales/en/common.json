@@ -53,6 +53,22 @@
       "website": "Lien vers le site",
       "frontend": "Frontend",
       "backend": "Backend"
+    },
+    "pagesTitles": {
+      "htmlCss": "HTML/CSS",
+      "jsVanilla": "JavaScript Projects",
+      "react": "React Projects",
+      "reactNative": "React Native Projects"
+    },
+    "htmlCssProjects": {
+      "booki": {
+        "name": "Booki",
+        "description": "Accommodation and activity booking platform."
+      },
+      "ohmyfood": {
+        "name": "OhMyFood",
+        "description": "Online food ordering website, designed with Sass for better CSS organization and animations managed via @keyframes."
+      }
     }
   }
 }

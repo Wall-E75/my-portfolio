@@ -3,6 +3,7 @@ import { useState } from 'react';
 import TemplateProjects from '@components/projects/TemplateProjects';
 import Image from 'next/image';
 import { merriweather, raleway } from '../ui/fonts';
+import { useTranslation } from 'next-i18next';
 
 // EXPORT DES DATA POUR LES REUTILISER
 
@@ -67,7 +68,7 @@ export const jsVanillaProjectsData = [
 
 function JsVanillaProjects() {
     // const [isDeployed, setIsDeployed] = useState(false)
-
+    const { t } = useTranslation('common');
     const projectList = jsVanillaProjectsData.map((project) => {
         return <TemplateProjects 
                     key={project.id}  
@@ -80,7 +81,7 @@ function JsVanillaProjects() {
         <>
             <main className={`${styles.mainContainer} ${raleway?.className || ''}`}>
                 <h1 className={`${styles.themeTitle} ${merriweather?.className || ''}`}>
-                    JavaScript Projects
+                    {t('projects.pagesTitles.jsVanilla')}
                 </h1>
                 {projectList}  
 

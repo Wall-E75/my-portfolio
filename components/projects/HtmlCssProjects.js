@@ -12,8 +12,8 @@ function HtmlCssProjects() {
     const projectData = [
         {
             id: 1,
-            name: 'Booki',
-            description: 'Plateforme de réservation d\'hébergements et d\'activités.',
+            name: t('projects.htmlCssProjects.booki.name'),
+            description: t('projects.htmlCssProjects.booki.description'),
             image: '/booki_logement.webp',
             alt: 'logo booki',
             techno: 'html, Css',
@@ -24,8 +24,8 @@ function HtmlCssProjects() {
 
         {
             id: 2,
-            name: 'OhMyFood',
-            description: 'Site de commande de repas en ligne, conçu avec Sass pour une meilleure organisation du CSS et des animations gérées via @keyframes.',
+            name: t('projects.htmlCssProjects.ohmyfood.name'),
+            description: t('projects.htmlCssProjects.ohmyfood.description'),
             image: '/ohmyfood_restaurant.webp',
             alt: 'logo oh my food',
             techno: 'html, Css, Saas, keyframe',
@@ -59,7 +59,7 @@ function HtmlCssProjects() {
         <>
         <main className={`${styles.mainContainer} ${raleway?.className || ''}`}>
             <h1 className={`${styles.themeTitle} ${merriweather?.className || ''}`}>
-                HTML/CSS
+                {t('projects.pagesTitles.htmlCss')}
             </h1>
                {/* {projectList} */}
                {/* {projectCarousel} */}
