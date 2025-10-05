@@ -2,13 +2,15 @@ import styles from '@styles/Formations.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { merriweather, raleway } from '../ui/fonts';
+import { useTranslation } from 'next-i18next';
 
 function Formations() {
+    const { t } = useTranslation('common');
     return(
         <>
             <main className={`${styles.main} ${raleway.className}`}>
                 <h1 className={`${styles.title} ${raleway.className}`}>
-                    Formations & Certifications
+                    {t('education.title')}
                 </h1>
                 <div className={styles.iconContainer}>
                         <FontAwesomeIcon 
@@ -18,19 +20,36 @@ function Formations() {
                 </div>
                 <div className={styles.formationContainer}>
                     <div className={styles.infos}>
-                        <h2 className={merriweather.className}>Diplôme</h2>
-                        <p><strong>2025</strong> : Titre RNCP niveau 6 (Bac+ 3/4)</p>
-                        <p>Concepteur Développeur d'Application Web et Mobile</p>
+                        <h2 className={merriweather.className}>
+                            {t('education.diploma.title')}
+                        </h2>
+                        <p>
+                            <strong>{t('education.diploma.year')}</strong> : {t('education.diploma.level')}
+                        </p>
+                        <p>{t('education.diploma.name')}</p>
                     </div>
+
                     <div className={styles.infos}>
-                        <h2 className={merriweather.className}>Formations</h2>
-                        <p><strong>2024 - 2025</strong> : CodingBootCamp - La Capsule</p>
-                        <p><strong>2022 - 2023</strong> : Developpeur web - OpenClassRoom</p>
+                        <h2 className={merriweather.className}>
+                            {t('education.training.title')}
+                        </h2>
+                        {t('education.training.items', { returnObjects: true }).map((item, index) => (
+                            <p key={index}>
+                                <strong>{item.period}</strong> : {item.name}
+                            </p>
+
+                        ))}
                     </div>   
                     <div className={styles.infos}>
-                        <h2 className={merriweather.className}>Langues</h2>
-                        <p><strong>Français</strong> : langue maternelle</p>
-                        <p><strong>Anglais</strong> : compréhension écrite avancée, expression orale intermédiaire</p>
+                        <h2 className={merriweather.className}>
+                            {t('education.languages.title')}
+                        </h2>
+                        {t('education.languages.items', { returnObjects: true }).map((item, index) => (
+                            <p key={index}>
+                                <strong>{item.language}</strong> : {item.level}
+                            </p>
+
+                        ))}
                     </div>
                 </div>
             </main>
