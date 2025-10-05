@@ -36,6 +36,41 @@
             "email": "sylla.wali@me.com"
         }
     },
+    "education": {
+        "title": "Formations & Certifications",
+        "diploma": {
+            "title": "Diplôme",
+            "year": "2025",
+            "level": "Titre RNCP Niveau 6 (Bac+ 3/4)",
+            "name": "Concepteur Développeur d'Application Web et Mobile"
+        },
+        "training": {
+            "title": "Formations",
+            "items": [
+                {
+                    "period": "2024 - 2025",
+                    "name": "CodingBootCamp - La Capsule"
+                },
+                {
+                    "period": "2022 - 2023",
+                    "name": "Développeur web - OpenClassRooms"
+                }
+            ]
+        },
+        "languages": {
+            "title": "Langues",
+            "items": [
+                {
+                    "language": "Français",
+                    "level": "langue maternelle"
+                },
+                {
+                    "language": "Anglais",
+                    "level": "Compréhension de documentation technique, expréssion orale intermédiare"
+                }
+            ]
+        }
+    },
     "skills": {
         "title": "Mes compétences",
         "intro": "Mes ecpériences antérieures m'ont permis de développer des compétences ransversales et une grande adaptabilité. Autonome et rigoureux, je sais faire face aux défis avec efficacité. De plus mes différentes formations continues m'ont permis d'acquérir et d'affiner des compétences techniques, dont voici un aperçu :",
