@@ -36,6 +36,41 @@
       "email": "sylla.wali@me.com"
     }
   },
+  "education": {
+      "title": "Education & Certifications",
+      "diploma": {
+        "title": "Diploma",
+        "year": "2025",
+        "level": "RNCP Level 6 Certification (Bachelor's +3/4)",
+        "name": "Web and Mobile Application Designer Developer "
+      },
+      "training": {
+        "title": "Training",
+        "items": [
+          {
+              "period": "2024 - 2025",
+              "name": "CodingBootCamp - La Capsule"
+          },
+          {
+              "period": "2022 - 2023",
+              "name": "Web Developer - OpenClassRooms"
+          }
+        ]
+      },
+      "languages": {
+        "title": "Languages",
+        "items": [
+            {
+                "language": "French",
+                "level": "native languuage"
+            },
+            {
+                "language": "English",
+                "level": "technical doucumentation comprehension, intermediate oral expression"
+            }
+        ]
+      }
+  },
   "skills": {
     "title": "My Skills",
     "intro": "My previous experiences have allowed me to develop cross-functional skills and great adaptability. Autonomous and rigourous, I know how to face challenges efficiently. Additionally, my various continuing education programs have allowed me to acquire and refine technical skills, here's an overview:",
