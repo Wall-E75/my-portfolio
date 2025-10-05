@@ -18,128 +18,142 @@ import {
     faSquareCaretUp,
     faWrench // Icône pour "outils"
 } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'next-i18next';
 import NextImageModule from 'next/image';
 const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function Competences() {
-    const skillsData = [
+    const { t } = useTranslation('common');
+    const getSkillsData = () => [
         {
-            title: 'Front-end',
+            title: t('skills.categories.frontend.title'),
             skills: [
                 {
-                    name:'JavaScript',
+                    name: t('skills.categories.frontend.skills.javascript'),
                     icon: faJs,
                 }, 
                 {
-                    name: 'HTML5',
+                    name: t('skills.categories.frontend.skills.html5'),
                     icon: faHtml5,
                 }, 
                 {
-                    name: 'CSS3',
+                    name: t('skills.categories.frontend.skills.css3'),
                     icon: faCss3,
                 }, 
                 {
-                    name: 'React',
+                    name: t('skills.categories.frontend.skills.react'),
                     icon: faReact,
                 },
                 {
-                    name: 'Next.js',
+                    name: t('skills.categories.frontend.skills.nextjs'),
                     icon: faSquareCaretUp,
                 },
                 {
-                    name: 'React-native',
+                    name: t('skills.categories.frontend.skills.reactnative'),
                     icon: faSquareJs,
                 },
                 {
-                    name: 'Tailwind',
+                    name: t('skills.categories.frontend.skills.tailwind'),
                     icon: '/Tailwind_CSS_Logo.svg',
                 }
             ]
         },
         {
-            title: 'Back-end',
+            title: t('skills.categories.backend.title'),
             skills: [
                 {
-                    name: 'Node.js',
+                    name: t('skills.categories.backend.skills.nodejs'),
                     icon: faNodeJs,
                 },
                 {
-                    name: 'Express',
+                    name: t('skills.categories.backend.skills.express'),
                     icon: faNodeJs,
                 },
                 {
-                    name: 'RESTful API',
+                    name: t('skills.categories.backend.skills.restapi'),
                     icon: faWrench,
                 }
             ]
         },
         {
-            title: 'Base de données',
+            title: t('skills.categories.database.title'),
             skills: [
                 {
-                    name: 'MongoDB',
+                    name: t('skills.categories.database.skills.mongodb'),
                     icon: faDatabase,
                 },
                 {
-                    name: 'Mongoose',
+                    name: t('skills.categories.database.skills.mongoose'),
+                    icon: faDatabase,
+                },
+                {
+                    name: t('skills.categories.database.skills.sql'),
+                    icon: faDatabase,
+                },
+                {
+                    name: t('skills.categories.database.skills.postgresql'),
                     icon: faDatabase,
                 }
             ]
         },
         {
-            title: 'Outils',
+            title: t('skills.categories.tools.title'),
             skills: [
                 {
-                    name: 'Git',
+                    name: t('skills.categories.tools.skills.git'),
                     icon: faGithub,
                 },
                 {
-                    name: 'GitHub',
+                    name: t('skills.categories.tools.skills.github'),
                     icon: faGithub,
                 },
                 {
-                    name: 'VSCode',
+                    name: t('skills.categories.tools.skills.vscode'),
                     icon: faWrench,
                 },
                 {
-                    name: 'Postman',
+                    name: t('skills.categories.tools.skills.postman'),
                     icon: faWrench,
                 },
                 {
-                    name: 'ThunderClient',
+                    name: t('skills.categories.tools.skills.thunderclient'),
                     icon: faWrench,
                 },
                 {
-                    name: 'Expo',
+                    name: t('skills.categories.tools.skills.figma'),
+                    icon: faWrench,
+                },
+                {
+                    name: t('skills.categories.tools.skills.expo'),
                     icon: faWrench,
                 }
             ]
         },
         {
-            title: 'Autres compétences',
+            title: t('skills.categories.other.title'),
             skills: [
                 {
-                    name: 'Responsive design',
+                    name: t('skills.categories.other.skills.responsive'),
                     icon: faWrench,
                 },
                 {
-                    name: 'SEO',
+                    name: t('skills.categories.other.skills.seo'),
                     icon: faWrench,
                 },
                 {
-                    name: 'Accessibilité',
+                    name: t('skills.categories.other.skills.accessibility'),
                     icon: faWrench,
                 },
                 {
-                    name: 'Web sémantique',
+                    name: t('skills.categories.other.skills.agile'),
                     icon: faWrench,
                 },
                 {
-                    name: 'Performance web',
+                    name: t('skills.categories.other.skills.scrum'),
                     icon: faWrench,
                 },
                 {
-                    name: 'Gestion de projet',
+                    name: t('skills.categories.other.skills.projectmanagement'),
                     icon: faWrench,
                 }
             ]
@@ -167,16 +181,16 @@ function Competences() {
     //  const skillsCarousel = skillsData.map((skill, index) => {
     //     return <Carousel key={index} {...skill} />
     //  });
+    const skillsData = getSkillsData();
     return (
         <>
             <main className={`${styles.main} ${raleway.className}`}>
-            <h1 className={`${styles.title} ${styles.titleColor} ${merriweather.className}`}>Mes compétences</h1>
+            <h1 className={`${styles.title} ${styles.titleColor} ${merriweather.className}`}>
+                {t('skills.title')}
+            </h1>
                 <div className={styles.skillsIntro}>
                     <q className={styles.skillsText}>
-                        <i>Mes expériences antérieures, mon permis de développé des compétences transversales et une grande adaptabilité. 
-                        Autonome et rigoureux, je sais faire face aux défis avec efficacité. 
-                        De plus mes différentes formations continues m&apos;ont permis d&apos;acquérir et d&apos;affiner des compétences techniques, 
-                        dont voici un aperçu : </i>
+                        <i>{t('skills.intro')}</i>
                     </q>
                 </div>
 

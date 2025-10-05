@@ -5,71 +5,67 @@ import Image from 'next/image';
 import { merriweather, raleway } from '../ui/fonts';
 import { useTranslation } from 'next-i18next';
 
-// EXPORT DES DATA POUR LES REUTILISER
+export const getJsVanillaProjectsData = (t) => [  
+    {
+        id: '1',
+        name: t('projects.jsVanillaProjects.kanap.name'),
+        description: t('projects.jsVanillaProjects.kanap.description'),
+        image: '/kanap.webp',
+        alt: 'Un canapé',
+        techno: 'Html, Css, JavaScript',
+        github: 'https://github.com/Wall-E75/kanap.git',
+        link: '',
+        category: 'JavaScript'
+    },
 
-export const jsVanillaProjectsData = [
-        
-        {
-            id: '1',
-            name: 'Kanap',
-            description: 'Boutique en ligne spécialisée dans la vente de canapés.',
-            image: '/kanap.webp',
-            alt: 'Un canapé',
-            techno: 'Html, Css, JavaScript',
-            github: 'https://github.com/Wall-E75/kanap.git',
-            link: '',
-            category: 'JavaScript'
+    {
+        id: '2',
+        name: t('projects.jsVanillaProjects.laPanthere.name'),
+        description: t('projects.jsVanillaProjects.laPanthere.description'),
+        image: '/la_panthere.webp',
+        alt: 'Logo panthere',
+        techno: 'SEO',
+        github: 'https://github.com/Wall-E75/la_panthere.github.io',
+        link: 'https://wall-e75.github.io/la_panthere.github.io/',
+        category: 'JavaScript'
+    },
+
+    {
+        id: '3',
+        name: t('projects.jsVanillaProjects.tickethack.name'),
+        description: t('projects.jsVanillaProjects.tickethack.description'),
+        image: '/tickethack.webp',
+        alt: 'Un train',
+        techno: 'Html, Css, JavaScript',
+        github: {
+            front: 'https://github.com/Wall-E75/ticketHack-frontend.git',
+            back: 'https://github.com/Wall-E75/ticketHack-backend.git'
         },
+        link: 'https://ticket-hack-frontend-azure.vercel.app/',
+        category: 'JavaScript'
+    },
 
-        {
-            id: '2',
-            name: 'La Panthere',
-            description: 'Agence de web design, pour ce site mon travail consistait à optimiser le referencement naturel (SEO), pour une meilleur visibilité en ligne',
-            image: '/la_panthere.webp',
-            alt: 'Logo panthere',
-            techno: 'SEO',
-            github: 'https://github.com/Wall-E75/la_panthere.github.io',
-            link: 'https://wall-e75.github.io/la_panthere.github.io/',
-            category: 'JavaScript'
+    {
+        id: '4',
+        name: t('projects.jsVanillaProjects.weatherapp.name'),
+        description: t('projects.jsVanillaProjects.weatherapp.description'),
+        image: '/weather.avif',
+        alt: 'Une representation de la météo avec plusieurs icônes de temps',
+        techno: 'Html, Css, JavaScript | NodeJs, Express, MongoDb, Mongoose, Vercel, Webservice',
+        github: {
+            front: 'https://github.com/Wall-E75/weatherapp-frontend.git',
+            back: 'https://github.com/Wall-E75/weatherapp-backend.git'
         },
-
-        {
-            id: '3',
-            name: 'Tickethack',
-            description: 'Site de réservation de billet de train, mise en place de fonctionnalités clés tel que la gestion de panier (ajout, suppression, sauveagrde).',
-            image: '/tickethack.webp',
-            alt: 'Un train',
-            techno: 'Html, Css, JavaScript',
-            github: {
-                front: 'https://github.com/Wall-E75/ticketHack-frontend.git',
-                back: 'https://github.com/Wall-E75/ticketHack-backend.git'
-            },
-            link: 'https://ticket-hack-frontend-azure.vercel.app/',
-            category: 'JavaScript'
-        },
-
-        {
-            id: '4',
-            name: 'WeatherApp',
-            description: 'FullStack: Site météo, permettant de consulter la météo de n\'importe quelle ville à l\'aide d\'une api',
-            image: '/weather.avif',
-            alt: 'Une representation de la météo avec plusieurs icônes de temps',
-            techno: 'Html, Css, JavaScript | NodeJs, Express, MongoDb, Mongoose, Vercel, Webservice',
-            github: {
-                front: 'https://github.com/Wall-E75/weatherapp-frontend.git',
-                back: 'https://github.com/Wall-E75/weatherapp-backend.git'
-            },
-            link: 'https://weatherapp-frontend-chi.vercel.app',
-            category: 'JavaScript'
-        },
-
-
-    ];
-
+        link: 'https://weatherapp-frontend-chi.vercel.app',
+        category: 'JavaScript'
+    },
+];
 function JsVanillaProjects() {
     // const [isDeployed, setIsDeployed] = useState(false)
     const { t } = useTranslation('common');
-    const projectList = jsVanillaProjectsData.map((project) => {
+
+    const projectsData = getJsVanillaProjectsData(t);
+    const projectList = projectsData.map((project) => {
         return <TemplateProjects 
                     key={project.id}  
                     {...project}

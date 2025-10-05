@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import TemplateProjects from '@components/projects/TemplateProjects';
+import { useTranslation } from 'next-i18next';
 import NextImageModule from 'next/image';
 const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
@@ -12,6 +13,7 @@ function CarouselProject({
     showAutoplay = true,
     showCategory = true
  }) {
+    const { t } = useTranslation('common');
     const [currentIndex, setCurrentIndex] = useState(0); //Indique l'index du projet actuelle
     const [isPlaying, setIsPlaying] = useState(true); //Indique si le carousel est en lecture automatique
     const autoplayRef = useRef(null); //Référence pour l'intervalle d'autoplay
@@ -88,8 +90,7 @@ function CarouselProject({
     if (!projects || projects.length === 0) {
         return (
             <div className={styles.noProjects}>
-                <p>Aucun projet à afficher pour le moment</p>
-                <p>Les projets seront bientôt disponibles</p>
+                {t('projects.carouselProjects.noProjects.message')}
             </div>
         );
     }

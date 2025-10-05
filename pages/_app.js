@@ -7,6 +7,8 @@ import { VisibilityProvider } from '../context/VisibilityContext';
 import { ThemeProvider, useTheme } from '@context/ThemeContext';
 import { merriweather } from '@/components/ui/fonts';
 import { appWithTranslation } from 'next-i18next';
+import nextI18NextConfig from '../next-i18next.config.js';
+
 
 function LayoutWrapper({children}) {
   const { theme } = useTheme();
@@ -49,4 +51,4 @@ function App({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(App);
+export default appWithTranslation(App, nextI18NextConfig);

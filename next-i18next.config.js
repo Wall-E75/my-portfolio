@@ -1,6 +1,3 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
-
 const config = {
     i18n: {
         defaultLocale: 'fr',

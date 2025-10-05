@@ -2,8 +2,8 @@ import styles from '@styles/Projets.module.css';
 import Cards from '@components/ui/Cards';
 import CarouselProject from '@components/layouts/CarouselProject';
 import { merriweather, raleway } from '../ui/fonts';
-import { jsVanillaProjectsData } from '../projects/JsVanillaProjects';
-import { reactProjectsData } from '../projects/ReactProjects';
+import { getJsVanillaProjectsData, jsVanillaProjectsData } from '../projects/JsVanillaProjects';
+import { getReactProjectsData, reactProjectsData } from '../projects/ReactProjects';
 import { useTranslation } from 'next-i18next';
 
 function Projets() {
@@ -49,22 +49,10 @@ function Projets() {
             // priority: false,
             link: 'reactNativeProjects',
         },
-
-        // {
-        //     id: 4,
-        //     title: 'Full Stack',
-        //     description: '',
-        //     image: '/icon-react-native.webp',
-        //     alt: '',
-        //     link: '',
-        // }
     ];
-    const allProjects = [...jsVanillaProjectsData, ...reactProjectsData];
-    console.log('Tous les projets ====>', allProjects);
-    console.log('Projets JS Vanilla ===>', jsVanillaProjectsData);
-    console.log('Projets React ===>', reactProjectsData);
-    
-
+    const jsVanillaData = getJsVanillaProjectsData(t);
+    const reactData = getReactProjectsData(t);
+    const allProjects = [...jsVanillaData, ...reactData];
     const projectCards = projectData.map((project, index) => (
         <div key={index}  className={styles.cardContainer}>
             <Cards 
@@ -81,7 +69,7 @@ function Projets() {
                 <h1 className={`${styles.title} ${merriweather.className}`}>{t('projects.title')}</h1>
                 <section className={styles.carouselSection}>
                     <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        {t('projects.subtitle')}
+                        {t('projects.sectionTitle')}
                     </h2>
                     <p className={styles.sectionDescription}>
                         {t('projects.sectionDescription')}
@@ -99,7 +87,7 @@ function Projets() {
 
                 <section className={styles.categoriesSection}>
                     <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        {t('projects.categorieTitle')}
+                        {t('projects.categoriesTitle')}
                     </h2>
 
                     <div className={styles.container}>

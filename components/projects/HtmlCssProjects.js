@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 
 function HtmlCssProjects() {
     const { t } = useTranslation('common');
+    console.log('translation function:', t);
     const [isDeployed, setIsDeployed] = useState(false)
     const projectData = [
         {

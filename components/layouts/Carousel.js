@@ -1,7 +1,7 @@
 import styles from '@styles/Carousel.module.css';
 import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import NextImageModule from 'next/image';
 
 const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
@@ -10,9 +10,7 @@ function Carousel({ skillsData }) {
     const [currentIndex, setCurrentIndex] = useState(0); //Indique l'index de l'image actuelle
     const [isPlaying, setIsPlaying] = useState(true); //Indique si le carousel est en lecture automatique
     const autoplayRef = useRef(null); //Référence pour l'intervalle d'autoplay
-    const intervalTime = 6000; //Temps entre chaque image
-
-   
+    const intervalTime = 6000; //Temps entre chaque image   
    
     const nextSlide = () => {
         setCurrentIndex((prevIndex) =>
@@ -20,7 +18,7 @@ function Carousel({ skillsData }) {
         );
     };
 
-    // Fonctopn pour passer à la slide précédente
+    // Fonction pour passer à la slide précédente
     const prevSlide = () => {
         setCurrentIndex(prevIndex =>
             prevIndex === 0 ? skillsData.length - 1 : prevIndex - 1
@@ -33,12 +31,22 @@ function Carousel({ skillsData }) {
         setCurrentIndex(index);
     };
 
+    // Fonction pour basculer play/pause
+    const togglePlayPause = () => {
+        setIsPlaying(!isPlaying);
+    };
+
     // Gestion de l'autoplay
     useEffect(() => {
         if (isPlaying) {
             autoplayRef.current = setInterval(() => {
                 nextSlide();
             }, intervalTime)
+        } else {
+            // Arret de l'autoplay si en pause
+            if (autoplayRef.current) {
+                clearInterval(autoplayRef.current);
+            }
         }
         // Netoyage lors du démontage du composant
         return () => {
@@ -46,11 +54,10 @@ function Carousel({ skillsData }) {
                 clearInterval(autoplayRef.current);
             }
         };
-    }, [isPlaying]);
+    }, [isPlaying, currentIndex]);
     return (
         <>
             <div className={styles.carousel}>
-            
                 <div className={styles.carouselContainer}>
                     <div 
                         className={styles.carouselSlides}
@@ -92,10 +99,7 @@ function Carousel({ skillsData }) {
                             </div>
                         ))}
                     </div>
-                    
                 </div>
-                        
-               
 
                 <div className={styles.carouselControls}>
                     <button 
@@ -104,6 +108,17 @@ function Carousel({ skillsData }) {
                         aria-label='Slide précédente'
                     >
                         <FontAwesomeIcon icon={faChevronLeft} />
+                    </button>
+                    <button
+                        className={`${styles.btn} ${styles.playPauseBtn}`}
+                        onClick={togglePlayPause}
+                        aria-label={isPlaying ? 'Mettre en pause' : 'Reprendre la lecture'}
+                        title={isPlaying ? 'Mettre en pause': 'Reprendre'}
+                    >
+                        <FontAwesomeIcon
+                            icon={isPlaying ? faPause : faPlay}
+                            className={styles.playPauseIcon}
+                        />
                     </button>
                     <button 
                         className={styles.btn}
@@ -127,10 +142,8 @@ function Carousel({ skillsData }) {
                                 {index + 1}
                             </button>
                         ))}
-                </div>
+                </div>               
             </div>
-
-            
         </>
     );
 };

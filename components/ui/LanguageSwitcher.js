@@ -1,14 +1,17 @@
 import styles from '@styles/LanguageSwitcher.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 import NextImageModule from 'next/image';
 const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function LanguageSwitcher() {
     const router = useRouter();
-    const { i18n } = useTranslation();
     const [isChanging, setIsChanging] = useState(false);
+
+    const datalang = {
+        'fr': { country: 'france.png', alt: 'Drapeau de la France', title: 'Français' },
+        'en': { country: 'royaume-uni.png', alt: 'Drapeau du Royaume-Uni', title: 'English' }
+    };
 
     const handleLanguageChange = async (lang) => {
         console.log('Changement de langue vers:', lang);
@@ -18,12 +21,6 @@ function LanguageSwitcher() {
 
         try {
             const { pathname, asPath, query } = router;
-
-            // Change la langue pour react-i18next
-            if (i18n.changeLanguage) {
-                i18n.changeLanguage(lang);
-            }
-
             // Redirige vers la même page avec la nouvelle langue pour Next.js
             await router.push({ pathname, query }, asPath, { locale: lang });
 
@@ -31,35 +28,30 @@ function LanguageSwitcher() {
             console.error('Erreur lors du chargement de langue:', error);
         } finally {
             setIsChanging(false);
-        }
+        };
     };
+
+    const toggleLanguage = () => {
+            const newLang = router.locale === 'fr' ? 'en' : 'fr';
+            handleLanguageChange(newLang);
+    };
+     // Langue actuelle affichée dans le bouton
+    const currentLang = router.locale || 'fr';
+    const langData = datalang[currentLang];
+
 
     return (
         <div className={styles.languageSwitcher}>
             <button
-                onClick={() => handleLanguageChange('fr')}
+                onClick={toggleLanguage}
                 className={`${styles.langBtn} ${router.locale === 'fr' ? styles.active : ''}`}
                 disabled={isChanging}
-                aria-label='Changer vers le français'
+                aria-label={`Changer vers ${currentLang === "fr" ? "anglais" : "français"}`}
+                title={langData.title}
             >
                 <Image
-                    src='/france.png'
-                    alt='Drapeau de la France'
-                    width={24}
-                    height={24}
-                    className={styles.flag}
-                />
-            </button>
-
-              <button
-                onClick={() => handleLanguageChange('en')}
-                className={`${styles.langBtn} ${router.locale === 'en' ? styles.active : ''}`}
-                disabled={isChanging}
-                aria-label='Switch to English'
-            >
-                <Image
-                    src='/royaume-uni.png'
-                    alt='Drapeau du Royaume-Uni'
+                    src={`/${langData.country}`}
+                    alt={langData.alt}
                     width={24}
                     height={24}
                     className={styles.flag}

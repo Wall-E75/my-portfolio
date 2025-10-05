@@ -4,43 +4,45 @@ import { useState } from 'react';
 import { merriweather, raleway } from '../ui/fonts';
 import { useTranslation } from 'next-i18next';
 
-export const reactProjectsData = [
-        {
-            id: 1,
-            name: 'La Sauce',
-            description: 'Site web réalisé en 10 jours avec une équipe de 3 étudiants développeurs. La sauce est une plateforme de mise en relation entre association et particulier.',
-            image: '/lasauce.webp',
-            alt: 'logo la sauce',
-            techno: 'FullStack - Front: React, NextJs, Redux, JSX, CSS, Antd Design | Back: NodeJs, Express, MongoDb, Mongoose, Cloudinary',
-            github: {
-                front: 'https://github.com/victor-blanchard/assos-frontend.git', 
-                back: 'https://github.com/victor-blanchard/assos-backend.git'
-                },
-            link: 'https://assos-frontend.vercel.app/',
-            category: 'React',
-        },
-
-        {
-            id: 2,
-            name: 'My Moviz',
-            description: 'Site web, permettant d\'afficher les derniers films à l\'aide de l\'API the movie database avec la possibilité d\'ajouter à sa wishlist des films, avec un compteur de vues et permet d\'évaluer chacun des films.',
-            image: '/moviz.webp',
-            alt: 'bande film',
-            techno: 'html, Css, React, NextJs, JSX | NodeJs, ExpressJs API, ',
-            github: {
-                front: 'https://github.com/Wall-E75/mymoviz-frontend.git',
-                back: 'https://github.com/Wall-E75/mymoviz-backend.git',
+export const getReactProjectsData = (t) => [
+    {
+        id: 1,
+        name: t('projects.reactProjects.lasauce.name'),
+        description: t('projects.reactProjects.lasauce.description'),
+        image: '/lasauce.webp',
+        alt: 'logo la sauce',
+        techno: 'FullStack - Front: React, NextJs, Redux, JSX, CSS, Antd Design | Back: NodeJs, Express, MongoDb, Mongoose, Cloudinary',
+        github: {
+            front: 'https://github.com/victor-blanchard/assos-frontend.git', 
+            back: 'https://github.com/victor-blanchard/assos-backend.git'
             },
-            link: 'https://mymoviz-frontend-theta-pied.vercel.app/',
-            category: 'React'
-        },
+        link: 'https://assos-frontend.vercel.app/',
+        category: 'React',
+    },
 
-    ];
+    {
+        id: 2,
+        name: t('projects.reactProjects.mymoviz.name'),
+        description: t('projects.reactProjects.mymoviz.description'),
+        image: '/moviz.webp',
+        alt: 'bande film',
+        techno: 'html, Css, React, NextJs, JSX | NodeJs, ExpressJs API, ',
+        github: {
+            front: 'https://github.com/Wall-E75/mymoviz-frontend.git',
+            back: 'https://github.com/Wall-E75/mymoviz-backend.git',
+        },
+        link: 'https://mymoviz-frontend-theta-pied.vercel.app/',
+        category: 'React'
+    },
+
+];
+
 function ReactProjects() {
     const { t } = useTranslation('common');
-    const [isDeployed, setIsDeployed] = useState(false)
+    const [isDeployed, setIsDeployed] = useState(false);
 
-    const projectList = reactProjectsData.map((project) => {
+    const projectsData = getReactProjectsData(t);
+    const projectList = projectsData.map((project) => {
         return <TemplateProjects 
                     key={project.id} 
                     {...project} 

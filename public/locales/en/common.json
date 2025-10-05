@@ -1,4 +1,18 @@
 {
+  "nav": {
+    "backToHome": "Back to home",
+    "mainNavigation": "Main navigation",
+    "projects": "Projects",
+    "projectsTitle": "Discover my projects",
+    "skills": "Skills",
+    "skillsTitle": "My technical skills", 
+    "experience": "Experience",
+    "experienceTitle": "My professional experience",
+    "education": "Education",
+    "educationTitle": "My education and certifications",
+    "contact": "Contact",
+    "contactTitle": "Contact me"
+  },
   "home": {
     "welcome": "Welcome to my portfolio! I'm a developer passionate about building modern web applications.",
     "greeting": "Hi!",
@@ -22,12 +36,70 @@
       "email": "sylla.wali@me.com"
     }
   },
+  "skills": {
+    "title": "My Skills",
+    "intro": "My previous experiences have allowed me to develop cross-functional skills and great adaptability. Autonomous and rigourous, I know how to face challenges efficiently. Additionally, my various continuing education programs have allowed me to acquire and refine technical skills, here's an overview:",
+    "categories": {
+      "frontend": {
+        "title": "Front-end",
+        "skills": {
+          "javascript": "JavaScript",
+          "html5": "HTML5",
+          "css3": "CSS3",
+          "react": "React",
+          "nextjs": "Next.js",
+          "reactnative": "React Native",
+          "tailwind": "Tailwind CSS"
+        }
+      },
+      "backend": {
+        "title": "Back-end",
+        "skills": {
+          "nodejs": "Node.js",
+          "express": "Express",
+          "restapi": "RESTful API"
+        }
+      },
+      "database": {
+        "title": "Database",
+        "skills": {
+          "mongodb": "MongoDB",
+          "mongoose": "Mongoose",
+          "sql": "SQL",
+          "postgresql": "PostgreSQL"
+        }
+      },
+      "tools": {
+        "title": "Tools",
+        "skills": {
+            "git": "Git",
+            "github": "GitHub",
+            "vscode": "VSCode",
+            "postman": "Postman",
+            "thunderclient": "ThunderClient",
+            "figma": "Figma",
+            "expo": "Expo"
+        }
+      },
+      "other": {
+        "title": "Other Skills",
+        "skills": {
+          "responsive": "Responsive design",
+          "seo": "SEO",
+          "agile": "Agile",
+          "scrum": "Scrum",
+          "accessibility": "Accessibility",
+          "projectmanagement": "Project management"
+        }
+      }
+    }
+  },
   "projects": {
     "title": "Projects",
-    "subtitle": "Project Selection",
+    "sectionTitle": "Project selection",
     "sectionDescription": "Here's a selection of projects I've worked on. Feel free to click on the links to learn more!",
     "carouselTitle": "JS Vanilla and React Projects",
-    "categorieTitle": "Browse my projects organized by technologies",
+    "categoriesTitle": "Browse my projects organized by technologies",
     "categories": {
       "htmlCss": {
         "title": "HTML/CSS",
@@ -50,7 +122,7 @@
       "description": "Description",
       "technologies": "Technologies",
       "github": "GitHub",
-      "website": "Lien vers le site",
+      "website": "Website link",
       "frontend": "Frontend",
       "backend": "Backend"
     },
@@ -69,6 +141,40 @@
         "name": "OhMyFood",
         "description": "Online food ordering website, designed with Sass for better CSS organization and animations managed via @keyframes."
       }
+    },
+    "jsVanillaProjects": {
+      "kanap": {
+        "name": "Kanap",
+        "description": "Online store specialized in sofa sales."
+      },
+      "laPanthere": {
+        "name": "La Panthère",
+        "description": "Web design agency, for this site my work consisted of optimizing natural referencing (SEO), for better online visibility."
+      },
+      "tickethack": {
+        "name": "Tickethack",
+        "description": "Train ticket booking site, implementation of key features such as cart management (add, delete, save)."
+      },
+      "weatherapp": {
+        "name": "WeatherApp",
+        "description": "FullStack: Weather website, allowing you to check the weather of any city using an API."
+      }
+    },
+    "reactProjects": {
+      "lasauce": {
+        "name": "La Sauce",
+        "description": "Website created in 10 days with a team of 3 student developers. La Sauce is a platform connecting associations and individuals."
+      },
+      "mymoviz": {
+        "name": "My Moviz",
+        "description": "Website allowing you to display the latest movies using The Movie Database API with the possibility of adding movies to your wishlist, with a view counter and allows you to rate each movie."
+      }
+    },
+    "carouselProjects": {
+      "noProjects": {
+        "message": "No projects available in this category at the moment."
+      }
     }
   }
+
 }

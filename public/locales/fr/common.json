@@ -1,4 +1,18 @@
 {
+    "nav": {
+        "backToHome": "Retour à l'accueil",
+        "mainNavigation": "Navigation principale",
+        "projects": "Projets",
+        "projectsTitle": "Découvrez mes projets",
+        "skills": "Compétences", 
+        "skillsTitle": "Mes compétences techniques",
+        "experience": "Expériences",
+        "experienceTitle": "Mon expérience professionnelle",
+        "education": "Formations",
+        "educationTitle": "Ma formation et mes certifications",
+        "contact": "Contact",
+        "contactTitle": "Contactez-moi"
+    },
     "home": {
         "welcome": "Bienvenue sur mon portfolio ! Je suis un développeur passionné par la création d'applications web modernes.",
         "greeting": "Salut !",
@@ -22,12 +36,70 @@
             "email": "sylla.wali@me.com"
         }
     },
+    "skills": {
+        "title": "Mes compétences",
+        "intro": "Mes ecpériences antérieures m'ont permis de développer des compétences ransversales et une grande adaptabilité. Autonome et rigoureux, je sais faire face aux défis avec efficacité. De plus mes différentes formations continues m'ont permis d'acquérir et d'affiner des compétences techniques, dont voici un aperçu :",
+        "categories": {
+            "frontend": {
+                "title": "Front-end",
+                "skills": {
+                    "javascript": "JavaScript",
+                    "html5": "HTML5",
+                    "css3": "CSS3",
+                    "react": "React",
+                    "nextjs": "Next.js",
+                    "reactnative": "React Native",
+                    "tailwind": "Tailwind CSS"
+                }
+            },
+            "backend": {
+                "title": "Back-end",
+                "skills": {
+                    "nodejs": "Node.js",
+                    "express": "Express",
+                    "restapi": "RESTful API"
+                }
+            },
+            "database": {
+                "title": "Base de données",
+                "skills": {
+                    "mongodb": "MongoDB",
+                    "mongoose": "Mongoose",
+                    "sql": "SQL",
+                    "postgresql": "PostgreSQL"
+                }
+            },
+            "tools": {
+                "title": "Outils",
+                "skills": {
+                    "git": "Git",
+                    "github": "GitHub",
+                    "vscode": "VSCode",
+                    "postman": "Postman",
+                    "thunderclient": "ThunderClient",
+                    "figma": "Figma",
+                    "expo": "Expo"
+                }
+            },
+            "other": {
+                "title": "Autres compétences",
+                "skills": {
+                    "responsive": "Responsive design",
+                    "seo": "SEO",
+                    "agile": "Méthodologie Agile",
+                    "scrum": "Scrum",
+                    "accessibility": "Accessibilité",
+                    "projectmanagement": "Gestion de projet"
+                }
+            }
+        }
+    },
     "projects": {
         "title": "Projets",
-        "subtitle": "Sélection de projets",
+        "sectionTitle": "Sélection de projets",
         "sectionDescription": "Voici une sélection de projets sur lesquels j'ai travaillé. N'hésitez pas à cliquer sur les liens pour en savoir plus !",
         "carouselTitle": "Projets JS Vanilla et React",
-        "categorieTitle": "Parcourez mes projets organisés par technologies",
+        "categoriesTitle": "Parcourez mes projets organisés par technologies",
         "categories": {
             "htmlCss": {
                 "title": "HTML/CSS",
@@ -68,6 +140,39 @@
             "ohmyfood": {
                 "name": "OhMyFood",
                 "description": "Site de commande de repas en ligne, conçu avec Sass pour une meilleure organisation du CSS et des animations gérées via @keyframes."
+            }
+        },
+        "jsVanillaProjects": {
+            "kanap": {
+                "name": "Kanap",
+                "description": "Boutique en ligne spécialisée dans la vente de canapés."
+            },
+            "laPanthere": {
+                "name": "La Panthère",
+                "description": "Agence de web design, pour ce site mon travail consistait à optimiser le référencement naturel (SEO), pour une meilleure visibilité en ligne."
+            },
+            "tickethack": {
+                "name": "Tickethack",
+                "description": "Site de réservation de billets de train, mise en place de fonctionnalités clés telles que la gestion de panier (ajout, suppression, sauvegarde)."
+            },
+            "weatherapp": {
+                "name": "WeatherApp",
+                "description": "FullStack : Site météo, permettant de consulter la météo de n'importe quelle ville à l'aide d'une API."
+            }
+        },
+        "reactProjects": {
+            "lasauce": {
+                "name": "La Sauce",
+                "description": "Site web réalisé en 10 jours avec une équipe de 3 étudiants développeurs. La sauce est une plateforme de mise en relation entre associations et particuliers."
+            },
+            "mymoviz": {
+                "name": "My Moviz",
+                "description": "Site web permettant d'afficher les derniers films à l'aide de l'API The Movie Database avec la possibilité d'ajouter à sa wishlist des films, avec un compteur de vues et permet d'évaluer chacun des films."
+            }
+        },
+        "carouselProjects": {
+            "noProjects": {
+                "message": "Aucun projet disponible dans cette catégorie pour le moment."
             }
         }
     }
