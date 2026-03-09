@@ -11,7 +11,6 @@
 
 .mainPresentation section {
     width: 100%;
-    /* padding-top: 5vh; */
 }
 
 .presentation {
@@ -20,26 +19,10 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    min-height: 100vh;
-    padding-bottom: 1rem;
+    padding: 2rem 0 3rem;
     background-color: var(--background-color);
     color: var(--text-color);
     position: relative;
-}
-
-.presentation::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--primary-color) 0%,
-        var(--secondary-color) 50%,
-        var(--accent-color) 100%
-    );
 }
 
 .presentationIntro {
@@ -49,10 +32,9 @@
     justify-content: flex-end;
     width: 100%;
     height: 90vh;
-    /* margin-bottom: 1rem; */
-    /* padding: 1rem; */
     background-image: url('/photo_de_profil.webp');
     background-size: cover;
+    background-position: center;
     position: relative;
 }
 
@@ -63,11 +45,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(248, 165, 185, 0.1) 0%,
-        rgba(63, 106, 78, 0.05) 100%
-    );
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 60%);
     z-index: 1;
 }
 
@@ -88,20 +66,22 @@
     box-shadow: var(--shadow-box);
     position: relative;
     z-index: 2;
+    padding: 1rem;
     border-left: 4px solid var(--primary-color);
-
 }
+
 .greetingTitle,
 .greetingText,
 .presentationContent ul li,
 .presentationContent ul li span {
     color: var(--text-color);
-} 
+}
+
 .greetingTitle {
     font-size: 1.7rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin: 0.5rem 0.5rem 0.2rem 0.5rem;
+    margin: 0 0 1rem 0;
     position: relative;
 }
 
@@ -119,8 +99,8 @@
     font-size: 1rem;
     font-weight: 400;
     font-style: italic;
-    margin: 0.5rem 0.5rem 2rem 0.5rem;
-    letter-spacing: 0.1rem;
+    margin: 0.5rem 0 1.5rem 0;
+    letter-spacing: 0.03rem;
     color: var(--secondary-color);
 }
 
@@ -132,10 +112,9 @@
     width: 100%;
     height: auto;
     background-color: var(--bg-box);
-    /* background-color: var(--presentation-bg); */
-    padding-bottom: 0.5rem;
+    padding: 0.25rem 0;
     border-radius: 8px;
-     box-shadow: var(--shadow-box);
+    box-shadow: none;
     position: relative;
     z-index: 2;
 }
@@ -149,13 +128,12 @@
     height: auto;
 }
 
-
 .presentationContent ul li {
     font-size: 1.2rem;
     border-bottom: 2px solid var(--neutral-medium);
     list-style-type: none;
-    margin: 1rem 0.5rem;
-    padding-bottom: 0.5rem;
+    margin: 0.6rem 0;
+    padding-bottom: 0.4rem;
     position: relative;
     transition: border-color 0.3s ease;
 }
@@ -178,125 +156,51 @@
     font-size: 0.9em;
 }
 
-.button {
-    margin: 1rem 0;
-    z-index: 2;
-    position: relative;
-}
+/* Sections */
 
-/*Section*/
 .projets {
     background-color: var(--neutral-light);
-}
-
-.projets::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--accent-color) 0%,
-        var(--primary-color) 100%
-    );
+    border-top: 1px solid var(--neutral-medium);
 }
 
 .competences {
     background-color: var(--bg-box);
+    border-top: 1px solid var(--neutral-medium);
     position: relative;
-}
-
-.competences::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg, 
-        var(--secondary-color) 0%, 
-        var(--accent-color) 100%
-    );
 }
 
 .experiences {
     background-color: var(--neutral-light);
+    border-top: 1px solid var(--neutral-medium);
     position: relative;
-}
-
-.experiences::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg, 
-        var(--primary-color) 0%, 
-        var(--secondary-color) 100%
-    );
 }
 
 .formations {
     background-color: var(--bg-box);
+    border-top: 1px solid var(--neutral-medium);
     position: relative;
-}
-
-.formations::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg, 
-        var(--accent-color) 0%, 
-        var(--primary-color) 100%
-    );
 }
 
 .contact {
     background-color: var(--neutral-light);
+    border-top: 1px solid var(--neutral-medium);
     position: relative;
 }
 
-.contact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg, 
-        var(--secondary-color) 0%, 
-        var(--accent-color) 100%
-    );
-}
-
-/*Tablet*/
+/* Tablet */
 
 @media (min-width: 768px) {
     .presentation {
-        padding-top: 1.5rem;
         height: auto;
-        background: linear-gradient(
-            135deg, 
-            rgba(248, 165, 185, 0.03) 0%, 
-            rgba(63, 106, 78, 0.02) 100%
-        );
     }
+
     .presentationIntro {
         background-image: none;
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: stretch;
+        gap: 1.5rem;
         width: 100%;
         height: auto;
         padding: 1.5rem;
@@ -309,11 +213,11 @@
     .imageContainer {
         display: flex;
         justify-content: center;
-        align-items: center;
-        width: 40%;
-        height: auto;
+        align-items: stretch;
+        width: 30%;
+        max-width: 280px;
+        flex-shrink: 0;
         position: relative;
-
     }
 
     .imageContainer::after {
@@ -331,65 +235,59 @@
     .imageContainer img {
         width: 100% !important;
         height: 100% !important;
+        object-fit: cover !important;
+        object-position: top center !important;
         border-radius: 8px !important;
         box-shadow: var(--shadow-box);
     }
 
     .greeting {
-        width: 70%;
+        flex: 1;
+        min-width: 0;
         height: auto;
         align-items: center;
-        background-color: rgba(255, 255, 255, 0.95);
-        margin: 0.5rem 1rem;
+        background-color: var(--bg-box);
+        padding: 1.25rem;
+        margin: 0;
         border-left: 6px solid var(--primary-color);
     }
+
     .greetingTitle {
         width: 100%;
         text-align: left;
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin: 0 0 1rem;
     }
 
     .greetingTitle::after {
-        width: 60px; /* Ligne plus longue en desktop */
+        width: 60px;
         height: 3px;
     }
 
     .greetingText {
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin-bottom: 1rem;
-    }
-
-    .line {
-        width: 90%;
-        height: 2px;
-        background-color:  linear-gradient(
-            90deg, 
-            var(--primary-color) 0%, 
-            var(--secondary-color) 50%, 
-            var(--accent-color) 100%
-        );
-        margin: 0.5rem 0;
-        text-align: center;
     }
 
     .presentationContent {
         width: 100%;
         height: auto;
-        background-color:var(--bg-box);
-        margin: 1rem;
+        background-color: var(--bg-box);
+        margin: 0.75rem 0 0;
         border: 1px solid var(--neutral-medium);
     }
 
     .presentationContent ul li {
-        font-size: 1.5rem;
+        font-size: 1.05rem;
     }
 }
 
-/*PC*/
+/* Desktop */
 
 @media (min-width: 992px) {
     .imageContainer {
-        width: 30%;
+        width: 28%;
+        max-width: 260px;
     }
 
     .greeting {
@@ -397,14 +295,14 @@
     }
 
     .greetingTitle {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-    
+
     .greetingText {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
-    
+
     .presentationContent ul li {
-        font-size: 1.6rem;
+        font-size: 1.1rem;
     }
 }
