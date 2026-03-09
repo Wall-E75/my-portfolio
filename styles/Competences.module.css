@@ -4,83 +4,42 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 100vh;
     background-color: var(--background-color);
     color: var(--text-color);
-    padding: 8rem 1rem  1rem 2rem;
-    position: inherit;
-
+    padding: 2rem 1.5rem 3rem;
 }
 
-.main::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(
-        90deg,
-        var(--secondary-color) 0%,
-        var(--primary-color) 50%,
-        var(--accent-color) 100%
-    );
-}
-.main h2, .title {
-    font-size: 2rem;
-}
 .title {
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--primary-color);
     text-align: center;
     position: relative;
-    padding-bottom: 1rem;
+    display: inline-block;
+    padding-bottom: 0.75rem;
 }
 
 .title::after {
     content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
+    display: block;
+    width: 48px;
     height: 3px;
-    background: linear-gradient(
-        90deg,
-        var(--secondary-color) 0%,
-        var(--accent-color) 100%
-    );
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
     border-radius: 2px;
 }
 
-
-.skillsIntro {    
+.skillsIntro {
     width: 100%;
     max-width: 800px;
     text-align: center;
-    margin-bottom: 3rem;
-    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.25rem 1.5rem;
     background-color: var(--bg-box);
     border-radius: 12px;
     box-shadow: var(--shadow-box);
-    position: relative;
-    border-left: 4px solid var(--secondary-color); 
-}
-
-.skillsIntro::before {
-    content: '💡';
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
+    border-left: 4px solid var(--secondary-color);
 }
 
 .skillsText {
@@ -88,7 +47,7 @@
     color: var(--text-color);
     font-style: italic;
     line-height: 1.6;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .skillsContainer {
@@ -99,19 +58,17 @@
     width: 100%;
     max-width: 1200px;
     height: auto;
-    background-color: var(--background-color);
     color: var(--text-color);
     padding: 1rem;
     gap: 1rem;
 }
 
 .skillsContainer h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
     color: var(--secondary-color);
     position: relative;
     padding-bottom: 0.5rem;
-
 }
 
 .skillsContainer h3::after {
@@ -121,106 +78,48 @@
     left: 0;
     width: 40px;
     height: 2px;
-    background-color: var(--accent-color); /* Ligne en couleur bois */
+    background-color: var(--accent-color);
     border-radius: 1px;
 }
 
 .skillsContainer li {
     list-style-type: none;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.9rem;
     text-align: center;
-    /* width: 60%; */
     border: 2px solid var(--neutral-medium);
     border-radius: 20px;
-    margin: 0.5rem;
+    margin: 0.4rem;
     background-color: var(--bg-box);
-    box-shadow: 5px 3px 5px var(--shadow-box);
-    transform: scale(1);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-box);
+    transition: border-color 200ms ease, box-shadow 200ms ease, transform 150ms ease;
     cursor: default;
     font-weight: 500;
-    position: relative;
-    overflow: hidden;
-
-}
-
-.skillsContainer li::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(248, 165, 185, 0.1),
-        transparent
-    );
-    transition: left 0.5s ease;
 }
 
 .skillsContainer li:hover {
-    border: 2px solid var(--primary-color);
-    border-radius: 20px 5px 20px 5px;
-    box-shadow: 0 8px 16px rgba(248, 165, 185, 0.3);
-    background-color: var(--skill-bg);
-    transform: translateY(-2px);
-    color: var(--text-color);
-
-}
-
-.skillsContainer li:nth-child(4n+1):hover {
     border-color: var(--primary-color);
-    box-shadow: 0 8px 16px rgba(248, 165, 185, 0.3);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    background-color: var(--presentation-bg);
 }
-
-.skillsContainer li:nth-child(4n+2):hover {
-    border-color: var(--secondary-color);
-    box-shadow: 0 8px 16px rgba(63, 106, 78, 0.3);
-}
-
-.skillsContainer li:nth-child(4n+3):hover {
-    border-color: var(--accent-color);
-    box-shadow: 0 8px 16px rgba(216, 169, 122, 0.3);
-}
-
-.skillsContainer li:nth-child(4n):hover {
-    border-color: var(--primary-light);
-    box-shadow: 0 8px 16px rgba(255, 202, 213, 0.3);
-}
-
-/**STACK**/
-
-
-.skillsText {
-    font-weight: 500;
-}
-
-
-
 
 .stack {
     display: flex;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--text-color);
-    border-radius: 15px;
+    border: 1px solid var(--neutral-medium);
+    border-radius: 12px;
     background-color: var(--background-color);
-    -webkit-box-shadow: 0px 0px 4px 1px var(--shadow-box); 
-    box-shadow: 0px 0px 4px 1px var(--shadow-box);
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    box-shadow: var(--shadow-box);
+    padding: 0.5rem 0 1rem;
     margin: 1rem;
-    transition: all 0.3s ease, background-color 0.5s ease-in-out;
+    transition: border-color 200ms ease, box-shadow 200ms ease;
 }
 
 .stack:hover {
-    border: 1px solid #333333;
-    -webkit-box-shadow: 5px 3px 5px var(--shadow-box);
-    box-shadow: 5px 3px 5px var(--shadow-box);
-    font-weight: 500;
+    border-color: var(--secondary-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-box);
 }
 
@@ -231,20 +130,19 @@
 }
 
 .frontEnd {
-    border-right: 1px solid  rgb(39 85 4);
+    border-right: 1px solid var(--neutral-medium);
 }
+
 .icon {
     font-size: 1rem;
     text-align: center;
-    color: #d8d8d8;
-    
+    color: var(--text-muted);
 }
 
-
-/*Tablet*/
+/* Tablet */
 
 @media (min-width: 768px) {
     .main {
-        height: auto;
+        padding: 3rem 2rem 4rem;
     }
 }

@@ -160,9 +160,8 @@ function Competences() {
    
     const skillsData = getSkillsData();
     return (
-        <>
-            <main className={`${styles.main} ${raleway.className}`}>
-            <h1 className={`${styles.title} ${styles.titleColor} ${merriweather.className}`}>
+        <div className={`${styles.main} ${raleway.className}`}>
+            <h1 className={`${styles.title} ${merriweather.className}`}>
                 {t('skills.title')}
             </h1>
                 <div className={styles.skillsIntro}>
@@ -174,8 +173,7 @@ function Competences() {
                 <div className={styles.skillsContainer}>
                     <Carousel skillsData={skillsData} />
                 </div>
-            </main>
-        </>
+        </div>
     );
 };
 
