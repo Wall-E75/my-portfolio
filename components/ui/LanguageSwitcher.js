@@ -2,7 +2,7 @@ import styles from '@styles/LanguageSwitcher.module.css';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import NextImageModule from 'next/image';
-const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
+const Image = NextImageModule.default || NextImageModule; // Solution pour ES Module avec Next.js
 
 function LanguageSwitcher() {
     const router = useRouter();
@@ -14,8 +14,7 @@ function LanguageSwitcher() {
     };
 
     const handleLanguageChange = async (lang) => {
-        console.log('Changement de langue vers:', lang);
-        if (lang === router.locale || isChanging) return; // Ne rien faire si la langue est déjà sélectionnée ou si un changement est en cours
+        if (lang === router.locale || isChanging) return;
 
         setIsChanging(true); 
 
@@ -44,7 +43,7 @@ function LanguageSwitcher() {
         <div className={styles.languageSwitcher}>
             <button
                 onClick={toggleLanguage}
-                className={`${styles.langBtn} ${router.locale === 'fr' ? styles.active : ''}`}
+                className={`${styles.langBtn} ${isChanging ? styles.loading : ''}`}
                 disabled={isChanging}
                 aria-label={`Changer vers ${currentLang === "fr" ? "anglais" : "français"}`}
                 title={langData.title}

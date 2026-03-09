@@ -14,7 +14,7 @@ function LayoutWrapper({children}) {
   const { theme } = useTheme();
   useEffect(() => {
     const body = document.body;
-    body.classList.remove("theme-light", "theme-dark", "theme-colorful"); // On retire les classes de theme
+    body.classList.remove("theme-light", "theme-dark"); // On retire les classes de theme
     body.classList.add(`theme-${theme}`); // On ajoute la classe theme-${theme} pour changer le thème de l'application
     return () => {
       body.classList.remove(`theme-${theme}`); // On retire la classe theme-${theme} lors du démontage du composant

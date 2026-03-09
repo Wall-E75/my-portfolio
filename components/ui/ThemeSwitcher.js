@@ -8,21 +8,13 @@ function ThemeSwitcher() {
     const { theme, setTheme } = useTheme(); // On utilise le hook useTheme pour recuperer la valeur du theme et setTheme
 
     const handleChangeTheme = () => {
-        // Toggle entre light et dark, au clic on change de theme
-        const newTheme = theme === "light" ? "dark" : theme === "dark" ? "light" : "light";
-        setTheme(newTheme);
-        console.log("Theme changé en : ", newTheme);
+        setTheme(theme === "light" ? "dark" : "light");
     };
 
     return (
         <div>
-            <button className={styles.themeSwitcher} onClick={handleChangeTheme} title='Changer de thème'>
-                <FontAwesomeIcon icon={
-                    theme === "light" ? faMoon : 
-                    theme === "dark" ? faSun : 
-                    faMoon
-                    } className={styles.icon} 
-                />
+            <button className={styles.themeSwitcher} onClick={handleChangeTheme} title='Changer de thème' aria-label={theme === "light" ? "Activer le mode sombre" : "Activer le mode clair"}>
+                <FontAwesomeIcon icon={theme === "light" ? faMoon : faSun} className={styles.icon} />
             </button>
         </div>
     )

@@ -318,15 +318,12 @@
 
 /* Large PC */
 @media (min-width: 1200px) {
-    @media (min-width: 1200px) {
     .formationContainer {
         max-width: 1000px;
         gap: 2.5rem;
     }
-    
+
     .infos {
         padding: 2.5rem;
     }
-}
-
 }

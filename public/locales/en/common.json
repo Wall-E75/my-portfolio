@@ -36,6 +36,55 @@
       "email": "sylla.wali@me.com"
     }
   },
+  "contact": {
+    "title": "Contact me",
+    "address": {
+      "title": "My address",
+      "metro": "Metro: Porte des Lilas (line 11)",
+      "city": "75019 Paris, France",
+      "drivingLicense": "Driving License B",
+      "motorcycleLicense": "Motorcycle License A"
+    },
+    "form": {
+      "title": "Send me a message",
+      "fields": {
+        "lastname": {
+          "label": "Last Name",
+          "placeholder": "Your last name",
+          "required": "The \"lastname\" field is required"
+        },
+        "firstname": {
+          "label": "Firstname",
+          "placeholder": "Your firstname",
+          "required": "The \"firstname\" field is required"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Your email",
+          "required": "The \"email\" field is required",
+          "invalid": "The email is not valid"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Your message...",
+          "required": "The \"messages\" field is required",
+          "counter": "characters"
+        }
+      },
+      "buttons": {
+        "send": "Send",
+        "sendTitle": "Send message",
+        "newMessage": "Send a new message",
+        "newMessageTitle": "Send a new message"
+      },
+      "messages": {
+        "success": "Message sent successfully!",
+        "networkError": "A network error occured. Please try again.",
+        "submitError": "An error occured during submission!",
+        "sendError": "Error sending message"
+      }
+    }
+  },
   "education": {
       "title": "Education & Certifications",
       "diploma": {
@@ -62,18 +111,18 @@
         "items": [
             {
                 "language": "French",
-                "level": "native languuage"
+                "level": "native language"
             },
             {
                 "language": "English",
-                "level": "technical doucumentation comprehension, intermediate oral expression"
+                "level": "technical documentation comprehension, intermediate oral expression"
             }
         ]
       }
   },
   "skills": {
     "title": "My Skills",
-    "intro": "My previous experiences have allowed me to develop cross-functional skills and great adaptability. Autonomous and rigourous, I know how to face challenges efficiently. Additionally, my various continuing education programs have allowed me to acquire and refine technical skills, here's an overview:",
+    "intro": "My previous experiences have allowed me to develop cross-functional skills and great adaptability. Autonomous and rigorous, I know how to face challenges efficiently. Additionally, my various continuing education programs have allowed me to acquire and refine technical skills, here's an overview:",
     "categories": {
       "frontend": {
         "title": "Front-end",
@@ -131,6 +180,24 @@
   },
   "projects": {
     "title": "Projects",
+    "featured": {
+      "portfolio": {
+        "name": "Portfolio",
+        "description": "This portfolio — designed and built from scratch with Next.js 15, React 19, CSS Modules and next-i18next. Single-page architecture, light/dark theme, bilingual FR/EN."
+      },
+      "esse": {
+        "name": "ESSE Association Website",
+        "description": "Showcase website for ESSE association, built as a freelance project. Next.js 15, Sanity CMS, Framer Motion. 7 content schemas, client trained on CMS, SEO optimized."
+      },
+      "lasauce": {
+        "name": "La Sauce",
+        "description": "Fullstack platform connecting associations with individuals. Team project (3 devs, 10 days). React, Redux, Node.js, Express, MongoDB."
+      },
+      "weatherapp": {
+        "name": "WeatherApp",
+        "description": "Fullstack weather app. City-based weather lookup via third-party API. Vanilla JavaScript, Node.js, Express, MongoDB."
+      }
+    },
     "sectionTitle": "Project selection",
     "sectionDescription": "Here's a selection of projects I've worked on. Feel free to click on the links to learn more!",
     "carouselTitle": "JS Vanilla and React Projects",
@@ -210,6 +277,55 @@
         "message": "No projects available in this category at the moment."
       }
     }
+  },
+  "experiences": {
+    "title": "Professional Experience",
+    "items": [
+      {
+        "company": "Wasabih",
+        "role": "Full-Stack Developer",
+        "type": "Internship",
+        "period": "Jan. 2026 — present",
+        "location": "Paris",
+        "missions": [
+          {
+            "title": "Open Graph Prerender Server",
+            "description": "Autonomous development of a Node.js/Express server dynamically generating sharing metadata (Facebook, LinkedIn, WhatsApp) for 5 content types. Modular architecture, detection of 15+ bot types, XSS security, SQL optimization and complete README documentation. Ready for NGINX + Alibaba Cloud deployment."
+          },
+          {
+            "title": "Data Extraction & Migration",
+            "description": "Complete extraction of a 48-column table from a 9.3 MB SQL dump under WSL2/MySQL. Usable CSV delivered in 3 hours in an emergency situation."
+          }
+        ],
+        "stack": ["Node.js", "Express", "Supabase", "PostgreSQL", "MySQL", "Git", "WSL2"]
+      },
+      {
+        "company": "Association ESSE",
+        "role": "Full-Stack Developer",
+        "type": "Freelance",
+        "period": "Oct. — Nov. 2025",
+        "location": "Paris",
+        "description": "Design and development of the ESSE association showcase website using Next.js 15, Sanity CMS and Framer Motion. Creation of 7 complex content schemas and client training for CMS autonomy. Optimized SEO, smooth animations, responsive.",
+        "stack": ["Next.js 15", "Sanity CMS", "Framer Motion"]
+      },
+      {
+        "company": "Kone",
+        "role": "Frontend Developer",
+        "type": "Internship",
+        "period": "Jan. — Apr. 2025",
+        "location": "Paris",
+        "description": "Skill development in Vue.js 3 in a professional context. Interface component development, existing code analysis and application of best practices.",
+        "stack": ["Vue.js 3"]
+      },
+      {
+        "company": "Association ESSE",
+        "role": "Educational Coordinator",
+        "type": "Full-time",
+        "period": "Oct. 2014 — Oct. 2025",
+        "location": "Paris",
+        "description": "12 years managing multi-partner projects, team management and coordinator supervision. Communication with diverse audiences, budget management. Skills directly transferable to development: autonomy, rigor, documentation, teamwork."
+      }
+    ]
   }
-
 }
+

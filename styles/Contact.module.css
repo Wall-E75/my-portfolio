@@ -240,7 +240,7 @@
 .message p {
     text-align: right;
     font-size: 0.8rem;
-    color: var(--gray-500);
+    color: var(--text-muted);
     margin-top: 0.25rem;
 }
 
@@ -349,7 +349,7 @@
 /*ERROR*/
 
 .input:invalid:not(:placeholder-shown) {
-    border-color: #dc2626;
+    border-color: var(--error-color);
 }
 
 .input:valid:not(:placeholder-shown) {
@@ -358,7 +358,7 @@
 
 .error {
     background-color: rgba(220, 38, 38, 0.1);
-    border: 2px solid #dc2626;
+    border: 2px solid var(--error-color);
     border-radius: 8px;
     padding: 1rem;
     margin: 1rem 0;
@@ -366,7 +366,7 @@
 }
 
 .error li {
-    color: #dc2626;
+    color: var(--error-color);
     font-weight: 600;
     margin: 0.5rem 0;
     list-style: none;
@@ -382,7 +382,7 @@
 }
 
 .emailError {
-    color: #dc2626;
+    color: var(--error-color);
     font-size: 0.85rem;
     margin-top: 0.25rem;
     font-weight: 500;

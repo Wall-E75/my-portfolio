@@ -9,7 +9,7 @@ import LanguageSwitcher from '@components/ui/LanguageSwitcher';
 import { raleway } from '../ui/fonts'; 
 
 function Header() {
-  const { displayComponant } = useVisibility();
+  const { displayComponent } = useVisibility();
   return (
     <>
       <header className={`${styles.header} ${raleway.className || ''}`}>
@@ -38,7 +38,7 @@ function Header() {
                     <Link href="/#competences">Compétences</Link>
                 </li>
 
-                {displayComponant && (
+                {displayComponent && (
                   <li className={styles.experiences}>
                       <Link href='/#experiences'>Expériences</Link>
                     <div className={styles.wallPaper}></div>

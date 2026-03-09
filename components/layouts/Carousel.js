@@ -3,8 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faPause, faPlay } from '@fortawesome/free-solid-svg-icons';
 import NextImageModule from 'next/image';
-
-const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
+const Image = NextImageModule.default || NextImageModule; // Solution pour ES Module avec Next.js
 
 function Carousel({ skillsData }) {
     const [currentIndex, setCurrentIndex] = useState(0); //Indique l'index de l'image actuelle
@@ -22,7 +21,6 @@ function Carousel({ skillsData }) {
     const prevSlide = () => {
         setCurrentIndex(prevIndex =>
             prevIndex === 0 ? skillsData.length - 1 : prevIndex - 1
-            // prevIndex > 0 ? prevIndex - 1 : props.length - 1
         );
     };
 

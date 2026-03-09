@@ -1,14 +1,10 @@
 .card {
-    /* background-color: rgb(18, 20, 20); */
-    /* border: 1px solid black; */
-
     border-radius: 10px;
     width: 50%;
     height: auto;
     margin: 1rem;
     cursor: pointer;
-    transition: transform 200ms
-    
+    transition: transform 200ms;
 }
 
 .card:hover {

@@ -5,7 +5,7 @@ import { faChevronLeft, faChevronRight, faPlay, faPause } from '@fortawesome/fre
 import TemplateProjects from '@components/projects/TemplateProjects';
 import { useTranslation } from 'next-i18next';
 import NextImageModule from 'next/image';
-const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
+const Image = NextImageModule.default || NextImageModule; // Solution pour ES Module avec Next.js
 
 function CarouselProject({ 
     projects = [],
@@ -17,8 +17,6 @@ function CarouselProject({
     const [currentIndex, setCurrentIndex] = useState(0); //Indique l'index du projet actuelle
     const [isPlaying, setIsPlaying] = useState(true); //Indique si le carousel est en lecture automatique
     const autoplayRef = useRef(null); //Référence pour l'intervalle d'autoplay
-    // const intervalTime = 4000; //Temps entre chaque slide
-
    // Fonction de navigation
     const nextSlide = useCallback(() => {
         setCurrentIndex((prevIndex) =>
@@ -37,10 +35,7 @@ function CarouselProject({
     }, []);
 
     const toggleAutoplay = useCallback(() => {
-        setIsPlaying(prevIsPlaying => {
-            console.log(`Changement: ${prevIsPlaying} ---> ${!prevIsPlaying}`);
-            return !prevIsPlaying;
-        });
+        setIsPlaying(prevIsPlaying => !prevIsPlaying);
     }, []);
 
     //Gestion autoplay
@@ -124,7 +119,7 @@ function CarouselProject({
                         className={styles.autoPlayBtn}
                         onClick={toggleAutoplay}
                         title={isPlaying ? 'Mettre en pause' : 'Reprendre'}
-                        aria-label={isPlaying ? 'Mettre en pause' : 'Reprndre'}
+                        aria-label={isPlaying ? 'Mettre en pause' : 'Reprendre'}
                     >
                         <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
                     </button>
@@ -144,7 +139,6 @@ function CarouselProject({
                             key={`${project.category || 'project'}-${project.id}`} 
                             className={styles.slides}
                             style={{
-                                width: `${100/project.length}%`,
                                 minWidth: '100%'
                             }}
                         >

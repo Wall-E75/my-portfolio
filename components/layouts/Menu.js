@@ -2,14 +2,14 @@ import styles from "@styles/Menu.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBarsProgress, faTimes, faAddressCard, faGears, faUserGraduate } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBarsProgress, faTimes, faAddressCard, faGears, faUserGraduate, faSuitcase } from '@fortawesome/free-solid-svg-icons';
 import { useVisibility } from "../../context/VisibilityContext";
 import { raleway } from "../ui/fonts";
 
 
 function Menu() {
     const [open, setOpen] = useState(false);
-    const { displayComponant } = useVisibility();
+    const { displayComponent } = useVisibility();
    
     const handleOpen = () => {
         setOpen(true);
@@ -67,7 +67,7 @@ function Menu() {
                         Compétences
                     </Link>
                 </li>
-                    {displayComponant && (
+                    {displayComponent && (
                         <li role="none">
                             <Link 
                                 href='/#experiences'

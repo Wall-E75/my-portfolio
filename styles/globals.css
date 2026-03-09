@@ -46,6 +46,8 @@ body {
   --skill-bg: rgba(248, 165, 185, 0.05);
   --icon-color: #3F6A4E;
   --header-bg: rgba(245, 241, 235, 0.95);
+  --error-color: #dc2626;
+  --text-muted: #6b7280;
 }
 
 .theme-dark {
@@ -81,14 +83,22 @@ body {
   --skill-bg: rgba(248, 165, 185, 0.08);
   --icon-color: #7DA68E;        /* Icônes en vert clair */
   --header-bg: rgba(30, 30, 36, 0.95);
+  --error-color: #f87171;
+  --text-muted: #9ca3af;
+}
+
+/* Z-index scale */
+:root {
+  --z-header: 1000;
+  --z-menu: 999;
+  --z-overlay: 10;
 }
 
 body, html {
   scroll-behavior: smooth;
   background: var(--background-color);
   color: var(--text-color);
-  transition: var(--background-color) 0.3s ease, color 0.3s ease;
-
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {

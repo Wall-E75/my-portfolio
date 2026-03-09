@@ -1,37 +1,28 @@
 import styles from '@styles/Presentation.module.css';
-import { useState, useEffect } from 'react';
-import { VisibilityProvider } from '../../context/VisibilityContext';
 import { useVisibility } from "../../context/VisibilityContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import Projets from '@components/sections/Projets'; 
+import Projets from '@components/sections/Projets';
 import Experiences from '@components/sections/Experiences';
 import Formations from '@components/sections/Formations';
 import Competences from '@components/sections/Competences';
 import Contact from './Contact';
 import Buttons from '../ui/Buttons';
+import NextImageModule from 'next/image';
+const Image = NextImageModule.default || NextImageModule; // Solution pour ES Module avec Next.js
 import { merriweather, raleway } from '../ui/fonts';
 import { useTranslation } from 'next-i18next';
-//Solution pour ES Module avec Next.js
-import NextImageModule from 'next/image';
-const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
-import { useRouter } from 'next/router';
 function Presentation() {
-  const [isVisible, setIsVisible] = useState(true);
-  const { displayComponent, setDisplayComponent} = useVisibility(); //Recupère la valeur de displayComponent et setDisplayComponent
-  const { t } = useTranslation('common'); //Utilise le hook useTranslation pour traduire les textes
-  // Fonction pour télécharger le CV
-  const handleClick = () => {   
-    // Crée un élément <a> invisible
-    const link = document.createElement('a');    
-    link.href = '/CV_Wali_Sylla_Developpeur_Web_JS.pdf'; // URL du fichier à télécharger
-    link.download = 'CV_Wali_Sylla_Developpeur_Web_JS.pdf'; // Nom du fichier à télécharger
-    document.body.appendChild(link);//Ajoute l'élément au DOM (nécessaire pour Firefox)
-    link.click();//Déclenche le téléchargement
-    document.body.removeChild(link);//Supprime l'élément du DOM
+  const { displayComponent } = useVisibility();
+  const { t } = useTranslation('common');
+  const handleClick = () => {
+    const link = document.createElement('a');
+    link.href = '/CV_Wali_Sylla_Developpeur_Web_JS.pdf';
+    link.download = 'CV_Wali_Sylla_Developpeur_Web_JS.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
-  const router = useRouter()
-  console.log('router =>', router)
 
   const presentationContent = (
     <div className={styles.presentationContent}>
@@ -63,12 +54,10 @@ function Presentation() {
           <div className={styles.greeting}>
             <h1 className={`${styles.greetingTitle} ${merriweather.className}`}>{t('home.greeting')}</h1>
             <q className={styles.greetingText}>{t('home.description')}</q>
-            {isVisible && presentationContent}
+            {presentationContent}
           </div>
         </div>
-        {!isVisible && presentationContent}
-        <Buttons 
-          // className={styles.button}
+        <Buttons
           title="Télécharger CV"
           text={t('home.downloadCV')}
           icon={faDownload}
@@ -83,7 +72,7 @@ function Presentation() {
       <section id="competences" className={styles.competences}>
         <Competences />
       </section>
-      {!displayComponent && <section id="experiences" className={styles.experiences}>
+      {displayComponent && <section id="experiences" className={styles.experiences}>
         <Experiences />
       </section>}
       <section id="formations" className={styles.formations}>

@@ -1,18 +1,9 @@
 import styles from '../styles/Home.module.css';
 import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 import Presentation from '@components/sections/Presentation.js';
-
-
 
 function Home() {
   const { t } = useTranslation('common');
-  const router = useRouter();//Permet le changement de page
-
-  const handleClick = () => {
-    console.log('Clic');
-    router.push('/presentation');
-  }
 
   return (
     <>
@@ -26,15 +17,12 @@ function Home() {
             <h1 className={styles.title}>
               {t('home.job')}
             </h1>
-            {/* <p className={styles.description}>
-              {t('home.welcome')}
-            </p> */}
           </div>
         </section>
-      
-      <section id='presentation' className={styles.presentation}>
-        <Presentation />
-      </section>
+
+        <section id='presentation'>
+          <Presentation />
+        </section>
       </main>
     </>
   );

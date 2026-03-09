@@ -1,101 +1,77 @@
 import styles from '@styles/Projets.module.css';
-import Cards from '@components/ui/Cards';
-import CarouselProject from '@components/layouts/CarouselProject';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { merriweather, raleway } from '../ui/fonts';
-import { getJsVanillaProjectsData, jsVanillaProjectsData } from '../projects/JsVanillaProjects';
-import { getReactProjectsData, reactProjectsData } from '../projects/ReactProjects';
 import { useTranslation } from 'next-i18next';
 
 function Projets() {
     const { t } = useTranslation('common');
 
-    const projectData = [
+    const projects = [
         {
-            id: 1,
-            title: t('projects.categories.htmlCss.title'),
-            description: t('projects.categories.description'),
-            image: '/html5_icon.webp', 
-            alt:'Logo html5', 
-            image2: '/css_logo_icon.webp', 
-            alt2: 'logo css',    
-            // priority: false,
-            link: '/htmlCssProjects',
+            name: t('projects.featured.portfolio.name'),
+            description: t('projects.featured.portfolio.description'),
+            stack: ['Next.js 15', 'React 19', 'CSS Modules', 'next-i18next'],
+            github: 'https://github.com/Wall-E75/my-portfolio',
+            link: null,
         },
         {
-            id: 2,
-            title: t('projects.categories.jsVanilla.title'),
-            description: t('projects.categories.jsVanilla.description'),
-            image: '/Js_logo.webp',
-            alt: 'Logo JavaScript',
-            priority: false,
-            link: 'jsVanillaProjects',
+            name: t('projects.featured.esse.name'),
+            description: t('projects.featured.esse.description'),
+            stack: ['Next.js 15', 'Sanity CMS', 'Framer Motion'],
+            github: null,
+            link: 'https://association-esse-first.netlify.app/',
         },
         {
-            id: 3,
-            title: t('projects.categories.react.title'),
-            description: t('projects.categories.react.description'),
-            image: '/React_logo.webp',
-            alt: 'Logo React',
-            // priority: false,
-            link: 'reactProjects',
+            name: t('projects.featured.lasauce.name'),
+            description: t('projects.featured.lasauce.description'),
+            stack: ['React', 'Redux', 'Next.js', 'Node.js', 'Express', 'MongoDB'],
+            github: 'https://github.com/victor-blanchard/assos-frontend',
+            link: 'https://assos-frontend.vercel.app/',
         },
-
         {
-            id: 4,
-            title: t('projects.categories.reactNative.title'),
-            description: t('projects.categories.reactNative.description'),
-            image: '/React_logo.webp',
-            alt: 'Logo React',
-            // priority: false,
-            link: 'reactNativeProjects',
+            name: t('projects.featured.weatherapp.name'),
+            description: t('projects.featured.weatherapp.description'),
+            stack: ['JavaScript', 'Node.js', 'Express', 'MongoDB'],
+            github: 'https://github.com/Wall-E75/weatherapp-frontend',
+            link: 'https://weatherapp-frontend-chi.vercel.app',
         },
     ];
-    const jsVanillaData = getJsVanillaProjectsData(t);
-    const reactData = getReactProjectsData(t);
-    const allProjects = [...jsVanillaData, ...reactData];
-    const projectCards = projectData.map((project, index) => (
-        <div key={index}  className={styles.cardContainer}>
-            <Cards 
-               { ...project }
-            />
-            <h3 className={merriweather.className}>{project.title}</h3>
 
-        </div>
-    ));
-
-    return(
-        <>
-            <main className={`${styles.main} ${raleway.className}`}>
-                <h1 className={`${styles.title} ${merriweather.className}`}>{t('projects.title')}</h1>
-                <section className={styles.carouselSection}>
-                    <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        {t('projects.sectionTitle')}
-                    </h2>
-                    <p className={styles.sectionDescription}>
-                        {t('projects.sectionDescription')}
-                    </p>
-
-                    <CarouselProject 
-                        projects={allProjects}
-                        className={styles.carouselElem}
-                        autoplayInterval={6000}
-                        showCategory={true}
-                        showAutoplay={true}
-                        title={t('projects.carouselTitle')}
-                    />
-                </section>
-
-                <section className={styles.categoriesSection}>
-                    <h2 className={`${styles.sectionTitle} ${merriweather.className}`}>
-                        {t('projects.categoriesTitle')}
-                    </h2>
-
-                    <div className={styles.container}>
-                        {projectCards}
-                    </div>
-                </section>
-            </main>
-        </>
+    return (
+        <main className={`${styles.main} ${raleway.className}`}>
+            <h1 className={`${styles.title} ${merriweather.className}`}>
+                {t('projects.title')}
+            </h1>
+            <div className={styles.grid}>
+                {projects.map((project, index) => (
+                    <article key={index} className={styles.card}>
+                        <h2 className={`${styles.projectName} ${merriweather.className}`}>
+                            {project.name}
+                        </h2>
+                        <p className={styles.description}>{project.description}</p>
+                        <div className={styles.stack}>
+                            {project.stack.map((tech, i) => (
+                                <span key={i} className={styles.techBadge}>{tech}</span>
+                            ))}
+                        </div>
+                        <div className={styles.links}>
+                            {project.github && (
+                                <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                                    <FontAwesomeIcon icon={faGithub} /> GitHub
+                                </a>
+                            )}
+                            {project.link && (
+                                <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                                    <FontAwesomeIcon icon={faGlobe} /> Demo
+                                </a>
+                            )}
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </main>
     );
 };
 

@@ -264,10 +264,6 @@
     font-size: 1rem;
   }
 
-  /* .slides {
-    height: 30vh; 
-  } */
-
   .carousel .slides [class*="projectContainer"] {
     padding: 1rem !important;
     align-items: center !important;
@@ -283,7 +279,6 @@
   
   .carousel .slides [class*="technoProject_paragraph"] {
     font-size: 0.85rem;
-    /* height: 14vh; */
   }
 
   .navBtn {

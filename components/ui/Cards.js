@@ -1,12 +1,9 @@
 import style from '@styles/Cards.module.css';
 import Link from 'next/link';
 import NextImageModule from 'next/image';
-const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
+const Image = NextImageModule.default || NextImageModule; // Solution pour ES Module avec Next.js
 
-function Cards(props) { 
-    if(props.image2) {
-
-    }
+function Cards(props) {
     return (
         <>
             <article className={style.card} title={props.title}>
@@ -33,12 +30,6 @@ function Cards(props) {
                         }
                     </div>
                 </Link>
-                {/* <Link href={props.link}>
-                    <div className={style.cardText}>
-                        <h2>{props.title}</h2>
-                        <p>{props.description}</p>
-                    </div>
-                </Link> */}
             </article>
         </>
     );

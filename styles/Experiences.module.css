@@ -1,22 +1,171 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: rgb(255, 0, 4);
-    margin-bottom: 1rem;
+    padding: 2rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
+
 .title {
     font-size: 2rem;
     font-weight: 700;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--secondary-color);
+    opacity: 0.5;
+}
+
+.card {
+    background: var(--bg-box);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-box);
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    left: -2.5rem;
+    top: 1.5rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--background-color);
+}
+
+.cardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    margin-bottom: 0.75rem;
+}
+
+.role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.company {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
     margin-bottom: 1rem;
 }
 
-/*Tablet*/
+.badge {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background-color: var(--primary-color);
+    color: var(--neutral-dark);
+    text-transform: uppercase;
+}
+
+.period,
+.location {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.description {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.missions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.mission {
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 0.75rem;
+}
+
+.missionTitle {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+}
+
+.missionDesc {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.techBadge {
+    font-size: 0.72rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    background-color: var(--presentation-bg);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    font-weight: 500;
+    opacity: 0.85;
+}
 
 @media (min-width: 768px) {
     .main {
-        height: auto;
+        padding: 3rem 2rem;
+    }
+
+    .timeline {
+        padding-left: 2.5rem;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .main {
+        padding: 4rem 3rem;
     }
 }

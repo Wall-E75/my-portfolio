@@ -1,23 +1,22 @@
 import styles from '@styles/Contact.module.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-    faBiking, 
-    faCar, 
-    faEnvelope, 
-    faHome, 
-    faLocation, 
-    faLocationArrow, 
-    faLocationDot, 
-    faMotorcycle, 
-    faPaperPlane, 
+import {
+    faCar,
+    faLocationArrow,
+    faLocationDot,
+    faMotorcycle,
+    faPaperPlane,
     faPhone } from '@fortawesome/free-solid-svg-icons';
 import Buttons from '../ui/Buttons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import { merriweather, raleway } from '../ui/fonts';
+import { useTranslation } from 'next-i18next';
 
 function Contact() {
+    const { t } = useTranslation('common');
+
     // State pour les informations contact
     const [infosContact, setInfosContact] = useState({
         lastname: '',
@@ -65,12 +64,12 @@ function Contact() {
         // On vérifie si chaque champ est vide
         fields.forEach((field) => {
             if (!infosContact[field]) {
-                errors.push(`*Le champ "${field}" est obligatoire`);
+                errors.push(`*${t(`contact.form.fields.${field}.required`)}`);
             }
         });
        
         if (!EMAIL_REGEX.test(infosContact.email)) {
-            errors.push('*L\'email n\'est pas valide');
+            errors.push(`*${t('contact.form.fields.email.invalid')}`);
             setEmailError(true); 
         } else {
             setEmailError(false); // On remet à false si l'email est correct
@@ -97,7 +96,7 @@ function Contact() {
 
                 if (!response.ok) {
                     const errorData = await response.json(); //Afficher un message d'erreur pour l'utilisateur
-                    setError([errorData.message || "Une erreur est survenue lors de la soumission !"])
+                    setError([errorData.message || t('contact.form.messages.submitError')])
                     setSuccess(false);
                     return;
                 };
@@ -108,13 +107,13 @@ function Contact() {
                     setError([]);
                 } else {
                     setSuccess(false);
-                    setError([data.message || 'Erreur lors de l\'envoi']);
+                    setError([data.message ||  t('contact.form.messages.sendError')]);
                 }
                
             } catch(error) {
                 console.error("Erreur réseau : ", error);
                 setSuccess(false);
-                setError(["Une erreur réseau est survenue. Veuillez réessayer."]);
+                setError([t('contact.form.messages.networkError')]);
             }           
 
         } else {
@@ -128,59 +127,59 @@ function Contact() {
     let formulaire = (
         <form onSubmit={handleSubmit} className={styles.form} noValidate> 
             <label htmlFor="lastname">
-                Nom *
+               {t('contact.form.fields.lastname.label')} *
                 <input
                     className={styles.input} 
                     type="text" 
                     name="lastname" 
-                    placeholder="Votre nom" 
+                    placeholder={t('contact.form.fields.lastname.placeholder')}
                     required 
                     onChange={handleChange} 
                     value={infosContact.lastname} 
                 />
             </label>
             <label htmlFor="firstname">
-                Prénom *
+                 {t('contact.form.fields.firstname.label')} *
                 <input 
                     className={styles.input} 
                     type="text" 
                     name="firstname" 
-                    placeholder="Votre prenom" 
+                    placeholder={t('contact.form.fields.firstname.placeholder')} 
                     required 
                     onChange={handleChange} 
                     value={infosContact.firstname}
                 />
             </label> 
             <label htmlFor="email" >
-                Email *
+                {t('contact.form.fields.email.label')} *
                 <input        
                     className={styles.input} 
                     type="email" 
                     name="email" 
-                    placeholder="Votre email" 
+                    placeholder={t('contact.form.fields.email.placeholder')}
                     required 
                     onChange={handleChange} 
                     value={infosContact.email}
                 />
-                {emailError && error.includes("*L'email n'est pas valide") && (
-                    <p className={styles.emailError}>L&apos;email n&apos;est pas valide</p>)}
+                {emailError && error.includes(`*${t('contact.form.fields.email.invalid')}`) && (
+                    <p className={styles.emailError}>{t('contact.form.fields.email.invalid')}</p>)}
             </label>
             <label htmlFor="messages" className={styles.message}>
-                Message *
+                {t('contact.form.fields.message.label')} *
                 <textarea
                     className={styles.input} 
                     name="messages"
-                    placeholder="Votre message..."
+                    placeholder={t('contact.form.fields.message.placeholder')}
                     required
                     maxLength={maxChars} //limite en HTML mais pas en js
                     onChange={handleChange}
                     value={infosContact.messages}
                 ></textarea>
-                <p>{infosContact.messages.length} / {maxChars} caractères</p>
+                <p>{infosContact.messages.length} / {maxChars} {t('contact.form.fields.message.counter')}</p>
             </label>
             <Buttons 
-                text="Envoyer" 
-                title='Envoyer le message' 
+                text={t('contact.form.buttons.send')}
+                title={t('contact.form.buttons.sendTitle')}
                 type="submit"
                 variant="primary"
                 icon={faPaperPlane}
@@ -191,45 +190,51 @@ function Contact() {
         <>
             <main className={`${styles.mainContact} ${raleway.className}`}>
             
-                <h1 className={`${styles.title} ${merriweather.className}`}>Contactez-moi</h1>
+                <h1 className={`${styles.title} ${merriweather.className}`}>
+                    {t('contact.title')}
+                </h1>
                 <div className={styles.contactContent}>
                     <section className={styles.adressContact}>
                         <div className={styles.adressContactInfo}>
                             <div className={styles.wallPaper}></div>
                             <div className={styles.adress}>
-                                <h2 className={merriweather.className}>Mon adresse</h2>
+                                <h2 className={merriweather.className}>
+                                    {t('contact.address.title')}
+                                </h2>
                                 <p>
                                     <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
-                                    Metro Porte des Lilas
+                                    {t('contact.address.metro')}
                                 </p>
                                 <p>
                                     <FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />
-                                    75019 Paris, France
+                                    {t('contact.address.city')}
                                 </p>
                                 <p>
                                     <FontAwesomeIcon className={styles.icon} icon={faPhone} /> 
-                                    06 60 27 89 40
+                                    {t('contact.address.phone')}
                                 </p>
                                 <p>
                                     <FontAwesomeIcon className={styles.icon} icon={faCar} /> 
-                                    Permis B
+                                    {t('contact.address.drivingLicense')}
                                 </p>
                                 <p>
                                     <FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />
-                                    Permis A
+                                    {t('contact.address.motorcycleLicense')}
                                 </p>
                             </div>
                         </div>
                     </section>
 
                     <section className={styles.formContact}>
-                        <h2>Envoyez moi un message</h2> 
+                        <h2>{t('contact.form.title')}</h2> 
                         {success ? 
                             <div className={styles.successMsg}>
-                                <p className={styles.success}>Message envoyé avec succès !</p> 
+                                <p className={styles.success}>
+                                    {t('contact.form.messages.success')}
+                                </p> 
                                 <Buttons 
-                                    text="Envoyer un nouveau message"
-                                    title="Envoyer un nouveau message" 
+                                    text={t('contact.form.buttons.newMessage')}
+                                    title={t('contact.form.buttons.newMessageTitle')}
                                     onClick={resetForm} 
                                     variant="secondary"
                                 />

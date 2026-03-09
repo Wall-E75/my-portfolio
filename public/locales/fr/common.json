@@ -36,6 +36,55 @@
             "email": "sylla.wali@me.com"
         }
     },
+    "contact": {
+        "title": "Contactez-moi",
+        "address": {
+            "title": "Adresse",
+            "metro": "Metro: Porte des Lilas (ligne 11)",
+            "city": "75019 Paris, France",
+            "drivingLicense": "Permis B",
+            "motorcycleLicense": "Permis A"
+        },
+        "form": {
+            "title": "Envoyez moi un message",
+            "fields": {
+                "lastname": {
+                    "label": "Nom",
+                    "placeholder": "Votre nom",
+                    "required": "Le champ \"lastname\" est obligatoire"
+                },
+                "firstname": {
+                    "label": "Prénom",
+                    "placeholder": "Votre prénom",
+                    "required": "Le champ \"firstname\" est obligatoire"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "Votre email",
+                    "required": "Le champ \"email\" est obligatoire",
+                    "invalid": "L'email n'est pas valide"
+                },
+                "message": {
+                    "label": "Message",
+                    "placeholder": "Votre message...",
+                    "required": "Le champ \"messages\" est obligatoire",
+                    "counter": "caractères"
+                }
+            },
+            "buttons": {
+                "send": "Envoyer",
+                "sendTitle": "Envoyer le message",
+                "newMessage": "Envoyer un nouveau message",
+                "newMessageTitle": "Envoyer un nouveau message"
+            },
+            "messages": {
+                "success": "Message envoyé avec succés !",
+                "networkError": "Une erreur réseau est survenue. Veuillez réessayer.",
+                "submitError": "Une erreur est survenue lors de la soumission !",
+                "sendError": "Erreur lors de l'envoi"
+            }
+        }
+    },
     "education": {
         "title": "Formations & Certifications",
         "diploma": {
@@ -66,14 +115,14 @@
                 },
                 {
                     "language": "Anglais",
-                    "level": "Compréhension de documentation technique, expréssion orale intermédiare"
+                    "level": "Compréhension de documentation technique, expression orale intermédiaire"
                 }
             ]
         }
     },
     "skills": {
         "title": "Mes compétences",
-        "intro": "Mes ecpériences antérieures m'ont permis de développer des compétences ransversales et une grande adaptabilité. Autonome et rigoureux, je sais faire face aux défis avec efficacité. De plus mes différentes formations continues m'ont permis d'acquérir et d'affiner des compétences techniques, dont voici un aperçu :",
+        "intro": "Mes expériences antérieures m'ont permis de développer des compétences transversales et une grande adaptabilité. Autonome et rigoureux, je sais faire face aux défis avec efficacité. De plus mes différentes formations continues m'ont permis d'acquérir et d'affiner des compétences techniques, dont voici un aperçu :",
         "categories": {
             "frontend": {
                 "title": "Front-end",
@@ -131,6 +180,24 @@
     },
     "projects": {
         "title": "Projets",
+        "featured": {
+            "portfolio": {
+                "name": "Portfolio",
+                "description": "Ce portfolio — conçu et développé de A à Z avec Next.js 15, React 19, CSS Modules et next-i18next. Architecture single-page, thème light/dark, bilingue FR/EN."
+            },
+            "esse": {
+                "name": "Site vitrine ESSE",
+                "description": "Site vitrine de l'association ESSE développé en freelance. Next.js 15, Sanity CMS, Framer Motion. 7 schémas de contenu, autonomie client sur le CMS, SEO optimisé."
+            },
+            "lasauce": {
+                "name": "La Sauce",
+                "description": "Plateforme fullstack de mise en relation associations/particuliers. Projet d'équipe (3 devs, 10 jours). React, Redux, Node.js, Express, MongoDB."
+            },
+            "weatherapp": {
+                "name": "WeatherApp",
+                "description": "Application météo fullstack. Consultation par ville via API tierce. JavaScript vanilla, Node.js, Express, MongoDB."
+            }
+        },
         "sectionTitle": "Sélection de projets",
         "sectionDescription": "Voici une sélection de projets sur lesquels j'ai travaillé. N'hésitez pas à cliquer sur les liens pour en savoir plus !",
         "carouselTitle": "Projets JS Vanilla et React",
@@ -210,5 +277,54 @@
                 "message": "Aucun projet disponible dans cette catégorie pour le moment."
             }
         }
+    },
+    "experiences": {
+        "title": "Expériences Professionnelles",
+        "items": [
+            {
+                "company": "Wasabih",
+                "role": "Développeur Full-Stack",
+                "type": "Stage",
+                "period": "Janv. 2026 — présent",
+                "location": "Paris",
+                "missions": [
+                    {
+                        "title": "Serveur prerender Open Graph",
+                        "description": "Développement autonome d'un serveur Node.js/Express générant dynamiquement les métadonnées de partage (Facebook, LinkedIn, WhatsApp) pour 5 types de contenus. Architecture modulaire, détection de 15+ types de bots, sécurisation XSS, optimisation SQL et documentation README complète. Prêt pour déploiement NGINX + Alibaba Cloud."
+                    },
+                    {
+                        "title": "Extraction & migration de données",
+                        "description": "Extraction complète d'une table de 48 colonnes depuis un dump SQL de 9,3 Mo sous WSL2/MySQL. CSV exploitable livré en 3h en situation d'urgence."
+                    }
+                ],
+                "stack": ["Node.js", "Express", "Supabase", "PostgreSQL", "MySQL", "Git", "WSL2"]
+            },
+            {
+                "company": "Association ESSE",
+                "role": "Développeur Full-Stack",
+                "type": "Freelance",
+                "period": "Oct. — Nov. 2025",
+                "location": "Paris",
+                "description": "Conception et développement du site vitrine de l'association ESSE avec Next.js 15, Sanity CMS et Framer Motion. Création de 7 schémas de contenu complexes et formation du client à l'autonomie sur le CMS. SEO optimisé, animations fluides, responsive.",
+                "stack": ["Next.js 15", "Sanity CMS", "Framer Motion"]
+            },
+            {
+                "company": "Kone",
+                "role": "Développeur Frontend",
+                "type": "Stage",
+                "period": "Janv. — Avr. 2025",
+                "location": "Paris",
+                "description": "Montée en compétences sur Vue.js 3 en contexte professionnel. Développement de composants d'interface, analyse de code existant et application des bonnes pratiques.",
+                "stack": ["Vue.js 3"]
+            },
+            {
+                "company": "Association ESSE",
+                "role": "Responsable Pédagogique",
+                "type": "CDI",
+                "period": "Oct. 2014 — Oct. 2025",
+                "location": "Paris",
+                "description": "12 ans de gestion de projets multi-partenaires, management d'équipes et coordination d'intervenants. Communication avec des publics variés, pilotage de budget. Compétences directement transférables au développement : autonomie, rigueur, documentation, travail en équipe."
+            }
+        ]
     }
 }

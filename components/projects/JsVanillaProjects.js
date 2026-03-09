@@ -1,7 +1,5 @@
 import styles from '@styles/technoProject.module.css';
-import { useState } from 'react';
 import TemplateProjects from '@components/projects/TemplateProjects';
-import Image from 'next/image';
 import { merriweather, raleway } from '../ui/fonts';
 import { useTranslation } from 'next-i18next';
 
@@ -61,7 +59,6 @@ export const getJsVanillaProjectsData = (t) => [
     },
 ];
 function JsVanillaProjects() {
-    // const [isDeployed, setIsDeployed] = useState(false)
     const { t } = useTranslation('common');
 
     const projectsData = getJsVanillaProjectsData(t);

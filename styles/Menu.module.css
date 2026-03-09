@@ -14,7 +14,7 @@
     opacity: 0;
     transition: all 0.4s ease-in-out;
     pointer-events: none; /* Empeche les clics quand le menu est fermé */
-    z-index: 1000;
+    z-index: var(--z-menu);
     overflow: hidden;
 }
 
@@ -183,7 +183,7 @@
     cursor: pointer;
     box-shadow: var(--shadow-box);
     transition: all 0.3s ease;
-    z-index: 999;
+    z-index: var(--z-header);
     width: 48px;
     height: 48px;
     display: flex;
@@ -219,6 +219,17 @@
     to {
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+@keyframes menuItemFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 

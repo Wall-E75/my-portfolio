@@ -19,8 +19,6 @@ import {
     faWrench // Icône pour "outils"
 } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'next-i18next';
-import NextImageModule from 'next/image';
-const Image = NextImageModule.default || NextImageModule; // Assure que l'import de l'image est correct
 
 function Competences() {
     const { t } = useTranslation('common');
@@ -160,27 +158,6 @@ function Competences() {
         }
     ];
    
-    // const skills = skillsData.map((skill, index) => {
-    //     return (
-    //         <div key={index} className={`${styles.stack} ${styles[skill.title]}`}>
-    //             <h3 className={styles.titleColor}>{skill.title}</h3>
-    //             <ul>
-    //                 {skill.skills.map((skill, index) => {
-    //                     return (
-    //                         <li key={index}>
-    //                             {/* {typeof skill.icon === 'string' ? <Image className={styles.icon} src={skill.icon} alt={skill.name} width={55} height={55}  /> : <FontAwesomeIcon icon={skill.icon} className={styles.icon} />} */}
-    //                             {skill.name}
-    //                         </li>
-    //                     )
-    //                 })}
-    //             </ul>
-    //         </div>
-    //     )
-    // });
-
-    //  const skillsCarousel = skillsData.map((skill, index) => {
-    //     return <Carousel key={index} {...skill} />
-    //  });
     const skillsData = getSkillsData();
     return (
         <>
@@ -195,11 +172,7 @@ function Competences() {
                 </div>
 
                 <div className={styles.skillsContainer}>
-                    {/* {skills} */}
-                    {/* {skillsCarousel} */}
-                    {/* <Carousel {...skillsData} /> */}
                     <Carousel skillsData={skillsData} />
-
                 </div>
             </main>
         </>

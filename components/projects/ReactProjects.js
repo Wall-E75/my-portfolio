@@ -1,6 +1,5 @@
 import styles from '@styles/technoProject.module.css';
 import TemplateProjects from '@components/projects/TemplateProjects';
-import { useState } from 'react';
 import { merriweather, raleway } from '../ui/fonts';
 import { useTranslation } from 'next-i18next';
 
@@ -39,7 +38,6 @@ export const getReactProjectsData = (t) => [
 
 function ReactProjects() {
     const { t } = useTranslation('common');
-    const [isDeployed, setIsDeployed] = useState(false);
 
     const projectsData = getReactProjectsData(t);
     const projectList = projectsData.map((project) => {
