@@ -1,204 +1,153 @@
+/* =====================
+   MOBILE MENU PANEL
+   ===================== */
+
 .menu {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 72px;
+    right: 16px;
     width: 280px;
-    max-width: 90vw;
+    max-width: calc(100vw - 32px);
     height: auto;
     background-color: var(--bg-box);
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    border: 2px solid var(--neutral-medium);
+    border: 1px solid var(--neutral-medium);
     color: var(--text-color);
     transform: translateX(110%);
     opacity: 0;
-    transition: all 0.4s ease-in-out;
-    pointer-events: none; /* Empeche les clics quand le menu est fermé */
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    pointer-events: none;
     z-index: var(--z-menu);
     overflow: hidden;
 }
 
+/* accent bar top */
 .menu::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(
-        90deg,
-        var(--primary-color) 0%,
-        var(--secondary-color) 50%,
-        var(--accent-color) 100%
-    );
+    height: 3px;
+    background-color: var(--secondary-color);
     z-index: 1;
 }
 
 .menu ul {
-    list-style-type: none;
-    background-color: transparent;  
-    border: none;
+    list-style: none;
     margin: 0;
     padding: 0.5rem 0;
 }
 
 .menu li {
     border-bottom: 1px solid var(--neutral-medium);
-    padding: 0;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    color: var(--text-color);
-    position: relative;
-    overflow: hidden;
-
+    transition: background-color 200ms;
 }
 
 .menu li:last-child {
     border-bottom: none;
 }
 
-/*Effet de brillance au survol*/
-.menu li::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-     background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(248, 165, 185, 0.1),
-        transparent
-    );
-    transition: left 0.5s ease;
-    z-index: 1;
-}
-
-.menu li:hover::before {
-    left: 100%;
-}
-
 .menu li:hover {
-    background-color: var(--skill-bg);
-    transform: translateX(5px);
-}
-
-/*Couleurs spécifiques pour chaque élément de menu*/
-.menu li:nth-child(1):hover {
-    border-left: 3px solid var(--primary-color);
-}
-.menu li:nth-child(2):hover {
-    border-left: 3px solid var(--secondary-color);
-}
-.menu li:nth-child(3):hover {
-    border-left: 3px solid var(--accent-color);
-}
-.menu li:nth-child(4):hover {
-    border-left: 3px solid var(--primary-light);
-}
-.menu li:nth-child(5):hover {
-    border-left: 3px solid var(--secondary-light);
+    background-color: var(--presentation-bg);
 }
 
 .menu a {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 1rem 1.5rem;
+    gap: 0.75rem;
+    padding: 0.9rem 1.5rem;
     text-decoration: none;
     color: var(--text-color);
+    font-size: 0.95rem;
     font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-    z-index: 2; /* Assure que le lien est au-dessus de l'effet de survol */
+    transition: color 200ms;
 }
 
 .menu a:hover {
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .menu a svg {
-    margin-right: 0.75rem;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1rem;
+    height: 1rem;
     color: var(--secondary-color);
-    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-.menu a:hover svg {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
+/* =====================
+   OPEN STATE
+   ===================== */
 
 .menu.open {
-    top: 15px;
     transform: translateX(0);
     opacity: 1;
-    pointer-events: auto; /* Permet les clics quand le menu est ouvert */
+    pointer-events: auto;
+    animation: menuSlideIn 0.35s ease-out;
 }
 
-.close{
+.menu.open li {
+    animation: menuItemFadeIn 0.3s ease-out both;
+}
+
+.menu.open li:nth-child(1) { animation-delay: 0.05s; }
+.menu.open li:nth-child(2) { animation-delay: 0.1s;  }
+.menu.open li:nth-child(3) { animation-delay: 0.15s; }
+.menu.open li:nth-child(4) { animation-delay: 0.2s;  }
+.menu.open li:nth-child(5) { animation-delay: 0.25s; }
+
+/* =====================
+   CLOSE BUTTON
+   ===================== */
+
+.close {
     position: absolute;
     top: 12px;
     right: 12px;
     background: none;
     border: none;
-    color: var(--secondary-color);
+    color: var(--text-muted);
     cursor: pointer;
-    padding: 8px;
+    padding: 6px;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+    font-size: 1rem;
+    transition: color 200ms, background-color 200ms;
     z-index: 3;
 }
 
 .close:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: rotate(90deg);
+    color: var(--secondary-color);
+    background-color: var(--presentation-bg);
 }
 
+/* =====================
+   OPEN BUTTON (hamburger)
+   — intégré dans le header, pas fixed
+   ===================== */
+
 .openBtn {
-    /* display: none; */
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 1.3rem;
-    color: white;
-    background: linear-gradient(
-        135deg,
-        var(--primary-color) 0%,
-        var(--secondary-color) 100%
-    );
-    border: none;
-    border-radius: 12px;
-    padding: 12px;
-    cursor: pointer;
-    box-shadow: var(--shadow-box);
-    transition: all 0.3s ease;
-    z-index: var(--z-header);
-    width: 48px;
-    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 200ms, transform 150ms;
 }
 
 .openBtn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(248, 165, 185, 0.4);
-    background: linear-gradient(
-        135deg,
-        var(--primary-dark) 0%,
-        var(--secondary-dark) 100%
-    );
+    background-color: var(--secondary-dark);
 }
 
 .openBtn:active {
@@ -207,87 +156,36 @@
 
 .openBtn svg {
     color: white;
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
+/* =====================
+   ANIMATIONS
+   ===================== */
+
 @keyframes menuSlideIn {
-    from {
-        transform: translateX(110%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+    from { transform: translateX(110%); opacity: 0; }
+    to   { transform: translateX(0);   opacity: 1; }
 }
 
 @keyframes menuItemFadeIn {
-    from {
-        opacity: 0;
-        transform: translateX(16px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(12px); }
+    to   { opacity: 1; transform: translateX(0);    }
 }
 
-.menu.open {
-    animation: menuSlideIn 0.4s ease-out;
-}
-
-/* Animation pour les éléments de menu */
-.menu.open li {
-    animation: menuItemFadeIn 0.3s ease-out;
-}
-
-.menu.open li:nth-child(1) { animation-delay: 0.1s; }
-.menu.open li:nth-child(2) { animation-delay: 0.15s; }
-.menu.open li:nth-child(3) { animation-delay: 0.2s; }
-.menu.open li:nth-child(4) { animation-delay: 0.25s; }
-.menu.open li:nth-child(5) { animation-delay: 0.3s; }
-
-/** Responsive **/
-
-@media (max-width: 768px) {
-    .menu {
-        width: 250px;
-        right: 10px;
-        top: 10px;
-    }
-
-    .openBtn {
-        top: 15px;
-        right: 15px;
-        width: 44px;
-        height: 44px;
-        padding: 10px;
-    }
-
-    .menu a {
-        padding: 0.875rem 1.25rem;
-        font-size: 0.95rem;
-    }
-}
+/* =====================
+   RESPONSIVE
+   ===================== */
 
 @media (max-width: 480px) {
     .menu {
-        width: calc(100vw -20px);
+        width: calc(100vw - 20px);
         right: 10px;
+        top: 68px;
     }
 
     .menu a {
-        padding: 0.75rem 1rem;
+        padding: 0.8rem 1.25rem;
     }
-}
-
-
-
-.openBtn svg {
-    transition: transform 0.3s ease;
-}
-
-.openBtn:hover svg {
-    transform: rotate(90deg);
 }
