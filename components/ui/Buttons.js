@@ -6,10 +6,10 @@ import { raleway } from './fonts';
 function Buttons(props) {
   //Détermine le type de bouton (primary, secondary)
   const buttonType = props.variant || 'primary';
-  const buttonClass = `${styles.button} ${styles[buttonType]} ${raleway?.className || ''}}`
+  const buttonClass = `${styles.button} ${styles[buttonType]} ${raleway?.className || ''}`
   return (
     <button
-      htmltype={props.type || 'button'}
+      type={props.type || 'button'}
       onClick={props.onClick}
       className={buttonClass}
       title={props.title}
