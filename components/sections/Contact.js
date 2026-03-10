@@ -9,8 +9,6 @@ import {
     faPaperPlane,
     faPhone } from '@fortawesome/free-solid-svg-icons';
 import Buttons from '../ui/Buttons';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import Link from 'next/link';
 import { merriweather, raleway } from '../ui/fonts';
 import { useTranslation } from 'next-i18next';
 
@@ -235,23 +233,6 @@ function Contact() {
                     )}
                 </section>
             </div>
-
-            <section className={styles.socialContact}>
-                <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/' target='_blank' rel='noopener'>
-                    <FontAwesomeIcon
-                        className={styles.icon}
-                        icon={faLinkedin}
-                        aria-label="LinkedIn"
-                    />
-                </Link>
-                <Link href='https://github.com/Wall-E75' target='_blank' rel='noopener'>
-                    <FontAwesomeIcon
-                        className={styles.icon}
-                        icon={faGithub}
-                        aria-label="GitHub"
-                    />
-                </Link>
-            </section>
         </div>
     );
 }
