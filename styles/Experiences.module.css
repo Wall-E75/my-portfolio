@@ -1,7 +1,8 @@
 .main {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 3rem;
     max-width: 900px;
     margin: 0 auto;
+    background-color: var(--background-color);
 }
 
 .title {
@@ -9,7 +10,21 @@
     font-weight: 700;
     margin-bottom: 2.5rem;
     text-align: center;
-    color: var(--text-color);
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.75rem;
+    width: 100%;
+}
+
+.title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
 }
 
 .timeline {
@@ -33,10 +48,18 @@
 
 .card {
     background: var(--bg-box);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 1.25rem 1.5rem;
     box-shadow: var(--shadow-box);
     position: relative;
+    border: 1px solid var(--neutral-medium);
+    transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.card:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(4px);
 }
 
 .card::before {
@@ -155,12 +178,18 @@
         padding: 3rem 2rem;
     }
 
+    .title {
+        font-size: 2.5rem;
+    }
+
     .timeline {
         padding-left: 2.5rem;
     }
+}
 
+@media (min-width: 992px) {
     .title {
-        font-size: 2.2rem;
+        font-size: 3rem;
     }
 }
 
