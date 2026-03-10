@@ -1,0 +1,6 @@
+{
+  "eslint.workingDirectories": [
+    { "mode": "auto" }
+  ],
+  "eslint.nodePath": "c:/Users/porab/Desktop/Projet/portfolio/front_portfolio/my-portfolio/node_modules"
+}
