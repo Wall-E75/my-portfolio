@@ -40,7 +40,7 @@ function Projets() {
     ];
 
     return (
-        <main className={`${styles.main} ${raleway.className}`}>
+        <div className={`${styles.main} ${raleway.className}`}>
             <h1 className={`${styles.title} ${merriweather.className}`}>
                 {t('projects.title')}
             </h1>
@@ -71,7 +71,7 @@ function Projets() {
                     </article>
                 ))}
             </div>
-        </main>
+        </div>
     );
 };
 

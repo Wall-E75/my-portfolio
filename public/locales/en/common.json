@@ -297,7 +297,7 @@
             "description": "Complete extraction of a 48-column table from a 9.3 MB SQL dump under WSL2/MySQL. Usable CSV delivered in 3 hours in an emergency situation."
           }
         ],
-        "stack": ["Node.js", "Express", "Supabase", "PostgreSQL", "MySQL", "Git", "WSL2"]
+        "stack": ["Node.js", "Express", "Supabase", "PostgreSQL", "MySQL", "Git", "WSL2", "PM2", "NGINX"]
       },
       {
         "company": "Association ESSE",

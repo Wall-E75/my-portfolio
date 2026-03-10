@@ -297,7 +297,7 @@
                         "description": "Extraction complète d'une table de 48 colonnes depuis un dump SQL de 9,3 Mo sous WSL2/MySQL. CSV exploitable livré en 3h en situation d'urgence."
                     }
                 ],
-                "stack": ["Node.js", "Express", "Supabase", "PostgreSQL", "MySQL", "Git", "WSL2"]
+                "stack": ["Node.js", "Express", "Supabase", "PostgreSQL", "MySQL", "Git", "WSL2", "PM2", "NGINX"]
             },
             {
                 "company": "Association ESSE",
