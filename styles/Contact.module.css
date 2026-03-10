@@ -2,25 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
     background-color: var(--background-color);
-    padding: 2rem 1rem;
-    position: relative;
-}
-
-.mainContact::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(
-        90deg,
-        var(--secondary-color) 0%,
-        var(--accent-color) 50%,
-        var(--primary-color) 100%
-    );
+    padding: 2rem 1rem 3rem;
 }
 
 .title {
@@ -30,24 +13,21 @@
     text-align: center;
     color: var(--primary-color);
     position: relative;
-    padding-bottom: 1rem;
+    display: inline-block;
+    padding-bottom: 0.75rem;
 }
 
 .title::after {
     content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80px;
+    display: block;
+    width: 60px;
     height: 3px;
-    background: linear-gradient(
-        90deg,
-        var(--secondary-color) 0%,
-        var(--accent-color) 100%
-    );
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
     border-radius: 2px;
 }
+
+/* --- Carte adresse --- */
 
 .adressContact {
     position: relative;
@@ -67,12 +47,10 @@
     background-image: url('../public/paris.webp');
     background-size: cover;
     background-position: 75% 50%;
-    opacity: 0.7;
     width: 100%;
     min-height: 50vh;
 }
 
-/* Overlay */
 .wallPaper::after {
     content: '';
     position: absolute;
@@ -80,11 +58,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(248, 165, 185, 0.2) 0%,
-        rgba(63, 106, 78, 0.1) 100%
-    );
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.adressContactInfo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
 }
 
 .adress {
@@ -95,66 +76,72 @@
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    max-width: 400px;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.9);    
+    align-items: flex-start;
+    width: auto;
+    min-width: 240px;
+    max-width: 300px;
+    padding: 1.75rem;
+    background-color: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
-    box-shadow: var(--shadow-box);
-    border-left: 4px solid var(--secondary-color);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .adress h2 {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
     position: relative;
     padding-bottom: 0.5rem;
+    width: 100%;
 }
 
 .adress h2::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
+    left: 0;
+    width: 40px;
     height: 2px;
     background-color: var(--accent-color);
     border-radius: 1px;
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.adressContactInfo {
-    position: relative;
-    align-items: center;
-    width: 100%;
-    height: auto;  
-    min-height: 50vh;  
-}
-
 .adressContactInfo p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    margin-bottom: 0.75rem;
-    color: #000;
+    margin-bottom: 0.6rem;
+    color: rgba(255, 255, 255, 0.92);
     display: flex;
     align-items: center;
-    padding: 0.5rem;
-    background-color: rgba(248, 165, 185, 0.05);
+    padding: 0.35rem 0.5rem;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: background-color 200ms ease, transform 200ms ease;
+    white-space: nowrap;
 }
 
 .adressContactInfo p:hover {
-    background-color: var(--skill-bg);
-    transform: translateX(5px);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
 }
+
+.adressContactInfo p:hover .icon {
+    color: var(--accent-color);
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.6rem;
+    color: rgba(255, 255, 255, 0.75);
+    flex-shrink: 0;
+    transition: color 200ms ease;
+}
+
+/* --- Formulaire --- */
 
 .formContact {
     position: relative;
@@ -164,72 +151,78 @@
     padding: 2rem;
     background-color: var(--bg-box);
     border-radius: 16px;
-    box-shadow: var(--shadow-box);
-    border-top: 4px solid var(--primary-color);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 .formContact h2 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    margin: 0.5rem 0 1.5rem 0;
+    margin: 0 0 1.75rem 0;
     color: var(--primary-color);
-    position: relative;
-    padding-bottom: 0.5rem;
+    letter-spacing: 0.02em;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    margin: 1rem 0;
-    padding: 1rem 0;
+    gap: 0.25rem;
 }
 
 .form label {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
     width: 100%;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    color: var(--text-muted);
 }
 
 .input {
     width: 100%;
-    height: 3rem;
+    height: 2.75rem;
     font-size: 1rem;
-    border: 2px solid var(--neutral-medium);
-    border-radius: 12px;
-    margin-top: 0.5rem;
-    padding: 0 1rem;
-    background-color: var(--background-color);
+    border: none;
+    border-bottom: 2px solid var(--neutral-medium);
+    border-radius: 0;
+    margin-top: 0.4rem;
+    padding: 0 0.25rem;
+    background-color: transparent;
     color: var(--text-color);
-    transition: all 0.3s ease;
+    transition: border-color 200ms ease;
 }
 
 .input:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(248, 165, 185, 0.1);
-    background-color: var(--bg-box);
+    border-bottom-color: var(--primary-color);
 }
 
 .input::placeholder {
-  color: #a1a1a1;
-  font-size: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.input:valid:not(:placeholder-shown) {
+    border-bottom-color: var(--secondary-color);
+}
+
+.input:invalid:not(:placeholder-shown) {
+    border-bottom-color: var(--error-color);
 }
 
 .form textarea {
-    height: 8rem;
-    padding: 1rem;
-    resize: vertical;
-    min-height: 6rem;
-    max-height: 12rem;
+    height: 7rem;
+    padding: 0.5rem 0.25rem;
+    resize: none;
+    min-height: 5rem;
+    max-height: 10rem;
     font-family: inherit;
 }
 
@@ -239,35 +232,23 @@
 
 .message p {
     text-align: right;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-muted);
     margin-top: 0.25rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
 }
 
-.icon {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-right: 0.75rem;
-    color: var(--secondary-color);
-    transition: all 0.3s ease;
-}
-
-.adressContactInfo p:hover .icon {
-    color: var(--primary-color);
-}
+/* --- Success --- */
 
 .successMsg {
     display: flex;
     width: 100%;
-    height: auto;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
-    background: linear-gradient(
-        135deg,
-        rgba(63, 106, 78, 0.1) 0%,
-        rgba(248, 165, 185, 0.05) 100%
-    );
+    background-color: var(--bg-box);
     border-radius: 12px;
     border: 2px solid var(--secondary-color);
 }
@@ -278,7 +259,6 @@
     font-size: 1.2rem;
     margin: 1rem 0;
     text-align: center;
-    position: relative;
 }
 
 .success::before {
@@ -294,6 +274,45 @@
     line-height: 24px;
     font-size: 14px;
 }
+
+/* --- Erreurs --- */
+
+.error {
+    background-color: rgba(220, 38, 38, 0.08);
+    border: 1px solid var(--error-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.error li {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0.4rem 0;
+    list-style: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.error li::before {
+    content: '⚠️';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.emailError {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+/* --- Réseaux sociaux --- */
 
 .socialContact {
     display: flex;
@@ -317,7 +336,7 @@
     border-radius: 50%;
     background-color: var(--background-color);
     border: 2px solid var(--neutral-medium);
-    transition: all 0.3s ease;
+    transition: transform 200ms ease, box-shadow 200ms ease;
     text-decoration: none;
 }
 
@@ -326,76 +345,28 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-
-/**/
-
 .socialContact a:first-child {
     border-color: var(--primary-color);
 }
-
 
 .socialContact a:last-child {
     border-color: var(--secondary-color);
 }
 
-
 .socialContact .icon {
     width: 1.5rem;
     height: 1.5rem;
     margin: 0;
+    color: var(--text-color);
 }
 
-
-/*ERROR*/
-
-.input:invalid:not(:placeholder-shown) {
-    border-color: var(--error-color);
-}
-
-.input:valid:not(:placeholder-shown) {
-    border-color: var(--secondary-color);
-}
-
-.error {
-    background-color: rgba(220, 38, 38, 0.1);
-    border: 2px solid var(--error-color);
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1rem 0;
-    width: 100%;
-}
-
-.error li {
-    color: var(--error-color);
-    font-weight: 600;
-    margin: 0.5rem 0;
-    list-style: none;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.error li::before {
-    content: '⚠️';
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.emailError {
-    color: var(--error-color);
-    font-size: 0.85rem;
-    margin-top: 0.25rem;
-    font-weight: 500;
-}
-
-/* Animation pour les éléments */
+/* --- Animations --- */
 
 @keyframes slideIn {
     from {
         opacity: 0;
         transform: translateY(20px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -405,20 +376,20 @@
 .formContact,
 .adressContact,
 .socialContact {
-    animation: slideIn 0.6s ease-out;
+    animation: slideIn 0.6s ease-out both;
 }
 
 .formContact { animation-delay: 0.1s; }
 .adressContact { animation-delay: 0.2s; }
 .socialContact { animation-delay: 0.3s; }
 
-
-/*Tablet*/
+/* Tablet */
 
 @media (min-width: 768px) {
     .mainContact {
-        padding: 3rem 2rem;
-}
+        padding: 3rem 2rem 4rem;
+    }
+
     .title {
         font-size: 2.5rem;
         margin-bottom: 3rem;
@@ -434,27 +405,24 @@
     }
 
     .adress {
-        padding: 2.5rem;
-        max-width: 500px;
+        max-width: 320px;
+        padding: 2rem;
+        left: 33%;
     }
 
     .adress h2 {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
     }
 
     .formContact {
-        padding: 3rem;
+        padding: 2.5rem;
         max-width: 700px;
         margin: 0;
     }
 
-    .mainContact h2 {
-        font-size: 1.7rem;
-    }
-
     .input {
-        height: 3.5rem;
-        font-size: 1.1rem;
+        height: 3rem;
+        font-size: 1rem;
     }
 
     .socialContact {
@@ -473,15 +441,11 @@
     }
 }
 
-/*PC*/
+/* PC */
 
 @media (min-width: 992px) {
     .title {
         font-size: 3rem;
-    }
-
-    .mainContact h2 {
-        font-size: 1.8rem;
     }
 
     .adressContact {
@@ -489,11 +453,10 @@
     }
 
     .adressContactInfo p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
     }
 
     .mainContact {
-        /* max-width: 1200px; */
         margin: 0 auto;
     }
 
@@ -504,7 +467,7 @@
         width: 100%;
     }
 
-    .wallPaper {
-        height: 10px;
+    .adress {
+        left: 40%;
     }
 }
