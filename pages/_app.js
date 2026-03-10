@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 import Header from '@components/layouts/Header';
+import Footer from '@components/layouts/Footer';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { VisibilityProvider } from '../context/VisibilityContext';
@@ -14,23 +15,18 @@ function LayoutWrapper({children}) {
   const { theme } = useTheme();
   useEffect(() => {
     const body = document.body;
-    body.classList.remove("theme-light", "theme-dark"); // On retire les classes de theme
-    body.classList.add(`theme-${theme}`); // On ajoute la classe theme-${theme} pour changer le thème de l'application
+    body.classList.remove("theme-light", "theme-dark");
+    body.classList.add(`theme-${theme}`);
     return () => {
-      body.classList.remove(`theme-${theme}`); // On retire la classe theme-${theme} lors du démontage du composant
+      body.classList.remove(`theme-${theme}`);
     };
   }, [theme])
   return <>{children}</>;
-  
-      
-  
 };
 
 function App({ Component, pageProps }) {
   const router = useRouter();
-  // const isHomePage = router.pathname === '/'; //On vérifie si on est sur la page d'accueil
   return (
-    
       <VisibilityProvider>
         <Head>
           <title>SyllaDev | Portfolio</title>
@@ -39,14 +35,14 @@ function App({ Component, pageProps }) {
           <meta httpEquiv="content-language" content={router.locale} />
         </Head>
         <ThemeProvider>
-        <LayoutWrapper>
-          <Header />
-          <main className={`${merriweather.className}`}>
-            <Component {...pageProps} />
-          </main>
-        </LayoutWrapper>
+          <LayoutWrapper>
+            <Header />
+            <main className={`${merriweather.className}`}>
+              <Component {...pageProps} />
+            </main>
+            <Footer />
+          </LayoutWrapper>
         </ThemeProvider>
-
       </VisibilityProvider>
   );
 }
