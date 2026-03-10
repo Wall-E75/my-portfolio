@@ -41,35 +41,37 @@ function Projets() {
 
     return (
         <div className={`${styles.main} ${raleway.className}`}>
-            <h1 className={`${styles.title} ${merriweather.className}`}>
-                {t('projects.title')}
-            </h1>
-            <div className={styles.grid}>
-                {projects.map((project, index) => (
-                    <article key={index} className={styles.card}>
-                        <h2 className={`${styles.projectName} ${merriweather.className}`}>
-                            {project.name}
-                        </h2>
-                        <p className={styles.description}>{project.description}</p>
-                        <div className={styles.stack}>
-                            {project.stack.map((tech, i) => (
-                                <span key={i} className={styles.techBadge}>{tech}</span>
-                            ))}
-                        </div>
-                        <div className={styles.links}>
-                            {project.github && (
-                                <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                                    <FontAwesomeIcon icon={faGithub} /> GitHub
-                                </a>
-                            )}
-                            {project.link && (
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                                    <FontAwesomeIcon icon={faGlobe} /> Demo
-                                </a>
-                            )}
-                        </div>
-                    </article>
-                ))}
+            <div className={styles.inner}>
+                <h1 className={`${styles.title} ${merriweather.className}`}>
+                    {t('projects.title')}
+                </h1>
+                <div className={styles.grid}>
+                    {projects.map((project, index) => (
+                        <article key={index} className={styles.card}>
+                            <h2 className={`${styles.projectName} ${merriweather.className}`}>
+                                {project.name}
+                            </h2>
+                            <p className={styles.description}>{project.description}</p>
+                            <div className={styles.stack}>
+                                {project.stack.map((tech, i) => (
+                                    <span key={i} className={styles.techBadge}>{tech}</span>
+                                ))}
+                            </div>
+                            <div className={styles.links}>
+                                {project.github && (
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                                        <FontAwesomeIcon icon={faGithub} /> GitHub
+                                    </a>
+                                )}
+                                {project.link && (
+                                    <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.link}>
+                                        <FontAwesomeIcon icon={faGlobe} /> Demo
+                                    </a>
+                                )}
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </div>
         </div>
     );

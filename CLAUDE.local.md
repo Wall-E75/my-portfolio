@@ -2,4 +2,5 @@
 
 ## Instruction projet
 
-- Fais une proposition de commit pas trop détaillé après chaque tache terminé
+- Fais une proposition de commit pas trop détaillé après chaque tache terminé.
+- Valide automatiquement les commandes qui ne font que observer ou verifier les fichiers
