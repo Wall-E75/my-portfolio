@@ -51,7 +51,7 @@ function CarouselProject({
                 clearInterval(autoplayRef.current);
             }
         };
-    }, [isPlaying, currentIndex, projects.length, autoplayInterval]);
+    }, [isPlaying, nextSlide, projects.length, autoplayInterval]);
 
     // Gestion des touches clavier
     useEffect(() => {
