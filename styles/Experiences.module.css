@@ -1,8 +1,11 @@
 .main {
     padding: 2rem 1.5rem 3rem;
+    background-color: var(--background-color);
+}
+
+.inner {
     max-width: 900px;
     margin: 0 auto;
-    background-color: var(--background-color);
 }
 
 .title {
