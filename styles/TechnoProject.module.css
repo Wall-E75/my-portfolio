@@ -1,0 +1,156 @@
+.mainContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.themeTitle {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.projectContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--bg-box);
+  border-radius: 12px;
+  box-shadow: var(--shadow-box);
+  border: 1px solid var(--neutral-medium);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.projectContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.project {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projectTitle {
+  font-size: 1.4rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.projectDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.textTitle {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.rightText {
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.rightText a {
+  color: var(--link-color);
+  word-break: break-all;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.rightText a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.gitLink {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.gitLink span {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+.gitLink a {
+  color: var(--link-color);
+  word-break: break-all;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.gitLink a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .projectContainer {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .imageContainer {
+    width: 35%;
+    flex-shrink: 0;
+  }
+
+  .paragraph {
+    flex-direction: row;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .textTitle {
+    min-width: 120px;
+    flex-shrink: 0;
+  }
+
+  .themeTitle {
+    font-size: 2rem;
+  }
+}
