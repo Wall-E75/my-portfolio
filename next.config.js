@@ -6,9 +6,6 @@ const nextConfig = {
     defaultLocale: 'fr',
     locales: ['fr', 'en'],
   },
-  images: {
-    unoptimized: true,
-  },
 };
 
 export default nextConfig;
