@@ -194,10 +194,6 @@ function Contact() {
                                 {t('contact.address.city')}
                             </p>
                             <p>
-                                <FontAwesomeIcon className={styles.icon} icon={faPhone} />
-                                {t('contact.address.phone')}
-                            </p>
-                            <p>
                                 <FontAwesomeIcon className={styles.icon} icon={faCar} />
                                 {t('contact.address.drivingLicense')}
                             </p>
