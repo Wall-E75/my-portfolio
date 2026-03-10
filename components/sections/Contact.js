@@ -17,22 +17,19 @@ import { useTranslation } from 'next-i18next';
 function Contact() {
     const { t } = useTranslation('common');
 
-    // State pour les informations contact
     const [infosContact, setInfosContact] = useState({
         lastname: '',
         firstname: '',
         email: '',
         messages: '',
     });
-    const [error, setError] = useState([]); 
-    const [success, setSuccess] = useState(false); // Message de confirmation
-    const [emailError, setEmailError] = useState(false); // Message d'erreur pour l'email
+    const [error, setError] = useState([]);
+    const [success, setSuccess] = useState(false);
+    const [emailError, setEmailError] = useState(false);
     const maxChars = 200;
-    // Regex pour l'email
     const EMAIL_REGEX =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    
-    //Fonction pour réinitialiser le formulaire
+    /^(([^<>()[\]\\.,;:\s@"]+(.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
     const resetForm = () => {
         setInfosContact({
             lastname: '',
@@ -40,49 +37,43 @@ function Contact() {
             email: '',
             messages: '',
         });
-
         setError([]);
         setEmailError(false);
         setSuccess(false);
-    }
-    // Fonction pour gérer le changement d'état des inputs
-    // On utilise le destructuring pour récupérer le nom et la valeur de l'input
+    };
+
     const handleChange = (e) => {
         const { name, value } = e.target;
-        if (name === 'messages' && value.length > maxChars) return; // On ne peut écrire plus que maxChars
-        
+        if (name === 'messages' && value.length > maxChars) return;
         setInfosContact({
             ...infosContact,
             [name]: value
-        });        
+        });
     };
-    // Fonction pour valider le formulaire
+
     const validateForm = () => {
         const fields = ['lastname', 'firstname', 'email', 'messages'];
         let errors = [];
 
-        // On vérifie si chaque champ est vide
         fields.forEach((field) => {
             if (!infosContact[field]) {
                 errors.push(`*${t(`contact.form.fields.${field}.required`)}`);
             }
         });
-       
+
         if (!EMAIL_REGEX.test(infosContact.email)) {
             errors.push(`*${t('contact.form.fields.email.invalid')}`);
-            setEmailError(true); 
+            setEmailError(true);
         } else {
-            setEmailError(false); // On remet à false si l'email est correct
+            setEmailError(false);
         }
 
-        setError(errors); // On met à jour le state error avec le tableau d'erreurs
-        return errors.length === 0; // On retourne true si le tableau d'erreurs est vide
+        setError(errors);
+        return errors.length === 0;
     };
 
-    // Fonction pour gérer l'envoi du formulaire
     const handleSubmit = async (e) => {
-        e.preventDefault(); // On empêche le comportement par défaut du formulaire
-        // Réinitialisation
+        e.preventDefault();
         setError([]);
         setSuccess(false);
 
@@ -95,70 +86,66 @@ function Contact() {
                 });
 
                 if (!response.ok) {
-                    const errorData = await response.json(); //Afficher un message d'erreur pour l'utilisateur
-                    setError([errorData.message || t('contact.form.messages.submitError')])
+                    const errorData = await response.json();
+                    setError([errorData.message || t('contact.form.messages.submitError')]);
                     setSuccess(false);
                     return;
-                };
-    
+                }
+
                 const data = await response.json();
                 if (data.result) {
                     setSuccess(true);
                     setError([]);
                 } else {
                     setSuccess(false);
-                    setError([data.message ||  t('contact.form.messages.sendError')]);
+                    setError([data.message || t('contact.form.messages.sendError')]);
                 }
-               
-            } catch(error) {
-                console.error("Erreur réseau : ", error);
+
+            } catch(err) {
+                console.error("Erreur réseau : ", err);
                 setSuccess(false);
                 setError([t('contact.form.messages.networkError')]);
-            }           
-
+            }
         } else {
-            setSuccess(false); // On n'affiche pas le message de success
-        };
-
-        
-
+            setSuccess(false);
+        }
     };
 
     let formulaire = (
-        <form onSubmit={handleSubmit} className={styles.form} noValidate> 
+        <form onSubmit={handleSubmit} className={styles.form} noValidate>
             <label htmlFor="lastname">
                {t('contact.form.fields.lastname.label')} *
                 <input
-                    className={styles.input} 
-                    type="text" 
-                    name="lastname" 
+                    className={styles.input}
+                    type="text"
+                    name="lastname"
                     placeholder={t('contact.form.fields.lastname.placeholder')}
-                    required 
-                    onChange={handleChange} 
-                    value={infosContact.lastname} 
+                    required
+                    onChange={handleChange}
+                    value={infosContact.lastname}
                 />
             </label>
             <label htmlFor="firstname">
                  {t('contact.form.fields.firstname.label')} *
-                <input 
-                    className={styles.input} 
-                    type="text" 
-                    name="firstname" 
-                    placeholder={t('contact.form.fields.firstname.placeholder')} 
-                    required 
-                    onChange={handleChange} 
+                <input
+                    className={styles.input}
+                    type="text"
+                    name="firstname"
+                    placeholder={t('contact.form.fields.firstname.placeholder')}
+                    required
+                    onChange={handleChange}
                     value={infosContact.firstname}
                 />
-            </label> 
-            <label htmlFor="email" >
+            </label>
+            <label htmlFor="email">
                 {t('contact.form.fields.email.label')} *
-                <input        
-                    className={styles.input} 
-                    type="email" 
-                    name="email" 
+                <input
+                    className={styles.input}
+                    type="email"
+                    name="email"
                     placeholder={t('contact.form.fields.email.placeholder')}
-                    required 
-                    onChange={handleChange} 
+                    required
+                    onChange={handleChange}
                     value={infosContact.email}
                 />
                 {emailError && error.includes(`*${t('contact.form.fields.email.invalid')}`) && (
@@ -167,17 +154,17 @@ function Contact() {
             <label htmlFor="messages" className={styles.message}>
                 {t('contact.form.fields.message.label')} *
                 <textarea
-                    className={styles.input} 
+                    className={styles.input}
                     name="messages"
                     placeholder={t('contact.form.fields.message.placeholder')}
                     required
-                    maxLength={maxChars} //limite en HTML mais pas en js
+                    maxLength={maxChars}
                     onChange={handleChange}
                     value={infosContact.messages}
                 ></textarea>
                 <p>{infosContact.messages.length} / {maxChars} {t('contact.form.fields.message.counter')}</p>
             </label>
-            <Buttons 
+            <Buttons
                 text={t('contact.form.buttons.send')}
                 title={t('contact.form.buttons.sendTitle')}
                 type="submit"
@@ -186,90 +173,87 @@ function Contact() {
             />
         </form>
     );
-    return(
-        <>
-            <main className={`${styles.mainContact} ${raleway.className}`}>
-            
-                <h1 className={`${styles.title} ${merriweather.className}`}>
-                    {t('contact.title')}
-                </h1>
-                <div className={styles.contactContent}>
-                    <section className={styles.adressContact}>
-                        <div className={styles.adressContactInfo}>
-                            <div className={styles.wallPaper}></div>
-                            <div className={styles.adress}>
-                                <h2 className={merriweather.className}>
-                                    {t('contact.address.title')}
-                                </h2>
-                                <p>
-                                    <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
-                                    {t('contact.address.metro')}
-                                </p>
-                                <p>
-                                    <FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />
-                                    {t('contact.address.city')}
-                                </p>
-                                <p>
-                                    <FontAwesomeIcon className={styles.icon} icon={faPhone} /> 
-                                    {t('contact.address.phone')}
-                                </p>
-                                <p>
-                                    <FontAwesomeIcon className={styles.icon} icon={faCar} /> 
-                                    {t('contact.address.drivingLicense')}
-                                </p>
-                                <p>
-                                    <FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />
-                                    {t('contact.address.motorcycleLicense')}
-                                </p>
-                            </div>
+
+    return (
+        <div className={`${styles.mainContact} ${raleway.className}`}>
+            <h1 className={`${styles.title} ${merriweather.className}`}>
+                {t('contact.title')}
+            </h1>
+            <div className={styles.contactContent}>
+                <section className={styles.adressContact}>
+                    <div className={styles.adressContactInfo}>
+                        <div className={styles.wallPaper}></div>
+                        <div className={styles.adress}>
+                            <h2 className={merriweather.className}>
+                                {t('contact.address.title')}
+                            </h2>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faLocationDot} />
+                                {t('contact.address.metro')}
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faLocationArrow} />
+                                {t('contact.address.city')}
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faPhone} />
+                                {t('contact.address.phone')}
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faCar} />
+                                {t('contact.address.drivingLicense')}
+                            </p>
+                            <p>
+                                <FontAwesomeIcon className={styles.icon} icon={faMotorcycle} />
+                                {t('contact.address.motorcycleLicense')}
+                            </p>
                         </div>
-                    </section>
-
-                    <section className={styles.formContact}>
-                        <h2>{t('contact.form.title')}</h2> 
-                        {success ? 
-                            <div className={styles.successMsg}>
-                                <p className={styles.success}>
-                                    {t('contact.form.messages.success')}
-                                </p> 
-                                <Buttons 
-                                    text={t('contact.form.buttons.newMessage')}
-                                    title={t('contact.form.buttons.newMessageTitle')}
-                                    onClick={resetForm} 
-                                    variant="secondary"
-                                />
-                            </div> : formulaire 
-                        }
-                        {error.length > 0 && (
-                            <ul className={styles.error}>
-                                {error.map((err, index) => (
-                                    <li key={index}>{err}</li>
-                                ))}
-                            </ul>
-                        )}
-                    </section>
-                </div>
-
-
-                <section className={styles.socialContact}>
-                    <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/' target='_blank' rel='noopener'>
-                        <FontAwesomeIcon 
-                            className={styles.icon}  
-                            icon={faLinkedin} 
-                            aria-label="LinkdIn"  
-                        />
-                    </Link>
-                    <Link href='https://github.com/Wall-E75' target='_blank' rel='noopener'>
-                        <FontAwesomeIcon 
-                            className={styles.icon} 
-                            icon={faGithub} 
-                            aria-label="GitHub" 
-                        />
-                    </Link>
+                    </div>
                 </section>
-            </main>
-        </>
+
+                <section className={styles.formContact}>
+                    <h2>{t('contact.form.title')}</h2>
+                    {success ?
+                        <div className={styles.successMsg}>
+                            <p className={styles.success}>
+                                {t('contact.form.messages.success')}
+                            </p>
+                            <Buttons
+                                text={t('contact.form.buttons.newMessage')}
+                                title={t('contact.form.buttons.newMessageTitle')}
+                                onClick={resetForm}
+                                variant="secondary"
+                            />
+                        </div> : formulaire
+                    }
+                    {error.length > 0 && (
+                        <ul className={styles.error}>
+                            {error.map((err, index) => (
+                                <li key={index}>{err}</li>
+                            ))}
+                        </ul>
+                    )}
+                </section>
+            </div>
+
+            <section className={styles.socialContact}>
+                <Link href='https://www.linkedin.com/in/wali-sylla-52a464186/' target='_blank' rel='noopener'>
+                    <FontAwesomeIcon
+                        className={styles.icon}
+                        icon={faLinkedin}
+                        aria-label="LinkedIn"
+                    />
+                </Link>
+                <Link href='https://github.com/Wall-E75' target='_blank' rel='noopener'>
+                    <FontAwesomeIcon
+                        className={styles.icon}
+                        icon={faGithub}
+                        aria-label="GitHub"
+                    />
+                </Link>
+            </section>
+        </div>
     );
-};
+}
 
 export default Contact;
