@@ -19,6 +19,7 @@ import {
     faWrench // Icône pour "outils"
 } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'next-i18next';
+import { useMemo } from 'react';
 
 function Competences() {
     const { t } = useTranslation('common');
@@ -158,7 +159,7 @@ function Competences() {
         }
     ];
    
-    const skillsData = getSkillsData();
+    const skillsData = useMemo(() => getSkillsData(), [t]);
     return (
         <div className={`${styles.main} ${raleway.className}`}>
             <h1 className={`${styles.title} ${merriweather.className}`}>
