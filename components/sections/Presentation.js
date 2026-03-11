@@ -27,7 +27,7 @@ function Presentation() {
         <li><span>Job :</span> {t('home.profileData.job')}</li>
         <li><span>Age :</span> {t('home.profileData.age')}</li>
         <li><span>City :</span> {t('home.profileData.city')}</li>
-        <li><span>Mail :</span> {t('home.profileData.email')}</li>
+        <li><span>Mail :</span> <a href={`mailto:${t('home.profileData.email')}`}>{t('home.profileData.email')}</a></li>
       </ul>
     </div>
   );

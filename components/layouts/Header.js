@@ -19,7 +19,6 @@ function Header() {
           </Link>
           <ThemeSwitcher />
           <LanguageSwitcher />
-          <p className={styles.logoMail}>sylla.wali@me.com</p>
         </div>
         
         <div className={styles.menu}>
