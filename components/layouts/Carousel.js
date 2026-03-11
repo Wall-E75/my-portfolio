@@ -107,17 +107,6 @@ function Carousel({ skillsData }) {
                     >
                         <FontAwesomeIcon icon={faChevronLeft} />
                     </button>
-                    <button
-                        className={`${styles.btn} ${styles.playPauseBtn}`}
-                        onClick={togglePlayPause}
-                        aria-label={isPlaying ? 'Mettre en pause' : 'Reprendre la lecture'}
-                        title={isPlaying ? 'Mettre en pause': 'Reprendre'}
-                    >
-                        <FontAwesomeIcon
-                            icon={isPlaying ? faPause : faPlay}
-                            className={styles.playPauseIcon}
-                        />
-                    </button>
                     <button 
                         className={styles.btn}
                         onClick={nextSlide}
@@ -127,7 +116,8 @@ function Carousel({ skillsData }) {
                     </button>
                 </div>
 
-                <div className={styles.carouselIndicators}>
+                <div className={styles.carouselFooter}>
+                    <div className={styles.carouselIndicators}>
                         {skillsData.map((_, index) => (
                             <button
                                 key={index}
@@ -140,7 +130,19 @@ function Carousel({ skillsData }) {
                                 {index + 1}
                             </button>
                         ))}
-                </div>               
+                    </div>
+                    <button
+                        className={`${styles.btn} ${styles.playPauseBtn}`}
+                        onClick={togglePlayPause}
+                        aria-label={isPlaying ? 'Mettre en pause' : 'Reprendre la lecture'}
+                        title={isPlaying ? 'Mettre en pause': 'Reprendre'}
+                    >
+                        <FontAwesomeIcon
+                            icon={isPlaying ? faPause : faPlay}
+                            className={styles.playPauseIcon}
+                        />
+                    </button>
+                </div>
             </div>
         </>
     );
