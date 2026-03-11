@@ -248,3 +248,17 @@
         max-width: 600px;
     }
 }
+.carouselFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin: 8px 0 12px;
+}
+
+.playPauseBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+}
