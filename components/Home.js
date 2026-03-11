@@ -3,12 +3,13 @@ import presentationStyles from '@styles/Presentation.module.css';
 import { useTranslation } from 'next-i18next';
 import { useVisibility } from '../context/VisibilityContext';
 import { raleway } from './ui/fonts';
+import dynamic from 'next/dynamic';
 import Presentation from '@components/sections/Presentation.js';
 import Projets from '@components/sections/Projets';
-import Competences from '@components/sections/Competences';
-import Experiences from '@components/sections/Experiences';
-import Formations from '@components/sections/Formations';
-import Contact from '@components/sections/Contact';
+const Competences = dynamic(() => import('@components/sections/Competences'));
+const Experiences = dynamic(() => import('@components/sections/Experiences'));
+const Formations = dynamic(() => import('@components/sections/Formations'));
+const Contact = dynamic(() => import('@components/sections/Contact'));
 
 function Home() {
   const { t } = useTranslation('common');
