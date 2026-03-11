@@ -307,3 +307,14 @@
         font-size: 1.1rem;
     }
 }
+
+.presentationContent ul li a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.presentationContent ul li a:hover {
+    color: var(--primary-color);
+}

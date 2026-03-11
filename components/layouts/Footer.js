@@ -8,7 +8,7 @@ function Footer() {
     return (
         <footer className={`${styles.footer} ${raleway.className}`}>
             <div className={styles.inner}>
-                <p className={styles.copyright}>© 2025 Wali Sylla</p>
+                <p className={styles.copyright}>© {new Date().getFullYear()} Wali Sylla</p>
                 <div className={styles.links}>
                     <Link
                         href="https://www.linkedin.com/in/wali-sylla-52a464186/"

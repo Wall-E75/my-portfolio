@@ -24,7 +24,7 @@ function Contact() {
     const [error, setError] = useState([]);
     const [success, setSuccess] = useState(false);
     const [emailError, setEmailError] = useState(false);
-    const maxChars = 200;
+    const maxChars = 500;
     const EMAIL_REGEX =
     /^(([^<>()[\]\\.,;:\s@"]+(.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
