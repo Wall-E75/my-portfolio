@@ -2,7 +2,7 @@ import { Merriweather, Raleway } from 'next/font/google';
 
 export const merriweather = Merriweather({
     subsets: ['latin'],
-    weight: ['400', '700', '900']
+    weight: ['400', '700']
 });
 
 export const raleway = Raleway({
