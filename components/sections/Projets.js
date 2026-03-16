@@ -4,8 +4,7 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { merriweather, raleway } from '../ui/fonts';
 import { useTranslation } from 'next-i18next';
-import NextImageModule from 'next/image';
-const Image = NextImageModule.default || NextImageModule;
+import Image from 'next/image';
 
 function Projets() {
     const { t } = useTranslation('common');
