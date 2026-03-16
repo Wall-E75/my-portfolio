@@ -17,7 +17,7 @@
         "welcome": "Bienvenue sur mon portfolio ! Je suis un développeur passionné par la création d'applications web modernes.",
         "greeting": "Salut !",
         "name": "Wali Sylla",
-        "job": "Développeur Web Full Stack",
+        "job": "Développeur Web Fullstack",
         "description": "Je suis Wali, développeur fullstack passionné par la creation d'applications web et les nouvelles technologies. Ma curiosité et ma soif d'apprendre me poussent à aller au bout de chaque projets avec rigueur. Grâce à mes expériences (professionnelles, sportives...) et à mon adaptabilité, je m'intégre facilement au sein d'une équipe et je m'investie pleinement dans les challenges et défi.",
         "downloadCV": "Télécharger CV",
         "sections": {
@@ -30,7 +30,7 @@
         },
         "profileData": {
             "name": "Sylla Wali",
-            "job": "Développeur Web Full Stack",
+            "job": "Développeur Web Fullstack",
             "age": "35 ans",
             "city": "Paris",
             "email": "sylla.wali@me.com"

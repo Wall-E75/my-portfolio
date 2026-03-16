@@ -3,13 +3,13 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--background-color);
-    padding: 2rem 1rem 3rem;
+    padding: 1.25rem 1rem 2rem;
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     color: var(--primary-color);
     text-align: center;
     position: relative;
@@ -31,14 +31,14 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .icon {
     width: 60%;
     max-width: 80px;
     height: auto;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
     color: var(--secondary-color);
     transition: color 200ms ease, transform 200ms ease;
 }
@@ -138,40 +138,40 @@
 /* Tablet */
 @media (min-width: 768px) {
     .main {
-        padding: 3rem 2rem 4rem;
+        padding: 1.75rem 1.25rem 2rem;
     }
 
     .title {
-        font-size: 2.5rem;
-        margin-bottom: 3rem;
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
     }
 
     .iconContainer {
-        margin-bottom: 3rem;
+        margin-bottom: 1.25rem;
     }
 
     .icon {
-        max-width: 100px;
+        max-width: 80px;
     }
 
     .formationContainer {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 
     .infos {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .infos h2 {
-        font-size: 1.7rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
     }
 
     .infos p {
-        font-size: 1.1rem;
-        margin: 1rem 0;
+        font-size: 1rem;
+        margin: 0.75rem 0;
     }
 
     .infos:last-child {
@@ -182,15 +182,15 @@
 /* PC */
 @media (min-width: 992px) {
     .title {
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
 
     .infos h2 {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     .infos p {
-        font-size: 1.15rem;
+        font-size: 1rem;
     }
 
     .formationContainer {
@@ -206,10 +206,10 @@
 @media (min-width: 1200px) {
     .formationContainer {
         max-width: 1000px;
-        gap: 2.5rem;
+        gap: 2rem;
     }
 
     .infos {
-        padding: 2.5rem;
+        padding: 1.75rem;
     }
 }
