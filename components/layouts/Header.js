@@ -27,12 +27,12 @@ function Header() {
 
         <nav className={styles.nav} aria-label='Navigation principal'>
             <ul className={styles.list}>
-                <li className={styles.project} title="Découvrez mes projets">
+                <li className={styles.project}>
                   <div className={styles.wallPaper}></div>
                     <Link href="/#projets">Projets</Link>
                 </li>
 
-                <li className={styles.competences} title='Mes compétences techniques'>
+                <li className={styles.competences}>
                   <div className={styles.wallPaper}></div>
                     <Link href="/#competences">Compétences</Link>
                 </li>
@@ -44,12 +44,12 @@ function Header() {
                   </li>
                 )}
 
-                <li className={styles.formations} title='Ma formation et mes certifications'>
+                <li className={styles.formations}>
                   <Link href='/#formations'>Formations</Link>
                   <div className={styles.wallPaper}></div>
                 </li>
 
-                <li className={styles.contact} title='Contactez-moi'>
+                <li className={styles.contact}>
                   <Link href='/#contact'>Contact</Link>
                   <div className={styles.wallPaper}>
                   </div>
