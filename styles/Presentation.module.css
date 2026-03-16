@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    padding: 2rem 0 3rem;
+    padding: 1.25rem 0 2rem;
     background-color: var(--background-color);
     color: var(--text-color);
     position: relative;
@@ -31,7 +31,7 @@
     align-items: center;
     justify-content: flex-end;
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     background-image: url('/photo_de_profil.webp');
     background-size: cover;
     background-position: top center;
@@ -99,7 +99,7 @@
     font-size: 1rem;
     font-weight: 400;
     font-style: italic;
-    margin: 0.5rem 0 1.5rem 0;
+    margin: 0.5rem 0 1rem 0;
     letter-spacing: 0.03rem;
     color: var(--secondary-color);
 }
@@ -215,7 +215,8 @@
         justify-content: center;
         align-items: stretch;
         width: 30%;
-        max-width: 280px;
+        max-width: 260px;
+        max-height: 360px;
         flex-shrink: 0;
         position: relative;
     }
@@ -287,8 +288,8 @@
 
 @media (min-width: 992px) {
     .imageContainer {
-        width: 28%;
-        max-width: 260px;
+        width: 26%;
+        max-width: 240px;
     }
 
     .greeting {

@@ -3,13 +3,13 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--background-color);
-    padding: 2rem 1rem 3rem;
+    padding: 1.25rem 1rem 2rem;
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     text-align: center;
     color: var(--primary-color);
     position: relative;
@@ -33,7 +33,7 @@
     position: relative;
     width: 100%;
     min-height: 50vh;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     overflow: hidden;
     border-radius: 16px;
     box-shadow: var(--shadow-box);
@@ -147,7 +147,7 @@
     position: relative;
     width: 100%;
     max-width: 600px;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 2rem;
     background-color: var(--bg-box);
     border-radius: 16px;
@@ -337,12 +337,12 @@
 
 @media (min-width: 768px) {
     .mainContact {
-        padding: 3rem 2rem 4rem;
+        padding: 1.75rem 1.25rem 2rem;
     }
 
     .title {
-        font-size: 2.5rem;
-        margin-bottom: 3rem;
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
     }
 
     .title::after {
@@ -351,7 +351,7 @@
     }
 
     .adressContact {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
     }
 
     .adress {
@@ -380,7 +380,7 @@
 
 @media (min-width: 992px) {
     .title {
-        font-size: 3rem;
+        font-size: 2.25rem;
     }
 
     .adressContact {
