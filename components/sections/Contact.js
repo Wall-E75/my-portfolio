@@ -77,7 +77,7 @@ function Contact() {
 
         if (validateForm()) {
             try {
-                const response = await fetch("https://my-portfolio-backend-sage.vercel.app/message", {
+                const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/message`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(infosContact),
