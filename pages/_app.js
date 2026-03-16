@@ -8,7 +8,6 @@ import { VisibilityProvider } from '../context/VisibilityContext';
 import { ThemeProvider, useTheme } from '@context/ThemeContext';
 import { merriweather } from '@/components/ui/fonts';
 import { appWithTranslation } from 'next-i18next';
-import nextI18NextConfig from '../next-i18next.config.js';
 
 
 function LayoutWrapper({children}) {
@@ -47,4 +46,13 @@ function App({ Component, pageProps }) {
   );
 }
 
-export default appWithTranslation(App, nextI18NextConfig);
+export default appWithTranslation(App, {
+  i18n: {
+    defaultLocale: 'fr',
+    locales: ['fr', 'en'],
+  },
+  reloadOnPrerender: process.env.NODE_ENV === 'development',
+  ns: ['common'],
+  defaultNS: 'common',
+  react: { useSuspense: false },
+});
