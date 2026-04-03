@@ -23,7 +23,8 @@ function Projets() {
             description: t('projects.featured.esse.description'),
             stack: ['Next.js 15', 'Sanity CMS', 'Framer Motion'],
             github: null,
-            link: 'https://association-esse-first.netlify.app/',
+            link: 'https://association-esse.fr/',
+            linkLabel: 'Site',
             image: '/esse.webp',
         },
         {
@@ -32,6 +33,7 @@ function Projets() {
             stack: ['React', 'Redux', 'Next.js', 'Node.js', 'Express', 'MongoDB'],
             github: 'https://github.com/victor-blanchard/assos-frontend',
             link: 'https://assos-frontend.vercel.app/',
+            linkLabel: 'Demo',
             image: '/lasauce.webp',
         },
         {
@@ -40,6 +42,7 @@ function Projets() {
             stack: ['JavaScript', 'Node.js', 'Express', 'MongoDB'],
             github: 'https://github.com/Wall-E75/weatherapp-frontend',
             link: 'https://weatherapp-frontend-chi.vercel.app',
+            linkLabel: 'Demo',
             image: '/weather.avif',
         },
     ];
@@ -82,7 +85,7 @@ function Projets() {
                                     )}
                                     {project.link && (
                                         <a href={project.link} target="_blank" rel="noopener noreferrer" className={styles.link}>
-                                            <FontAwesomeIcon icon={faGlobe} /> Demo
+                                            <FontAwesomeIcon icon={faGlobe} /> {project.linkLabel ?? 'Demo'}
                                         </a>
                                     )}
                                 </div>
