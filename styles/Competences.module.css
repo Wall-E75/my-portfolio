@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -34,7 +33,7 @@
     width: 100%;
     max-width: 800px;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding: 1.25rem 1.5rem;
     background-color: var(--bg-box);
     border-radius: 12px;
@@ -50,96 +49,138 @@
     font-size: 1rem;
 }
 
+/* ── Main Stack ── */
+
+.mainStack {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+}
+
+.mainStackItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    flex: 1;
+    min-width: 150px;
+    padding: 0.85rem 1.25rem;
+    background-color: var(--bg-box);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-box);
+}
+
+.mainStackIcon {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+.mainStackName {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* ── Accordéon ── */
+
 .skillsContainer {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    max-width: 1200px;
-    height: auto;
-    color: var(--text-color);
-    padding: 1rem;
-    gap: 1rem;
-}
-
-.skillsContainer h3 {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    color: var(--secondary-color);
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-.skillsContainer h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--accent-color);
-    border-radius: 1px;
-}
-
-.skillsContainer li {
-    list-style-type: none;
-    padding: 0.6rem 0.9rem;
-    text-align: center;
-    border: 2px solid var(--neutral-medium);
-    border-radius: 20px;
-    margin: 0.4rem;
-    background-color: var(--bg-box);
-    box-shadow: var(--shadow-box);
-    transition: border-color 200ms ease, box-shadow 200ms ease, transform 150ms ease;
-    cursor: default;
-    font-weight: 500;
-}
-
-.skillsContainer li:hover {
-    border-color: var(--primary-color);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-    transform: translateY(-2px);
-    background-color: var(--presentation-bg);
-}
-
-.stack {
-    display: flex;
-    width: 100%;
     flex-direction: column;
-    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 700px;
+}
+
+.card {
+    background-color: var(--bg-box);
     border: 1px solid var(--neutral-medium);
     border-radius: 12px;
-    background-color: var(--background-color);
     box-shadow: var(--shadow-box);
-    padding: 0.5rem 0 1rem;
-    margin: 1rem;
-    transition: border-color 200ms ease, box-shadow 200ms ease;
+    overflow: hidden;
+    transition: border-color 200ms ease;
 }
 
-.stack:hover {
+.card[open] {
     border-color: var(--secondary-color);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    background-color: var(--bg-box);
 }
 
-.stack ul {
+/* Supprime le marqueur natif */
+.card > summary {
+    list-style: none;
+}
+.card > summary::-webkit-details-marker {
+    display: none;
+}
+
+.cardSummary {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
 }
 
-.frontEnd {
-    border-right: 1px solid var(--neutral-medium);
-}
-
-.icon {
+.cardTitle {
     font-size: 1rem;
-    text-align: center;
-    color: var(--text-muted);
+    font-weight: 600;
+    color: var(--secondary-color);
 }
 
-/* Tablet */
+.cardChevron {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: transform 300ms ease;
+    flex-shrink: 0;
+}
+
+.card[open] .cardChevron {
+    transform: rotate(180deg);
+}
+
+/* ── Liste verticale des skills ── */
+
+.skillsList {
+    list-style: none;
+    margin: 0;
+    padding: 0 1.25rem 0.75rem;
+    border-top: 1px solid var(--neutral-medium);
+}
+
+.skillItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--neutral-medium);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.skillItem:last-child {
+    border-bottom: none;
+}
+
+.skillIcon {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    width: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.skillSvg {
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* ── Responsive ── */
 
 @media (min-width: 768px) {
     .main {
@@ -154,5 +195,11 @@
 @media (min-width: 992px) {
     .title {
         font-size: 2.25rem;
+    }
+
+    .skillsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
     }
 }

@@ -128,52 +128,55 @@
                 "title": "Front-end",
                 "skills": {
                     "javascript": "JavaScript",
+                    "typescript": "TypeScript",
                     "html5": "HTML5",
                     "css3": "CSS3",
-                    "react": "React",
-                    "nextjs": "Next.js",
-                    "reactnative": "React Native",
-                    "tailwind": "Tailwind CSS"
+                    "react": "React 18",
+                    "nextjs": "Next.js 15",
+                    "redux": "Redux Toolkit",
+                    "tailwind": "Tailwind CSS",
+                    "framermotion": "Framer Motion"
                 }
             },
             "backend": {
-                "title": "Back-end",
+                "title": "Back-end & Base de données",
                 "skills": {
                     "nodejs": "Node.js",
                     "express": "Express",
-                    "restapi": "RESTful API"
-                }
-            },
-            "database": {
-                "title": "Base de données",
-                "skills": {
+                    "restapi": "API RESTful",
                     "mongodb": "MongoDB",
                     "mongoose": "Mongoose",
-                    "sql": "SQL",
-                    "postgresql": "PostgreSQL"
+                    "postgresql": "PostgreSQL",
+                    "mysql": "MySQL",
+                    "supabase": "Supabase",
+                    "bcrypt": "Bcrypt"
                 }
             },
             "tools": {
-                "title": "Outils",
+                "title": "Outils & DevOps",
                 "skills": {
                     "git": "Git",
                     "github": "GitHub",
-                    "vscode": "VSCode",
-                    "postman": "Postman",
-                    "thunderclient": "ThunderClient",
-                    "figma": "Figma",
-                    "expo": "Expo"
+                    "wsl2": "WSL2 / Linux",
+                    "jest": "Jest",
+                    "npm": "npm / yarn",
+                    "sanity": "Sanity CMS",
+                    "nginx": "NGINX",
+                    "pm2": "PM2",
+                    "cloudinary": "Cloudinary",
+                    "i18n": "I18n"
                 }
             },
-            "other": {
-                "title": "Autres compétences",
+            "methods": {
+                "title": "Méthodes",
                 "skills": {
-                    "responsive": "Responsive design",
-                    "seo": "SEO",
-                    "agile": "Méthodologie Agile",
-                    "scrum": "Scrum",
-                    "accessibility": "Accessibilité",
-                    "projectmanagement": "Gestion de projet"
+                    "agile": "Agile / Scrum",
+                    "solid": "Architecture SOLID",
+                    "modular": "Architecture modulaire",
+                    "sqloptim": "Optimisation SQL",
+                    "xss": "Sécurité Web (XSS)",
+                    "documentation": "Documentation technique",
+                    "unittests": "Tests unitaires"
                 }
             }
         }

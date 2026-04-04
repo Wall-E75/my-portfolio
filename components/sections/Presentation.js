@@ -13,8 +13,8 @@ function Presentation() {
 
   const handleClick = () => {
     const link = document.createElement('a');
-    link.href = '/CV_Wali_Sylla_Developpeur_Web_JS.pdf';
-    link.download = 'CV_Wali_Sylla_Developpeur_Web_JS.pdf';
+    link.href = '/CV_Wali_Sylla_Developpeur_Fullstack.pdf';
+    link.download = 'CV_Wali_Sylla_Developpeur_Fullstack.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
