@@ -103,6 +103,7 @@
     box-shadow: var(--shadow-box);
     overflow: hidden;
     transition: border-color 200ms ease;
+    align-self: start;
 }
 
 .card[open] {
