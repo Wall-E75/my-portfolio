@@ -48,6 +48,8 @@ body {
   --header-bg: rgba(245, 241, 235, 0.95);
   --error-color: #dc2626;
   --text-muted: #6b7280;
+  --hero-left: #F8A5B9;
+  --hero-right: #3F6A4E;
 }
 
 .theme-dark {
@@ -85,6 +87,8 @@ body {
   --header-bg: rgba(30, 30, 36, 0.95);
   --error-color: #f87171;
   --text-muted: #9ca3af;
+  --hero-left: #3D1825;
+  --hero-right: #1A2E22;
 }
 
 /* Z-index scale */
