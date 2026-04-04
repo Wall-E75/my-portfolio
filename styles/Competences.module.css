@@ -94,6 +94,7 @@
     gap: 0.6rem;
     width: 100%;
     max-width: 700px;
+    margin: 0 auto;
 }
 
 .card {
@@ -103,7 +104,6 @@
     box-shadow: var(--shadow-box);
     overflow: hidden;
     transition: border-color 200ms ease;
-    align-self: start;
 }
 
 .card[open] {
@@ -202,5 +202,9 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         max-width: 900px;
+    }
+
+    .card {
+        align-self: start;
     }
 }
